@@ -24,30 +24,39 @@ body {
     overflow: hidden;
 }
 
+#theoryText {
+    color: white;
+    font-size: 14px;
+    width: 600px;
+}
+
 #time_slider {
     color: white;
     word-spacing: 40px;
-    width:70%;
+    width: 70%;
     text-align: center;
 
 }
+
 #time_slider2 {
     color: white;
     word-spacing: 150px;
-    width:70%;
+    width: 70%;
     text-align: center;
 
 }
+
 #time_slider3 {
     color: white;
     word-spacing: 270px;
-    width:70%;
+    width: 70%;
     text-align: center;
 
 }
-#time_slider_table{
+
+#time_slider_table {
     color: white;
-    width:70%;
+    width: 70%;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
@@ -120,4 +129,15 @@ table {
     background: #8B8682;
     position: absolute;
     display: none;
+}
+
+#TheoryMenu {
+    background: #8B8682;
+    position: absolute;
+    display: none;
+}
+
+#TheoryMenu ul {
+    padding: 3px;
+    margin: 0;
 }

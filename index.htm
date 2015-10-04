@@ -5,23 +5,19 @@
     <title>Эволюция звезд</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-    <link href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAACgCAMAAAC8EZcfAAAAkFBMVEX///8JCQkJCQkcHBwSEhIUFBQoKCgfHx8ICAgDAwMLCwseHh4nJycjIyMTExMFBQUBAQHi4uIODg4ZGRkhISEiIiIdHR0VFRUQEBAGBga/v78bGxsaGhoXFxdPT08YGBjKysr8/PwNDQ0REREPDw8MDAwFBQUHBwcKCgre3t7i4uL///8EBAT9/f3///8VFRXqzzg1AAAAMHRSTlMA2SDZ2dnZ2TKf2dnZ2dnXEg7Z2dnZ2dnZ2XbZ2dmt2Q462dnZ2SDZ2WogYsFiXM0jCUDVAAABG0lEQVQYle3ZyW4CMRAAUQMJkJ1sQPZkskBW/v/vuFVfEomRJwIz9c62VD52OyVJkiRJKl4H6y75g4G5DMxlYC4Dc21oYBc97GDddcnAfAbmMjCXgbk2PnAXfQwwhIEGGmiggQamtId9HOAQRzjGCUYw0EADDTRw+wJPEcu0M8QwdI4LXP5ijAmmiGdewUADDTTQwLIDwzUi5gaxahuvKG7c4g4rZxlooIEGGlhMYLjHQyMi6xEGGmiggQZuc2CIoWlSW3z4PKGhLAMNNNBAA4sJrPBc2wsazzLQQAMNNLCYwPjcqWp7xRsMNNBAAw1sW+AMc7zjA5+Ic/G4LxhooIEGGti2wG/Uv/uDBQw00EADDWxboCRJkiT9gyWV9wDueShVyQAAAABJRU5ErkJggg==" rel="icon" type="image/x-icon" />
+    <link href="data:image/x-icon;base64,iVBORw0KGgoAAAANSU hEUgAAAKAAAACgCAMAAAC8EZcfAAAAkFBMVEX///8JCQkJCQkcHBwSEhIUFBQoKCgfHx8ICAgDAwMLCwseHh4nJycjIyMTExMFBQUBAQHi4uIODg4ZGRkhISEiIiIdHR0VFRUQEBAGBga/v78bGxsaGhoXFxdPT08YGBjKysr8/PwNDQ0REREPDw8MDAwFBQUHBwcKCgre3t7i4uL///8EBAT9/f3///8VFRXqzzg1AAAAMHRSTlMA2SDZ2dnZ2TKf2dnZ2dnXEg7Z2dnZ2dnZ2XbZ2dmt2Q462dnZ2SDZ2WogYsFiXM0jCUDVAAABG0lEQVQYle3ZyW4CMRAAUQMJkJ1sQPZkskBW/v/vuFVfEomRJwIz9c62VD52OyVJkiRJKl4H6y75g4G5DMxlYC4Dc21oYBc97GDddcnAfAbmMjCXgbk2PnAXfQwwhIEGGmiggQamtId9HOAQRzjGCUYw0EADDTRw+wJPEcu0M8QwdI4LXP5ijAmmiGdewUADDTTQwLIDwzUi5gaxahuvKG7c4g4rZxlooIEGGlhMYLjHQyMi6xEGGmiggQZuc2CIoWlSW3z4PKGhLAMNNNBAA4sJrPBc2wsazzLQQAMNNLCYwPjcqWp7xRsMNNBAAw1sW+AMc7zjA5+Ic/G4LxhooIEGGti2wG/Uv/uDBQw00EADDWxboCRJkiT9gyWV9wDueShVyQAAAABJRU5ErkJggg=="
+          rel="icon" type="image/x-icon"/>
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" href="css/jquery-ui.css"/>
     <link rel="stylesheet" href="css/info.css"/>
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
 
-    <script src="js/lib/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
     <script src="js/lib/jquery-ui.js"></script>
     <script src="js/lib/three.min.js"></script>
-    <script src="js/const.js"></script>
-    <script src="js/graphics.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/util.js"></script>
     <script src="js/lib/sylvester.js" type="text/javascript"></script>
     <script src="js/lib/glUtils.js" type="text/javascript"></script>
     <script src="js/lib/sceneNode.js" type="text/javascript"></script>
-
     <script src="js/lib/Three.js"></script>
     <script src="js/lib/Detector.js"></script>
     <script src="js/lib/Stats.js"></script>
@@ -30,10 +26,35 @@
     <script src="js/lib/THREEx.FullScreen.js"></script>
     <script src="js/lib/THREEx.WindowResize.js"></script>
     <script src="js/lib/info.js"></script>
-    <script src="js/FBOUtils.js"></script>
-    <script src="js/OrbitControls2.js"></script>
+    <script src="js/lib/FBOUtils.js"></script>
+    <script src="js/lib/OrbitControls2.js"></script>
+    <script src="js/lib/dat.gui.min.js"></script>
 
-    <script src="js/dat.gui.min.js"></script>
+
+    <script type="text/javascript" src="js/lib/black_hole/purl.js"></script>
+    <script type='text/javascript' src='js/lib/black_hole/util.js'></script>
+    <script type='text/javascript' src='js/lib/black_hole/gl-matrix.2.2.0.min.js'></script>
+    <script type='text/javascript' src='js/lib/black_hole/gl-util.js'></script>
+    <script type='text/javascript' src='js/lib/black_hole/gl-util-unitquad.js'></script>
+    <script type='text/javascript' src='js/lib/black_hole/gl-util-kernel.js'></script>
+    <script type='text/javascript' src='js/lib/black_hole/mouse3d.js'></script>
+    <!--<script type="text/javascript" src="js/lib/black_hole/MathJax.js"></script>-->
+    <script type='text/javascript' src='js/lib/black_hole/renderer.testcube.js'></script>
+    <script type='text/javascript' src='js/lib/black_hole/renderer.sw.js'></script>
+    <script type='text/javascript' src='js/lib/black_hole/renderer.fbo.js'></script>
+    <script type='text/javascript' src="js/lib/supernova/Wagner.js"></script>
+    <script type='text/javascript' src="js/lib/supernova/WagnerPositionPass.js"></script>
+    <script type='text/javascript' src="js/lib/supernova/WagnerVelocityPass.js"></script>
+    <script type='text/javascript' src="js/lib/supernova/ColorConverter.js"></script>
+    type='text/javascript'
+    lib/supernova/
+    <script src="js/const.js"></script>
+    <script src="js/blackhole.js"></script>
+    <script src="js/supernova.js"></script>
+    <script src="js/graphics.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/util.js"></script>
+
     <!--<script src="js/lib/ParticleEngine.js"></script>-->
     <!--<script src="js/lib/ParticleEngineExamples.js"></script>-->
 
@@ -69,6 +90,7 @@
 
             gl_Position = projectionMatrix * modelViewMatrix * vec4( newPosition, 1.0 );
         }
+
     </script>
     <script id="fragmentShader" type="x-shader/x-vertex">
         uniform sampler2D baseTexture;
@@ -104,6 +126,7 @@
             theColor.a = alpha;
             gl_FragColor = theColor;
         }
+
     </script>
     <script id="vertexShaderGlow" type="x-shader/x-vertex">
         varying vec3 vNormal;
@@ -112,6 +135,7 @@
             vNormal = normalize( normalMatrix * normal );
             gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
         }
+
     </script>
     <script id="fragmentShaderGlow" type="x-shader/x-vertex">
         varying vec3 vNormal;
@@ -120,6 +144,7 @@
             float intensity = pow( 0.7 - dot( vNormal, vec3( 0.0, 0.0, 1.0 ) ), 4.0 );
             gl_FragColor = vec4( 1.0, 1.0, 1.0, 1.0 ) * intensity;
         }
+
     </script>
     <script id="texture_vertex_simulation_shader" type="x-shader/x-vertex">
 
@@ -132,7 +157,8 @@
 
 			}
 
-		</script>
+
+    </script>
     <script id="texture_fragment_simulation_shader" type="x-shader/x-fragment">
 
 			// simulation
@@ -180,7 +206,8 @@
 			}
 
 
-		</script>
+
+    </script>
 
     <!-- zz85 - end simulations -->
 
@@ -207,7 +234,8 @@
 
 			}
 
-		</script>
+
+    </script>
 
     <script id="fs-particles" type="x-shader/x-fragment">
 
@@ -219,10 +247,58 @@
 
 			}
 
-		</script>
+
+    </script>
+    <script type="x-shader/x-vertex" id="vertexshaderP">
+
+
+    attribute float size;
+    attribute vec3 customColor;
+    attribute vec2 aPoints;
+    uniform sampler2D texture;
+    varying vec3 vColor;
+
+    void main() {
+
+    vColor = customColor;
+
+
+    vec4 pos=vec4(texture2D(texture,aPoints).xyz,1.0)+vec4(position,1.0);
+    //vec4 pos=vec4(position,1.0);
+    vec4 mvPosition =modelViewMatrix * pos;
+    gl_PointSize = size * ( 1000.0 / length( mvPosition.xyz ) );
+    gl_Position = projectionMatrix * mvPosition;
+
+    }
+
+
+
+    </script>
+
+    <script type="x-shader/x-fragment" id="fragmentshaderP">
+    #ifdef GL_ES
+    precision highp float;
+    #endif
+
+    uniform vec3 color;
+    uniform sampler2D texture_point;
+
+    varying vec3 vColor;
+
+    void main() {
+
+    gl_FragColor = vec4( color * vColor, 1.0 );
+    gl_FragColor = gl_FragColor * texture2D( texture_point, gl_PointCoord );
+
+    }
+
+
+
+    </script>
+
 </head>
 <body>
-<table width="100%">
+<table width="100%" height="100%">
     <tr>
         <td width="71" height="71" align="center" class="mainLabel">
             <img src="img/logo2(chb).gif.png" width="60">
@@ -234,6 +310,7 @@
     <tr>
         <td valign="top" align="center">
             <img src="img/burger.png" width="70" id="burgerBtn" style="cursor: pointer">
+
             <div id="massMenu">
                 <ul>
                     <li><a onclick="selectMass(1, 'Маса > 15 M¤')" href="#" class="button">Маса > 15 M¤</a></li>
@@ -246,13 +323,28 @@
                     </li>
                 </ul>
             </div>
+            <img onclick="" src="img/theory.png" width="70" id="theoryBtn" style="cursor: pointer">
+
+            <div id="TheoryMenu">
+                <ul>
+                    <li><a onclick="selectTheory(1,'Діаграмма Герцшпрунга-Рассела')" href="#"  class="button">Діаграмма Герцшпрунга-Рассела</a></li>
+                    <li><a onclick="selectTheory(2,'Червоний гігант')" href="#"  class="button">Червоний гігант</a></li>
+                    <li><a onclick="selectTheory(3,'Протозоря')" href="#"  class="button">Протозоря</a></li>
+
+                </ul>
+            </div>
         </td>
         <td>
-            <table width="100%">
+            <span id="theoryCont" style="display: none;">
+
+            </span>
+            <table id="graphicCont" width="100%">
                 <tr>
                     <td class="polya" valign="top">
                         <span id="polyaDivLeft"></span>
+
                         <p>T=<span id="temperature"></span></p>
+
                         <p>L=<span id="light"></span></p>
 
                     </td>
@@ -269,9 +361,9 @@
                         <table id="time_slider_table">
                             <tr>
                                 <td align="center">
-                                    <span   id="time_slider"></span>
-                                    <span   id="time_slider2"></span>
-                                    <span   id="time_slider3"></span>
+                                    <span id="time_slider"></span>
+                                    <span id="time_slider2"></span>
+                                    <span id="time_slider3"></span>
                                 </td>
                             </tr>
                         </table>

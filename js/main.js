@@ -5,6 +5,7 @@ window.onload = function () {
     events();
     stepsArr = [];
     selectMass(1, 'Маса > 15 M¤');
+    //selectTheory(1,'Діаграмма Герцшпрунга-Рассела');
 
 };
 
@@ -15,12 +16,28 @@ function drawMainScene(stepName) {
     document.getElementById('polyaDiv2Right').innerHTML = step.infoRight;
     document.getElementById('temperature').innerHTML = step.temperature;
     document.getElementById('light').innerHTML = step.light;
-
-
     drawStar(step);
 };
+function selectTheory(partId,theoryName){
+    document.getElementById('massLabel').innerHTML =theoryName;
+    $('#graphicCont').hide(0);
+    $('#theoryCont').show(0);
 
+    if(partId==1    ) {
+        document.getElementById('theoryCont').innerHTML = 'Діаграма Герцшпрунга—Рассела —графічно відображена залежність між світністю та спектральним класом(тобто, температурою поверхні) зорі. Запропонована 1910 року незалежно Ейнаром Герцшпрунгом та Генрі Расселом. Діаграма використовується для класифікації зір та відповідає сучасній уяві про зоряну еволюцію.Близько 90% зір розташовано вздовж вузької смуги — головної послідовності, що перетинає діаграму по діагоналі від високих світлостей та температур до низьких. Світність цих зір зумовлено ядерними реакціями перетворення водню на гелій. Згідно з йєркською класифікацією, зорі головної послідовності належать до V-го класу світності.Чітко виділяються кілька гілок зір, що вже пройшли стадію головної послідовності (гіганти, надгіганти). У них відбувається «горіння» гелію та важчих елементів. Вони розташовані вище головної послідовності, ці зорі належать до I-IV класів світності.У нижній частині діаграми розташовано білі карлики, що проеволюціонували майже повністю. Вони мають VII клас світності.';
+        console.log("rabotaya 1");
+    }
+    if(partId==2) {
+        content = ',,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,';
+    }
+    if(partId==3) {
+        content = 'ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc';
+    }
+    $('#TheoryMenu').hide(100);
+}
 function selectMass(massId, massName) {
+    $('#graphicCont').show(0);
+    $('#theoryCont').hide(0);
     document.getElementById('massLabel').innerHTML = massName;
     document.getElementById('time_slider').innerHTML = massId.time_slider;
     if (massId==1) {
@@ -71,8 +88,12 @@ function selectMass(massId, massName) {
 function events() {
     document.getElementById('burgerBtn').onclick=function(){
         showHide('massMenu');
+        $('#TheoryMenu').hide(0);
     };
-
+    document.getElementById('theoryBtn').onclick=function(){
+        showHide('TheoryMenu');
+        $('#massMenu').hide(0);
+    };
     $("#slider").on("slide", function (event, ui) {
         drawMainScene(stepsArr[ui.value - 1]);
     });

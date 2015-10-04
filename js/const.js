@@ -1,13 +1,12 @@
 var masses = {
-    1: ['protostar', 'blue_sverx_giant', 'supernova1'],
+    1: ['protostar', 'blue_sverx_giant', 'supernova'],
     2: ['protostar', 'blue_sverx_giant', 'black_hole'],
-    3: ['protostar', 'blue_sverx_giant', 'supernova2', 'black_hole'],
-    4: ['protostar', 'blue_sverx_giant', 'red_gigant', 'blue_giant', 'supernova2', 'neutronstar'],
+    3: ['protostar', 'blue_sverx_giant', 'supernova', 'black_hole'],
+    4: ['protostar', 'blue_sverx_giant', 'red_gigant', 'blue_giant', 'supernova', 'neutronstar'],
     5: ['protostar', 'kartinka_proto_to_sun', 'sun_type', 'kartinka_sun_to_rg1', 'kartinka_sun_to_rg2', 'red_gigant', 'kartinka_rd_to_pr', 'kartinka_rd_to_pr2', 'kartinka_rd_to_pr3', 'planet_remnant', 'white_dwarf'],
     6: ['protostar', 'red_dwarf', 'white_dwarf'],
     7: ['protostar', 'brown_dwarf']
 };
-
 
 
 var steps = {
@@ -50,7 +49,7 @@ var steps = {
                 $('#graphic').html(renderer.domElement);
                 // EVENTS
                 THREEx.WindowResize(renderer, camera);
-                THREEx.FullScreen.bindKey({ charCode: 'm'.charCodeAt(0) });
+                THREEx.FullScreen.bindKey({charCode: 'm'.charCodeAt(0)});
                 // CONTROLS
                 controls = new THREE.OrbitControls(camera, renderer.domElement);
                 // SKYBOX/FOG
@@ -107,20 +106,20 @@ var steps = {
                 var bumpScale = 20.0;
 
                 customUniforms = {
-                    baseTexture: { type: "t", value: lavaTexture },
-                    baseSpeed: { type: "f", value: baseSpeed },
-                    repeatS: { type: "f", value: repeatS },
-                    repeatT: { type: "f", value: repeatT },
-                    noiseTexture: { type: "t", value: noiseTexture },
-                    noiseScale: { type: "f", value: noiseScale },
-                    blendTexture: { type: "t", value: blendTexture },
-                    blendSpeed: { type: "f", value: blendSpeed },
-                    blendOffset: { type: "f", value: blendOffset },
-                    bumpTexture: { type: "t", value: bumpTexture },
-                    bumpSpeed: { type: "f", value: bumpSpeed },
-                    bumpScale: { type: "f", value: bumpScale },
-                    alpha: { type: "f", value: 1.0 },
-                    time: { type: "f", value: 1.0 }
+                    baseTexture: {type: "t", value: lavaTexture},
+                    baseSpeed: {type: "f", value: baseSpeed},
+                    repeatS: {type: "f", value: repeatS},
+                    repeatT: {type: "f", value: repeatT},
+                    noiseTexture: {type: "t", value: noiseTexture},
+                    noiseScale: {type: "f", value: noiseScale},
+                    blendTexture: {type: "t", value: blendTexture},
+                    blendSpeed: {type: "f", value: blendSpeed},
+                    blendOffset: {type: "f", value: blendOffset},
+                    bumpTexture: {type: "t", value: bumpTexture},
+                    bumpSpeed: {type: "f", value: bumpSpeed},
+                    bumpScale: {type: "f", value: bumpScale},
+                    alpha: {type: "f", value: 1.0},
+                    time: {type: "f", value: 1.0}
                 };
 
                 // create custom material from the shader code above
@@ -141,7 +140,7 @@ var steps = {
 
                 var spriteMaterial = new THREE.SpriteMaterial(
                     {
-                        map: new THREE.ImageUtils.loadTexture('img/textures/glow.png'),
+                        map: new THREE.ImageUtils.loadTexture('img/textures/1234.png'),
                         useScreenCoordinates: false,
                         alignment: THREE.SpriteAlignment.center,
                         color: 0xFFCC33,
@@ -149,7 +148,7 @@ var steps = {
                         blending: THREE.AdditiveBlending
                     });
                 var sprite = new THREE.Sprite(spriteMaterial);
-                sprite.scale.set(340, 340, 1.0);
+                sprite.scale.set(320, 320, 1.0);
                 ball.add(sprite);
 
                 var spriteMaterial2 = new THREE.SpriteMaterial(
@@ -224,7 +223,7 @@ var steps = {
                 $('#graphic').html(renderer.domElement);
                 // EVENTS
                 THREEx.WindowResize(renderer, camera);
-                THREEx.FullScreen.bindKey({ charCode: 'm'.charCodeAt(0) });
+                THREEx.FullScreen.bindKey({charCode: 'm'.charCodeAt(0)});
                 // CONTROLS
                 controls = new THREE.OrbitControls(camera, renderer.domElement);
                 // STATS
@@ -290,36 +289,36 @@ var steps = {
 
 
                 customUniforms = {
-                    baseTexture: { type: "t", value: lavaTexture },
-                    baseSpeed: { type: "f", value: baseSpeed },
-                    repeatS: { type: "f", value: repeatS },
-                    repeatT: { type: "f", value: repeatT },
-                    noiseTexture: { type: "t", value: noiseTexture },
-                    noiseScale: { type: "f", value: noiseScale },
-                    blendTexture: { type: "t", value: blendTexture },
-                    blendSpeed: { type: "f", value: blendSpeed },
-                    blendOffset: { type: "f", value: blendOffset },
-                    bumpTexture: { type: "t", value: bumpTexture },
-                    bumpSpeed: { type: "f", value: bumpSpeed },
-                    bumpScale: { type: "f", value: bumpScale },
-                    alpha: { type: "f", value: 1.0 },
-                    time: { type: "f", value: 1.0 }
+                    baseTexture: {type: "t", value: lavaTexture},
+                    baseSpeed: {type: "f", value: baseSpeed},
+                    repeatS: {type: "f", value: repeatS},
+                    repeatT: {type: "f", value: repeatT},
+                    noiseTexture: {type: "t", value: noiseTexture},
+                    noiseScale: {type: "f", value: noiseScale},
+                    blendTexture: {type: "t", value: blendTexture},
+                    blendSpeed: {type: "f", value: blendSpeed},
+                    blendOffset: {type: "f", value: blendOffset},
+                    bumpTexture: {type: "t", value: bumpTexture},
+                    bumpSpeed: {type: "f", value: bumpSpeed},
+                    bumpScale: {type: "f", value: bumpScale},
+                    alpha: {type: "f", value: 1.0},
+                    time: {type: "f", value: 1.0}
                 };
                 customUniformsCircle = {
-                    baseTexture: { type: "t", value: lavaTextureCircle },
-                    baseSpeed: { type: "f", value: baseSpeed },
-                    repeatS: { type: "f", value: repeatS },
-                    repeatT: { type: "f", value: repeatT },
-                    noiseTexture: { type: "t", value: noiseTexture },
-                    noiseScale: { type: "f", value: noiseScale },
-                    blendTexture: { type: "t", value: blendTextureCircle },
-                    blendSpeed: { type: "f", value: blendSpeed },
-                    blendOffset: { type: "f", value: blendOffset },
-                    bumpTexture: { type: "t", value: bumpTexture },
-                    bumpSpeed: { type: "f", value: bumpSpeedCircle },
-                    bumpScale: { type: "f", value: bumpScaleCircle },
-                    alpha: { type: "f", value: 1.0 },
-                    time: { type: "f", value: 1.0 }
+                    baseTexture: {type: "t", value: lavaTextureCircle},
+                    baseSpeed: {type: "f", value: baseSpeed},
+                    repeatS: {type: "f", value: repeatS},
+                    repeatT: {type: "f", value: repeatT},
+                    noiseTexture: {type: "t", value: noiseTexture},
+                    noiseScale: {type: "f", value: noiseScale},
+                    blendTexture: {type: "t", value: blendTextureCircle},
+                    blendSpeed: {type: "f", value: blendSpeed},
+                    blendOffset: {type: "f", value: blendOffset},
+                    bumpTexture: {type: "t", value: bumpTexture},
+                    bumpSpeed: {type: "f", value: bumpSpeedCircle},
+                    bumpScale: {type: "f", value: bumpScaleCircle},
+                    alpha: {type: "f", value: 1.0},
+                    time: {type: "f", value: 1.0}
                 };
 
 
@@ -462,7 +461,7 @@ var steps = {
                 $('#graphic').html(renderer.domElement);
                 // EVENTS
                 THREEx.WindowResize(renderer, camera);
-                THREEx.FullScreen.bindKey({ charCode: 'm'.charCodeAt(0) });
+                THREEx.FullScreen.bindKey({charCode: 'm'.charCodeAt(0)});
                 // CONTROLS
                 controls = new THREE.OrbitControls(camera, renderer.domElement);
                 // STATS
@@ -532,20 +531,20 @@ var steps = {
 
 
                 customUniforms = {
-                    baseTexture: { type: "t", value: lavaTexture },
-                    baseSpeed: { type: "f", value: baseSpeed },
-                    repeatS: { type: "f", value: repeatS },
-                    repeatT: { type: "f", value: repeatT },
-                    noiseTexture: { type: "t", value: noiseTexture },
-                    noiseScale: { type: "f", value: noiseScale },
-                    blendTexture: { type: "t", value: blendTexture },
-                    blendSpeed: { type: "f", value: blendSpeed },
-                    blendOffset: { type: "f", value: blendOffset },
-                    bumpTexture: { type: "t", value: bumpTexture },
-                    bumpSpeed: { type: "f", value: bumpSpeed },
-                    bumpScale: { type: "f", value: bumpScale },
-                    alpha: { type: "f", value: 1.0 },
-                    time: { type: "f", value: 1.0 }
+                    baseTexture: {type: "t", value: lavaTexture},
+                    baseSpeed: {type: "f", value: baseSpeed},
+                    repeatS: {type: "f", value: repeatS},
+                    repeatT: {type: "f", value: repeatT},
+                    noiseTexture: {type: "t", value: noiseTexture},
+                    noiseScale: {type: "f", value: noiseScale},
+                    blendTexture: {type: "t", value: blendTexture},
+                    blendSpeed: {type: "f", value: blendSpeed},
+                    blendOffset: {type: "f", value: blendOffset},
+                    bumpTexture: {type: "t", value: bumpTexture},
+                    bumpSpeed: {type: "f", value: bumpSpeed},
+                    bumpScale: {type: "f", value: bumpScale},
+                    alpha: {type: "f", value: 1.0},
+                    time: {type: "f", value: 1.0}
                 };
                 var customMaterial = new THREE.ShaderMaterial(
                     {
@@ -564,7 +563,7 @@ var steps = {
                 //   that is within specially labeled script tags
                 var customMaterial = new THREE.ShaderMaterial(
                     {
-                        uniforms: {  },
+                        uniforms: {},
                         vertexShader: document.getElementById('vertexShaderGlow').textContent,
                         fragmentShader: document.getElementById('fragmentShaderGlow').textContent,
                         side: THREE.BackSide,
@@ -645,7 +644,7 @@ var steps = {
                 $('#graphic').html(renderer.domElement);
                 // EVENTS
                 THREEx.WindowResize(renderer, camera);
-                THREEx.FullScreen.bindKey({ charCode: 'm'.charCodeAt(0) });
+                THREEx.FullScreen.bindKey({charCode: 'm'.charCodeAt(0)});
                 // CONTROLS
                 controls = new THREE.OrbitControls(camera, renderer.domElement);
                 // STATS
@@ -693,20 +692,20 @@ var steps = {
                 // magnitude of normal displacement
                 var bumpScale = 10.0;
                 customUniforms = {
-                    baseTexture: { type: "t", value: lavaTexture },
-                    baseSpeed: { type: "f", value: baseSpeed },
-                    repeatS: { type: "f", value: repeatS },
-                    repeatT: { type: "f", value: repeatT },
-                    noiseTexture: { type: "t", value: noiseTexture },
-                    noiseScale: { type: "f", value: noiseScale },
-                    blendTexture: { type: "t", value: blendTexture },
-                    blendSpeed: { type: "f", value: blendSpeed },
-                    blendOffset: { type: "f", value: blendOffset },
-                    bumpTexture: { type: "t", value: bumpTexture },
-                    bumpSpeed: { type: "f", value: bumpSpeed },
-                    bumpScale: { type: "f", value: bumpScale },
-                    alpha: { type: "f", value: 1.0 },
-                    time: { type: "f", value: 1.0 }
+                    baseTexture: {type: "t", value: lavaTexture},
+                    baseSpeed: {type: "f", value: baseSpeed},
+                    repeatS: {type: "f", value: repeatS},
+                    repeatT: {type: "f", value: repeatT},
+                    noiseTexture: {type: "t", value: noiseTexture},
+                    noiseScale: {type: "f", value: noiseScale},
+                    blendTexture: {type: "t", value: blendTexture},
+                    blendSpeed: {type: "f", value: blendSpeed},
+                    blendOffset: {type: "f", value: blendOffset},
+                    bumpTexture: {type: "t", value: bumpTexture},
+                    bumpSpeed: {type: "f", value: bumpSpeed},
+                    bumpScale: {type: "f", value: bumpScale},
+                    alpha: {type: "f", value: 1.0},
+                    time: {type: "f", value: 1.0}
                 };
                 var customMaterial = new THREE.ShaderMaterial(
                     {
@@ -719,7 +718,7 @@ var steps = {
                 scene.add(moon);
                 var customMaterial = new THREE.ShaderMaterial(
                     {
-                        uniforms: {  },
+                        uniforms: {},
                         vertexShader: document.getElementById('vertexShaderGlow').textContent,
                         fragmentShader: document.getElementById('fragmentShaderGlow').textContent,
                         side: THREE.BackSide,
@@ -747,234 +746,6 @@ var steps = {
                 renderer.render(scene, camera);
             }
         }
-    },
-    supernova2: {
-        myImage: 'img/5.jpg',
-        mainLabel: 'Наднова зірка типа 2',
-        infoLeft: 'Наднові зірки - зірки, блиск яких при спалаху збільшується на десятки зоряних величин протягом декількох діб. У максимумі блиску наднова порівнянна по яскравості з усією галактикою, в якій вона спалахнула, і навіть може перевершувати її.',
-        infoRight: '<p> Приклади:</p>  <p>SN 1054</p> <p> SN 1987A</p> <p> Simeis 147</p>',
-        temperature: '100 billion K',
-        light: '5*10^28 LSol',
-
-        draw: function () {
-            SCREEN_WIDTH = $('#graphic').width();
-            SCREEN_HEIGHT = $('#graphic').height() - 5;
-            var container, scene, camera, renderer, controls, stats, camera2;
-            var keyboard = new THREEx.KeyboardState();
-            var clock = new THREE.Clock();
-            // custom global variables
-            init();
-            animate();
-
-
-            // FUNCTIONS
-            function init() {
-
-                // SCENE
-                scene = new THREE.Scene();
-                // CAMERA
-
-                VIEW_ANGLE = 45, ASPECT = SCREEN_WIDTH / SCREEN_HEIGHT, NEAR = 0.1, FAR = 20000;
-                camera = new THREE.PerspectiveCamera(VIEW_ANGLE, ASPECT, NEAR, FAR);
-                camera.position.set(200, 200, 150);
-                // camera.lookAt(scene.position);
-                // RENDERER
-                if (Detector.webgl)
-                    renderer = new THREE.WebGLRenderer({antialias: true});
-                else
-                    renderer = new THREE.CanvasRenderer();
-                renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
-                container = document.getElementById('graphic');
-                $('#graphic').html(renderer.domElement);
-                // EVENTS
-                THREEx.WindowResize(renderer, camera);
-                THREEx.FullScreen.bindKey({ charCode: 'm'.charCodeAt(0) });
-                // CONTROLS
-                controls = new THREE.OrbitControls(camera, renderer.domElement);
-                // STATS
-                stats = new Stats();
-                var imagePrefix = "img/textures/skybox_";
-                var directions = ["right1", "left2", "top3", "bottom4", "front5", "back6"];
-                var imageSuffix = ".png";
-                var skyGeometry = new THREE.CubeGeometry(22000, 22000, 22000);
-
-                var materialArray = [];
-                for (var i = 0; i < 6; i++)
-                    materialArray.push(new THREE.MeshBasicMaterial({
-                        map: THREE.ImageUtils.loadTexture(imagePrefix + directions[i] + imageSuffix),
-                        side: THREE.BackSide
-                    }));
-                var skyMaterial = new THREE.MeshFaceMaterial(materialArray);
-                var skyBox = new THREE.Mesh(skyGeometry, skyMaterial);
-                scene.add(skyBox);
-                stats.domElement.style.display = "none";
-                stats.domElement.style.position = 'absolute';
-                stats.domElement.style.bottom = '0px';
-                stats.domElement.style.zIndex = 100;
-                $('#graphic').html(renderer.domElement);
-                var lavaTexture = new THREE.ImageUtils.loadTexture('img/textures/proto.jpg');
-                lavaTexture.wrapS = lavaTexture.wrapT = THREE.RepeatWrapping;
-                var lavaTextureCircle = new THREE.ImageUtils.loadTexture('img/textures/protocircle2.png');
-                lavaTextureCircle.wrapS = lavaTextureCircle.wrapT = THREE.RepeatWrapping;
-                // multiplier for distortion speed
-                var baseSpeed = 0.02;
-                // number of times to repeat texture in each direction
-                var repeatS = repeatT = 4.0;
-
-                // texture used to generate "randomness", distort all other textures
-                var noiseTexture = new THREE.ImageUtils.loadTexture('img/fireball/cloud.png');
-                noiseTexture.wrapS = noiseTexture.wrapT = THREE.RepeatWrapping;
-                // magnitude of noise effect
-                var noiseScale = 1;
-
-                // texture to additively blend with base image texture
-
-
-                // texture to additively blend with base image texture
-                var blendTexture = new THREE.ImageUtils.loadTexture('img/textures/proto.jpg');
-                blendTexture.wrapS = blendTexture.wrapT = THREE.RepeatWrapping;
-                var blendTextureCircle = new THREE.ImageUtils.loadTexture('img/textures/protocircle2.png');
-                blendTextureCircle.wrapS = blendTextureCircle.wrapT = THREE.RepeatWrapping;
-                // multiplier for distortion speed
-                var blendSpeed = 0.01;
-                // adjust lightness/darkness of blended texture
-                var blendOffset = 0.25;
-
-                // texture to determine normal displacement
-                var bumpTexture = noiseTexture;
-                bumpTexture.wrapS = bumpTexture.wrapT = THREE.RepeatWrapping;
-                // multiplier for distortion speed
-                var bumpSpeed = 0.007;
-                // magnitude of normal displacement
-                var bumpScale = 10.0;
-
-                var bumpSpeedCircle = 0.0001;
-                // magnitude of normal displacement
-                var bumpScaleCircle = 15.0;
-
-
-                customUniforms = {
-                    baseTexture: { type: "t", value: lavaTexture },
-                    baseSpeed: { type: "f", value: baseSpeed },
-                    repeatS: { type: "f", value: repeatS },
-                    repeatT: { type: "f", value: repeatT },
-                    noiseTexture: { type: "t", value: noiseTexture },
-                    noiseScale: { type: "f", value: noiseScale },
-                    blendTexture: { type: "t", value: blendTexture },
-                    blendSpeed: { type: "f", value: blendSpeed },
-                    blendOffset: { type: "f", value: blendOffset },
-                    bumpTexture: { type: "t", value: bumpTexture },
-                    bumpSpeed: { type: "f", value: bumpSpeed },
-                    bumpScale: { type: "f", value: bumpScale },
-                    alpha: { type: "f", value: 1.0 },
-                    time: { type: "f", value: 1.0 }
-                };
-                customUniformsCircle = {
-                    baseTexture: { type: "t", value: lavaTextureCircle },
-                    baseSpeed: { type: "f", value: baseSpeed },
-                    repeatS: { type: "f", value: repeatS },
-                    repeatT: { type: "f", value: repeatT },
-                    noiseTexture: { type: "t", value: noiseTexture },
-                    noiseScale: { type: "f", value: noiseScale },
-                    blendTexture: { type: "t", value: blendTextureCircle },
-                    blendSpeed: { type: "f", value: blendSpeed },
-                    blendOffset: { type: "f", value: blendOffset },
-                    bumpTexture: { type: "t", value: bumpTexture },
-                    bumpSpeed: { type: "f", value: bumpSpeedCircle },
-                    bumpScale: { type: "f", value: bumpScaleCircle },
-                    alpha: { type: "f", value: 1.0 },
-                    time: { type: "f", value: 1.0 }
-                };
-
-
-                // create custom material from the shader code above
-                //   that is within specially labeled script tags
-                var customMaterial = new THREE.ShaderMaterial(
-                    {
-                        uniforms: customUniforms,
-                        vertexShader: document.getElementById('vertexShader').textContent,
-                        fragmentShader: document.getElementById('fragmentShader').textContent,
-                        visible: false
-                    });
-                var customCircleMaterial = new THREE.ShaderMaterial(
-                    {
-                        uniforms: customUniformsCircle,
-                        vertexShader: document.getElementById('vertexShader').textContent,
-                        fragmentShader: document.getElementById('fragmentShader').textContent
-
-                    }
-                );
-                // var circleTexture = THREE.ImageUtils.loadTexture( 'img/textures/circle.jpg' );
-                //  var customMaterialCircle = new THREE.MeshBasicMaterial( { map: circleTexture } );
-                var discGeometry = new THREE.CircleGeometry(130, 90, 20, 20);
-                // var discGeometry2 = new THREE.CircleGeometry(140,90,20,20);
-                // var discGeometry3 = new THREE.CircleGeometry(120,90,20,20);
-                var disc = new THREE.Mesh(discGeometry, customCircleMaterial);
-                var ballGeometry = new THREE.SphereGeometry(1, 64, 64);
-                // var disc2 = new THREE.Mesh(discGeometry2, customCircleMaterial);
-                //  var disc3 = new THREE.Mesh(discGeometry3, customCircleMaterial);
-
-                disc.position.set(0, 0, -2.5);
-                // disc3.position.set(0,0,2.5);
-                //   disc2.position.set(0,0,0);
-               // scene.add(disc);
-                // scene.add(disc2);
-                //   scene.add(disc3);
-
-
-                var ball = new THREE.Mesh(ballGeometry, customMaterial);
-                var kol=10;
-                var x=0;
-                var y=0;
-                var z=0;
-
-                while(kol>5) {
-                    ball.position.set(x, y, z);
-                    scene.add(ball);
-
-                    ball.position.set(x, y, z);
-
-
-                    var spriteMaterial = new THREE.SpriteMaterial(
-                        {
-                            map: new THREE.ImageUtils.loadTexture('img/textures/glow.png'),
-                            useScreenCoordinates: false,
-                            alignment: THREE.SpriteAlignment.center,
-                            color: 0xFFFF00,
-                            transparent: false,
-                            blending: THREE.AdditiveBlending
-                        });
-                    var sprite = new THREE.Sprite(spriteMaterial);
-                    sprite.scale.set(18, 18, 1.0);
-                    ball.add(sprite);
-                    x=x+15;
-                    y=y+15;
-                    z=z+15;
-                    kol=kol-1;
-                    console.log("`34`25`235");
-                }
-
-            }
-
-
-            function animate() {
-                idAnimationFrame = requestAnimationFrame(animate);
-                render();
-                update();
-            }
-
-            function update() {
-                customUniforms.time.value += clock.getDelta();
-                customUniformsCircle.time.value = customUniforms.time.value;
-                controls.update();
-                stats.update();
-            }
-
-            function render() {
-                renderer.render(scene, camera);
-            }
-        }
-
     },
     neutronstar: {
         myImage: 'img/6.jpg',
@@ -1014,7 +785,7 @@ var steps = {
                 $('#graphic').html(renderer.domElement);
                 // EVENTS
                 THREEx.WindowResize(renderer, camera);
-                THREEx.FullScreen.bindKey({ charCode: 'm'.charCodeAt(0) });
+                THREEx.FullScreen.bindKey({charCode: 'm'.charCodeAt(0)});
                 // CONTROLS
                 controls = new THREE.OrbitControls(camera, renderer.domElement);
                 var imagePrefix = "img/textures/skybox_";
@@ -1069,20 +840,20 @@ var steps = {
                 var bumpScale = 10.0;
 
                 customUniforms = {
-                    baseTexture: { type: "t", value: lavaTexture },
-                    baseSpeed: { type: "f", value: baseSpeed },
-                    repeatS: { type: "f", value: repeatS },
-                    repeatT: { type: "f", value: repeatT },
-                    noiseTexture: { type: "t", value: noiseTexture },
-                    noiseScale: { type: "f", value: noiseScale },
-                    blendTexture: { type: "t", value: blendTexture },
-                    blendSpeed: { type: "f", value: blendSpeed },
-                    blendOffset: { type: "f", value: blendOffset },
-                    bumpTexture: { type: "t", value: bumpTexture },
-                    bumpSpeed: { type: "f", value: bumpSpeed },
-                    bumpScale: { type: "f", value: bumpScale },
-                    alpha: { type: "f", value: 1.0 },
-                    time: { type: "f", value: 1.0 }
+                    baseTexture: {type: "t", value: lavaTexture},
+                    baseSpeed: {type: "f", value: baseSpeed},
+                    repeatS: {type: "f", value: repeatS},
+                    repeatT: {type: "f", value: repeatT},
+                    noiseTexture: {type: "t", value: noiseTexture},
+                    noiseScale: {type: "f", value: noiseScale},
+                    blendTexture: {type: "t", value: blendTexture},
+                    blendSpeed: {type: "f", value: blendSpeed},
+                    blendOffset: {type: "f", value: blendOffset},
+                    bumpTexture: {type: "t", value: bumpTexture},
+                    bumpSpeed: {type: "f", value: bumpSpeed},
+                    bumpScale: {type: "f", value: bumpScale},
+                    alpha: {type: "f", value: 1.0},
+                    time: {type: "f", value: 1.0}
                 };
 
                 // create custom material from the shader code above
@@ -1131,166 +902,6 @@ var steps = {
 
         }
     },
-    supernova1: {
-        myImage: 'img/supernova1.jpg',
-        mainLabel: 'Наднова зірка',
-        infoLeft: 'Наднові зірки - зірки, блиск яких при спалаху збільшується на десятки зоряних величин протягом декількох діб. У максимумі блиску наднова порівнянна по яскравості з усією галактикою, в якій вона спалахнула, і навіть може перевершувати її. ',
-        infoRight: '<p> Приклади:</p> <p>SN 1972E </p> <p>SN 1572</p> <p>SN 1604 (Сверхновая Кеплера)</p> <p> SN 2006gy</p>',
-        temperature: '100 billion K',
-        light: '5*10^25 LSol',
-        cell1: '',
-        cell2: '',
-        cell3: '',
-        cell4: '',
-        cell5: '',
-        cell6: '',
-        draw: function () {
-            window.requestAnimFrame = (function(){
-                return  window.requestAnimationFrame       ||
-                    window.webkitRequestAnimationFrame ||
-                    window.mozRequestAnimationFrame    ||
-                    window.oRequestAnimationFrame      ||
-                    window.msRequestAnimationFrame     ||
-                    function(/* function */ callback, /* DOMElement */ element){
-                        window.setTimeout(callback, 1000 / 60);
-                    };
-            })();
-            // set the scene size
-            var WIDTH = 400,
-                HEIGHT = 300;
-
-            // set some camera attributes
-            var VIEW_ANGLE = 45,
-                ASPECT = WIDTH / HEIGHT,
-                NEAR = 0.1,
-                FAR = 10000;
-
-            // get the DOM element to attach to
-            // - assume we've got jQuery to hand
-            var $container = $('#container');
-
-            // create a WebGL renderer, camera
-            // and a scene
-            var renderer = new THREE.WebGLRenderer();
-            var camera = new THREE.Camera(  VIEW_ANGLE,
-                ASPECT,
-                NEAR,
-                FAR  );
-            var scene = new THREE.Scene();
-
-            // the camera starts at 0,0,0 so pull it back
-            camera.position.z = 300;
-
-            // start the renderer - set the clear colour
-            // to a full black
-            renderer.setClearColor(new THREE.Color(0, 1));
-            renderer.setSize(WIDTH, HEIGHT);
-
-            // attach the render-supplied DOM element
-            $container.append(renderer.domElement);
-
-            // create the particle variables
-            var particleCount = 1800,
-                particles = new THREE.Geometry(),
-                pMaterial = new THREE.ParticleBasicMaterial({
-                    color: 0xFFFFFF,
-                    size: 10,
-                    map: THREE.ImageUtils.loadTexture(
-                        "img/particle.png"
-                    ),
-                    blending: THREE.AdditiveBlending,
-                    transparent: true
-                });
-
-            // now create the individual particles
-            for(var p = 0; p < particleCount; p++) {
-
-                // create a particle with random
-                // position values, -250 -> 250
-                var pX = Math.random()*300,
-                    pY = Math.random() * 500 - 250,
-                    pZ = Math.random() * 500 - 250,
-                    particle = new THREE.Vertex(
-                        new THREE.Vector3(pX, pY, pZ)
-                    );
-                // create a velocity vector
-                particle.velocity = new THREE.Vector3(
-                    0,				// x
-                    -Math.random(),	// y
-                    0);				// z
-
-                // add it to the geometry
-                particles.vertices.push(particle);
-            }
-
-            // create the particle system
-            var particleSystem = new THREE.ParticleSystem(
-                particles,
-                pMaterial);
-
-            particleSystem.sortParticles = true;
-
-            // add it to the scene
-            scene.add(particleSystem);
-
-            // animation loop
-            function update() {
-
-                // add some rotation to the system
-                particleSystem.rotation.y = 0.01;
-
-                var pCount = particleCount;
-                while(pCount--) {
-                    // get the particle
-                    var particle = particles.vertices[pCount];
-
-                    // check if we need to reset
-                    if(particle.position.y < -200) {
-                        particle.position.y = 200;
-                        particle.velocity.y = 0;
-                    }
-
-                    // update the velocity
-                    particle.velocity.y -= Math.random() * .1;
-
-                    // and the position
-                    particle.position.addSelf(
-                        particle.velocity);
-                }
-
-                // flag to the particle system that we've
-                // changed its vertices. This is the
-                // dirty little secret.
-                particleSystem.geometry.__dirtyVertices = true;
-
-                renderer.render(scene, camera);
-
-                // set up the next call
-                requestAnimFrame(update);
-            }
-            requestAnimFrame(update);
-        }
-    },
-    black_hole: {
-        myImage: 'img/blackhole.jpg',
-        mainLabel: 'Чорна діра ',
-        infoLeft: 'Чорна діра - область у просторі-часі, гравітаційне тяжіння якої настільки велике, що покинути її не можуть навіть об"єкти, які рухаються зі швидкістю світла, в тому числі кванти самого світла. Межа цієї області називається горизонтом подій.',
-        infoRight: '<p> Приклади:</p><p>Існують тільки теоретично</p>',
-        temperature: '0',
-        light: '0',
-        cell1: '',
-        cell2: '',
-        cell3: '',
-        cell4: '',
-        cell5: '',
-        cell6: '',
-        draw: function () {
-            var graphic = $('#graphic');
-            graphic.empty();
-            graphic.html("<img height ='440' src='img/img_etap/bh.jpg'>");
-        }
-
-    },
     sun_type: {
         myImage: 'img/sun_type.jpg',
         mainLabel: 'Зірки сонячного типу',
@@ -1334,7 +945,7 @@ var steps = {
                 $('#graphic').html(renderer.domElement);
                 // EVENTS
                 THREEx.WindowResize(renderer, camera);
-                THREEx.FullScreen.bindKey({ charCode: 'm'.charCodeAt(0) });
+                THREEx.FullScreen.bindKey({charCode: 'm'.charCodeAt(0)});
                 // CONTROLS
                 controls = new THREE.OrbitControls(camera, renderer.domElement);
                 var imagePrefix = "img/textures/skybox_";
@@ -1388,20 +999,20 @@ var steps = {
                 var bumpScale = 10.0;
 
                 customUniforms = {
-                    baseTexture: { type: "t", value: lavaTexture },
-                    baseSpeed: { type: "f", value: baseSpeed },
-                    repeatS: { type: "f", value: repeatS },
-                    repeatT: { type: "f", value: repeatT },
-                    noiseTexture: { type: "t", value: noiseTexture },
-                    noiseScale: { type: "f", value: noiseScale },
-                    blendTexture: { type: "t", value: blendTexture },
-                    blendSpeed: { type: "f", value: blendSpeed },
-                    blendOffset: { type: "f", value: blendOffset },
-                    bumpTexture: { type: "t", value: bumpTexture },
-                    bumpSpeed: { type: "f", value: bumpSpeed },
-                    bumpScale: { type: "f", value: bumpScale },
-                    alpha: { type: "f", value: 1.0 },
-                    time: { type: "f", value: 1.0 }
+                    baseTexture: {type: "t", value: lavaTexture},
+                    baseSpeed: {type: "f", value: baseSpeed},
+                    repeatS: {type: "f", value: repeatS},
+                    repeatT: {type: "f", value: repeatT},
+                    noiseTexture: {type: "t", value: noiseTexture},
+                    noiseScale: {type: "f", value: noiseScale},
+                    blendTexture: {type: "t", value: blendTexture},
+                    blendSpeed: {type: "f", value: blendSpeed},
+                    blendOffset: {type: "f", value: blendOffset},
+                    bumpTexture: {type: "t", value: bumpTexture},
+                    bumpSpeed: {type: "f", value: bumpSpeed},
+                    bumpScale: {type: "f", value: bumpScale},
+                    alpha: {type: "f", value: 1.0},
+                    time: {type: "f", value: 1.0}
                 };
 
                 // create custom material from the shader code above
@@ -1485,12 +1096,12 @@ var steps = {
 
                 container = document.getElementById("graphic")
                 renderer = new THREE.WebGLRenderer();
-                renderer.setSize(SCREEN_WIDTH,SCREEN_HEIGHT);
+                renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
                 $('#graphic').html(renderer.domElement);
 
                 scene = new THREE.Scene();
 
-                camera = new THREE.PerspectiveCamera(50, SCREEN_WIDTH/SCREEN_HEIGHT, 1, 1000);
+                camera = new THREE.PerspectiveCamera(50, SCREEN_WIDTH / SCREEN_HEIGHT, 1, 1000);
                 scene.add(camera);
 
                 controls = new THREE.OrbitControls2(camera);
@@ -1512,7 +1123,7 @@ var steps = {
 //                scene.add(skyBox);
                 //
 
-                var width = SCREEN_WIDTH-50, height = SCREEN_HEIGHT;
+                var width = SCREEN_WIDTH - 50, height = SCREEN_HEIGHT;
 
                 if (!renderer.context.getExtension('OES_texture_float')) {
 
@@ -1548,9 +1159,9 @@ var steps = {
                 simulationShader = new THREE.ShaderMaterial({
 
                     uniforms: {
-                        tPositions: { type: "t", value: texture },
-                        origin: { type: "v3", value: new THREE.Vector3() },
-                        timer: { type: "f", value: 0 }
+                        tPositions: {type: "t", value: texture},
+                        origin: {type: "v3", value: new THREE.Vector3()},
+                        timer: {type: "f", value: 0}
                     },
 
                     vertexShader: document.getElementById('texture_vertex_simulation_shader').textContent,
@@ -1580,12 +1191,12 @@ var steps = {
 
                     uniforms: {
 
-                        "map": { type: "t", value: rtTexturePos },
-                        "width": { type: "f", value: width },
-                        "height": { type: "f", value: height },
+                        "map": {type: "t", value: rtTexturePos},
+                        "width": {type: "f", value: width},
+                        "height": {type: "f", value: height},
 
-                        "pointColor": { type: "v4", value: new THREE.Vector4(0.25, 0.50, 1.0, 0.25) },
-                        "pointSize": { type: "f", value: 1 }
+                        "pointColor": {type: "v4", value: new THREE.Vector4(0.25, 0.50, 1.0, 0.25)},
+                        "pointSize": {type: "f", value: 1}
 
                     },
                     vertexShader: document.getElementById('vs-particles').textContent,
@@ -1691,7 +1302,7 @@ var steps = {
                 $('#graphic').html(renderer.domElement);
                 // EVENTS
                 THREEx.WindowResize(renderer, camera);
-                THREEx.FullScreen.bindKey({ charCode: 'm'.charCodeAt(0) });
+                THREEx.FullScreen.bindKey({charCode: 'm'.charCodeAt(0)});
                 // CONTROLS
                 controls = new THREE.OrbitControls(camera, renderer.domElement);
                 // STATS
@@ -1739,20 +1350,20 @@ var steps = {
                 // magnitude of normal displacement
                 var bumpScale = 2.0;
                 customUniforms = {
-                    baseTexture: { type: "t", value: lavaTexture },
-                    baseSpeed: { type: "f", value: baseSpeed },
-                    repeatS: { type: "f", value: repeatS },
-                    repeatT: { type: "f", value: repeatT },
-                    noiseTexture: { type: "t", value: noiseTexture },
-                    noiseScale: { type: "f", value: noiseScale },
-                    blendTexture: { type: "t", value: blendTexture },
-                    blendSpeed: { type: "f", value: blendSpeed },
-                    blendOffset: { type: "f", value: blendOffset },
-                    bumpTexture: { type: "t", value: bumpTexture },
-                    bumpSpeed: { type: "f", value: bumpSpeed },
-                    bumpScale: { type: "f", value: bumpScale },
-                    alpha: { type: "f", value: 1.0 },
-                    time: { type: "f", value: 1.0 }
+                    baseTexture: {type: "t", value: lavaTexture},
+                    baseSpeed: {type: "f", value: baseSpeed},
+                    repeatS: {type: "f", value: repeatS},
+                    repeatT: {type: "f", value: repeatT},
+                    noiseTexture: {type: "t", value: noiseTexture},
+                    noiseScale: {type: "f", value: noiseScale},
+                    blendTexture: {type: "t", value: blendTexture},
+                    blendSpeed: {type: "f", value: blendSpeed},
+                    blendOffset: {type: "f", value: blendOffset},
+                    bumpTexture: {type: "t", value: bumpTexture},
+                    bumpSpeed: {type: "f", value: bumpSpeed},
+                    bumpScale: {type: "f", value: bumpScale},
+                    alpha: {type: "f", value: 1.0},
+                    time: {type: "f", value: 1.0}
                 };
                 var customMaterial = new THREE.ShaderMaterial(
                     {
@@ -1765,7 +1376,7 @@ var steps = {
                 scene.add(moon);
                 var customMaterial = new THREE.ShaderMaterial(
                     {
-                        uniforms: {  },
+                        uniforms: {},
                         vertexShader: document.getElementById('vertexShaderGlow').textContent,
                         fragmentShader: document.getElementById('fragmentShaderGlow').textContent,
                         side: THREE.BackSide,
@@ -1837,7 +1448,7 @@ var steps = {
                 $('#graphic').html(renderer.domElement);
                 // EVENTS
                 THREEx.WindowResize(renderer, camera);
-                THREEx.FullScreen.bindKey({ charCode: 'm'.charCodeAt(0) });
+                THREEx.FullScreen.bindKey({charCode: 'm'.charCodeAt(0)});
                 // CONTROLS
                 controls = new THREE.OrbitControls(camera, renderer.domElement);
                 // SKYBOX/FOG
@@ -1894,20 +1505,20 @@ var steps = {
                 var bumpScale = 2.0;
 
                 customUniforms = {
-                    baseTexture: { type: "t", value: lavaTexture },
-                    baseSpeed: { type: "f", value: baseSpeed },
-                    repeatS: { type: "f", value: repeatS },
-                    repeatT: { type: "f", value: repeatT },
-                    noiseTexture: { type: "t", value: noiseTexture },
-                    noiseScale: { type: "f", value: noiseScale },
-                    blendTexture: { type: "t", value: blendTexture },
-                    blendSpeed: { type: "f", value: blendSpeed },
-                    blendOffset: { type: "f", value: blendOffset },
-                    bumpTexture: { type: "t", value: bumpTexture },
-                    bumpSpeed: { type: "f", value: bumpSpeed },
-                    bumpScale: { type: "f", value: bumpScale },
-                    alpha: { type: "f", value: 1.0 },
-                    time: { type: "f", value: 1.0 }
+                    baseTexture: {type: "t", value: lavaTexture},
+                    baseSpeed: {type: "f", value: baseSpeed},
+                    repeatS: {type: "f", value: repeatS},
+                    repeatT: {type: "f", value: repeatT},
+                    noiseTexture: {type: "t", value: noiseTexture},
+                    noiseScale: {type: "f", value: noiseScale},
+                    blendTexture: {type: "t", value: blendTexture},
+                    blendSpeed: {type: "f", value: blendSpeed},
+                    blendOffset: {type: "f", value: blendOffset},
+                    bumpTexture: {type: "t", value: bumpTexture},
+                    bumpSpeed: {type: "f", value: bumpSpeed},
+                    bumpScale: {type: "f", value: bumpScale},
+                    alpha: {type: "f", value: 1.0},
+                    time: {type: "f", value: 1.0}
                 };
 
                 // create custom material from the shader code above
@@ -2013,7 +1624,7 @@ var steps = {
                 $('#graphic').html(renderer.domElement);
                 // EVENTS
                 THREEx.WindowResize(renderer, camera);
-                THREEx.FullScreen.bindKey({ charCode: 'm'.charCodeAt(0) });
+                THREEx.FullScreen.bindKey({charCode: 'm'.charCodeAt(0)});
                 // CONTROLS
                 controls = new THREE.OrbitControls(camera, renderer.domElement);
                 // STATS
@@ -2067,20 +1678,20 @@ var steps = {
                 var bumpScale = 2.0;
 
                 customUniforms = {
-                    baseTexture: { type: "t", value: lavaTexture },
-                    baseSpeed: { type: "f", value: baseSpeed },
-                    repeatS: { type: "f", value: repeatS },
-                    repeatT: { type: "f", value: repeatT },
-                    noiseTexture: { type: "t", value: noiseTexture },
-                    noiseScale: { type: "f", value: noiseScale },
-                    blendTexture: { type: "t", value: blendTexture },
-                    blendSpeed: { type: "f", value: blendSpeed },
-                    blendOffset: { type: "f", value: blendOffset },
-                    bumpTexture: { type: "t", value: bumpTexture },
-                    bumpSpeed: { type: "f", value: bumpSpeed },
-                    bumpScale: { type: "f", value: bumpScale },
-                    alpha: { type: "f", value: 1.0 },
-                    time: { type: "f", value: 1.0 }
+                    baseTexture: {type: "t", value: lavaTexture},
+                    baseSpeed: {type: "f", value: baseSpeed},
+                    repeatS: {type: "f", value: repeatS},
+                    repeatT: {type: "f", value: repeatT},
+                    noiseTexture: {type: "t", value: noiseTexture},
+                    noiseScale: {type: "f", value: noiseScale},
+                    blendTexture: {type: "t", value: blendTexture},
+                    blendSpeed: {type: "f", value: blendSpeed},
+                    blendOffset: {type: "f", value: blendOffset},
+                    bumpTexture: {type: "t", value: bumpTexture},
+                    bumpSpeed: {type: "f", value: bumpSpeed},
+                    bumpScale: {type: "f", value: bumpScale},
+                    alpha: {type: "f", value: 1.0},
+                    time: {type: "f", value: 1.0}
                 };
 
                 // create custom material from the shader code above
@@ -2134,7 +1745,7 @@ var steps = {
         draw: function () {
             var graphic = $('#graphic');
             graphic.empty();
-            graphic.html("<img height ='440' src='img/img_etap/1.jpg'>");
+            graphic.html("<video width='832' height='455' volume='' autoplay > <source src='vid/supernovaCrab.mp4'> </video>");
         }
     },
     kartinka_sun_to_rg1: {
