@@ -1094,19 +1094,20 @@
 
         .wrapper.slider {
             background-color: #000000;
-
-
         }
 
 .star {
 	margin-left: auto;
 	margin-right: auto;
-
-	/* width: (containers) */
-	width: 800px;
+	width: 1200px;
 }
+
 .star .row {
 	border: solid white;
+}
+
+.star img {
+	width:100%;
 }
 		.wrapper.style2 .profile {
 			margin-bottom: 2em;
