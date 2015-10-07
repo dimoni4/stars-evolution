@@ -2,8 +2,8 @@ var masses = {
     1: ['protostar', 'blue_sverx_giant', 'supernova'],
     2: ['protostar', 'blue_sverx_giant', 'black_hole'],
     3: ['protostar', 'blue_sverx_giant', 'supernova', 'black_hole'],
-    4: ['protostar', 'blue_sverx_giant', 'red_gigant', 'blue_giant', 'supernova', 'neutronstar'],
-    5: ['protostar', 'kartinka_proto_to_sun', 'sun_type', 'kartinka_sun_to_rg1', 'kartinka_sun_to_rg2', 'red_gigant', 'kartinka_rd_to_pr', 'kartinka_rd_to_pr2', 'kartinka_rd_to_pr3', 'planet_remnant', 'white_dwarf'],
+    4: ['protostar', 'blue_sverx_giant', 'red_gigant', 'blue_giant', 'supernova',  'neutronstar'],
+    5: ['protostar', 'sun_type', 'red_gigant','white_dwarf','video_supernova_to_crab','planet_remnant',],
     6: ['protostar', 'red_dwarf', 'white_dwarf'],
     7: ['protostar', 'brown_dwarf']
 };
@@ -1728,7 +1728,7 @@ var steps = {
         }
     },
 //картинки для этапов ниже
-    kartinka_proto_to_sun: {
+    video_supernova_to_crab: {
         myImage: 'img/1.jpg',
         mainLabel: 'Протозвезда',
         infoLeft: 'Протозвёзды — звёзды на завершающем этапе своего формирования, вплоть до момента загорания термоядерных реакций в ядре, после которого сжатие протозвезды прекращается и она становится звездой главной последовательности.',
