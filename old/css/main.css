@@ -1,0 +1,143 @@
+body {
+    margin: 0px;
+    background: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.mainLabel {
+    background: #282828;
+    text-align: left;
+    font-weight: bold;
+    font-size: 25px;
+    color: lightcyan;
+
+}
+
+.polya {
+    background: #A9A9A9;
+    width: 200px;
+    color: black;
+    font-size: 14px;
+    text-align: left;
+    padding: 10px;
+    height: 440px;
+    overflow: hidden;
+}
+
+#theoryCont {
+    color: white;
+    font-size: 14px;
+    width: 600px;
+}
+
+#time_slider {
+    color: white;
+    word-spacing: 40px;
+    width: 70%;
+    text-align: center;
+
+}
+
+#time_slider2 {
+    color: white;
+    word-spacing: 150px;
+    width: 70%;
+    text-align: center;
+
+}
+
+#time_slider3 {
+    color: white;
+    word-spacing: 270px;
+    width: 70%;
+    text-align: center;
+
+}
+
+#time_slider_table {
+    color: white;
+    width: 70%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#slider {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a.button {
+    cursor: pointer;
+    display: inline-block;
+    color: black;
+    font-weight: 700;
+    text-decoration: none;
+    user-select: none;
+    padding: .4em 1.5em;
+    outline: none;
+    border: 1px solid;
+    border-radius: 1px;
+    transition: 0.2s;
+    background: #C0C0C0;
+    width: 125px;
+}
+
+a.button:hover {
+    background: #808080;
+}
+
+a.button:active {
+    background: #708090;
+}
+
+li {
+    list-style-type: none;
+}
+
+td {
+    padding: 0px;
+}
+
+table {
+    border-spacing: 0px;
+}
+
+.time_slider_table {
+
+}
+
+#massMenu ul {
+    padding: 3px;
+    margin: 0;
+}
+
+#pic_cntr {
+    /*height: 200px;*/
+    display: none;
+}
+
+#graphic {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+#massMenu {
+    background: #8B8682;
+    position: absolute;
+    display: none;
+}
+
+#TheoryMenu {
+    background: #8B8682;
+    position: absolute;
+    display: none;
+}
+
+#TheoryMenu ul {
+    padding: 3px;
+    margin: 0;
+}
