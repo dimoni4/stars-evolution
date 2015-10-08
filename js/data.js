@@ -42,7 +42,7 @@ var stars = {
                 // CONTROLS
                 controls = new THREE.OrbitControls(camera, renderer.domElement);
                 // SKYBOX/FOG
-                var imagePrefix = "img/textures/skybox_";
+                var imagePrefix = "images/textures/skybox_";
                 var directions = ["right1", "left2", "top3", "bottom4", "front5", "back6"];
                 var imageSuffix = ".png";
                 var skyGeometry = new THREE.CubeGeometry(22000, 22000, 22000);
@@ -65,7 +65,7 @@ var stars = {
                 $('#graphic').html(renderer.domElement);
 
 
-                var lavaTexture = new THREE.ImageUtils.loadTexture('img/fireball/lava.jpg');
+                var lavaTexture = new THREE.ImageUtils.loadTexture('images/textures/lava.jpg');
                 lavaTexture.wrapS = lavaTexture.wrapT = THREE.RepeatWrapping;
                 // multiplier for distortion speed
                 var baseSpeed = 0.002;
@@ -73,13 +73,13 @@ var stars = {
                 var repeatS = repeatT = 3.0;
 
                 // texture used to generate "randomness", distort all other textures
-                var noiseTexture = new THREE.ImageUtils.loadTexture('img/fireball/cloud.png');
+                var noiseTexture = new THREE.ImageUtils.loadTexture('images/textures/cloud.png');
                 noiseTexture.wrapS = noiseTexture.wrapT = THREE.RepeatWrapping;
                 // magnitude of noise effect
                 var noiseScale = 6;
 
                 // texture to additively blend with base image texture
-                var blendTexture = new THREE.ImageUtils.loadTexture('img/fireball/lava.jpg');
+                var blendTexture = new THREE.ImageUtils.loadTexture('images/textures/lava.jpg');
                 blendTexture.wrapS = blendTexture.wrapT = THREE.RepeatWrapping;
                 // multiplier for distortion speed
                 var blendSpeed = 0.007;
@@ -129,7 +129,7 @@ var stars = {
 
                 var spriteMaterial = new THREE.SpriteMaterial(
                     {
-                        map: new THREE.ImageUtils.loadTexture('img/textures/1234.png'),
+                        map: new THREE.ImageUtils.loadTexture('images/textures/1234.png'),
                         useScreenCoordinates: false,
                         alignment: THREE.SpriteAlignment.center,
                         color: 0xFFCC33,
@@ -142,7 +142,7 @@ var stars = {
 
                 var spriteMaterial2 = new THREE.SpriteMaterial(
                     {
-                        map: new THREE.ImageUtils.loadTexture('img/textures/glow.png'),
+                        map: new THREE.ImageUtils.loadTexture('images/textures/glow.png'),
                         useScreenCoordinates: false,
                         alignment: THREE.SpriteAlignment.center,
                         color: 0xCC0033,
@@ -217,7 +217,7 @@ var stars = {
                 controls = new THREE.OrbitControls(camera, renderer.domElement);
                 // STATS
                 stats = new Stats();
-                var imagePrefix = "img/textures/skybox_";
+                var imagePrefix = "images/textures/skybox_";
                 var directions = ["right1", "left2", "top3", "bottom4", "front5", "back6"];
                 var imageSuffix = ".png";
                 var skyGeometry = new THREE.CubeGeometry(22000, 22000, 22000);
@@ -236,9 +236,9 @@ var stars = {
                 stats.domElement.style.bottom = '0px';
                 stats.domElement.style.zIndex = 100;
                 $('#graphic').html(renderer.domElement);
-                var lavaTexture = new THREE.ImageUtils.loadTexture('img/textures/proto.jpg');
+                var lavaTexture = new THREE.ImageUtils.loadTexture('images/textures/proto.jpg');
                 lavaTexture.wrapS = lavaTexture.wrapT = THREE.RepeatWrapping;
-                var lavaTextureCircle = new THREE.ImageUtils.loadTexture('img/textures/protocircle2.png');
+                var lavaTextureCircle = new THREE.ImageUtils.loadTexture('images/textures/protocircle2.png');
                 lavaTextureCircle.wrapS = lavaTextureCircle.wrapT = THREE.RepeatWrapping;
                 // multiplier for distortion speed
                 var baseSpeed = 0.02;
@@ -246,7 +246,7 @@ var stars = {
                 var repeatS = repeatT = 4.0;
 
                 // texture used to generate "randomness", distort all other textures
-                var noiseTexture = new THREE.ImageUtils.loadTexture('img/fireball/cloud.png');
+                var noiseTexture = new THREE.ImageUtils.loadTexture('images/textures/cloud.png');
                 noiseTexture.wrapS = noiseTexture.wrapT = THREE.RepeatWrapping;
                 // magnitude of noise effect
                 var noiseScale = 1;
@@ -255,9 +255,9 @@ var stars = {
 
 
                 // texture to additively blend with base image texture
-                var blendTexture = new THREE.ImageUtils.loadTexture('img/textures/proto.jpg');
+                var blendTexture = new THREE.ImageUtils.loadTexture('images/textures/proto.jpg');
                 blendTexture.wrapS = blendTexture.wrapT = THREE.RepeatWrapping;
-                var blendTextureCircle = new THREE.ImageUtils.loadTexture('img/textures/protocircle2.png');
+                var blendTextureCircle = new THREE.ImageUtils.loadTexture('images/textures/protocircle2.png');
                 blendTextureCircle.wrapS = blendTextureCircle.wrapT = THREE.RepeatWrapping;
                 // multiplier for distortion speed
                 var blendSpeed = 0.01;
@@ -327,7 +327,7 @@ var stars = {
 
                     }
                 );
-                // var circleTexture = THREE.ImageUtils.loadTexture( 'img/textures/circle.jpg' );
+                // var circleTexture = THREE.ImageUtils.loadTexture( 'images/textures/circle.jpg' );
                 //  var customMaterialCircle = new THREE.MeshBasicMaterial( { map: circleTexture } );
                 var discGeometry = new THREE.CircleGeometry(130, 90, 20, 20);
                 // var discGeometry2 = new THREE.CircleGeometry(140,90,20,20);
@@ -369,7 +369,7 @@ var stars = {
                 // use sprite because it appears the same from all angles
                 var spriteMaterial = new THREE.SpriteMaterial(
                     {
-                        map: new THREE.ImageUtils.loadTexture('img/textures/glow.png'),
+                        map: new THREE.ImageUtils.loadTexture('images/textures/glow.png'),
                         useScreenCoordinates: false,
                         alignment: THREE.SpriteAlignment.center,
                         color: 0xFFFF00,
@@ -381,7 +381,7 @@ var stars = {
                 ball.add(sprite);
                 var spriteMaterial2 = new THREE.SpriteMaterial(
                     {
-                        map: new THREE.ImageUtils.loadTexture('img/textures/glow.png'),
+                        map: new THREE.ImageUtils.loadTexture('images/textures/glow.png'),
                         useScreenCoordinates: false,
                         alignment: THREE.SpriteAlignment.center,
                         color: 0xFF3333,
@@ -465,7 +465,7 @@ var stars = {
                 light.position.set(0, 250, 0);
                 scene.add(light);
                 // SKYBOX/FOG
-                var imagePrefix = "img/textures/skybox_";
+                var imagePrefix = "images/textures/skybox_";
                 var directions = ["right1", "left2", "top3", "bottom4", "front5", "back6"];
                 var imageSuffix = ".png";
                 var skyGeometry = new THREE.CubeGeometry(22000, 22000, 22000);
@@ -480,7 +480,7 @@ var stars = {
                 var skyBox = new THREE.Mesh(skyGeometry, skyMaterial);
                 scene.add(skyBox);
 
-                var lavaTexture = new THREE.ImageUtils.loadTexture('img/textures/blue_giant.png');
+                var lavaTexture = new THREE.ImageUtils.loadTexture('images/textures/blue_giant.png');
                 lavaTexture.wrapS = lavaTexture.wrapT = THREE.RepeatWrapping;
 
                 var baseSpeed = 0.02;
@@ -488,7 +488,7 @@ var stars = {
                 var repeatS = repeatT = 1.0;
 
                 // texture used to generate "randomness", distort all other textures
-                var noiseTexture = new THREE.ImageUtils.loadTexture('img/fireball/cloud.png');
+                var noiseTexture = new THREE.ImageUtils.loadTexture('images/textures/cloud.png');
                 noiseTexture.wrapS = noiseTexture.wrapT = THREE.RepeatWrapping;
                 // magnitude of noise effect
                 var noiseScale = 1;
@@ -497,9 +497,9 @@ var stars = {
 
 
                 // texture to additively blend with base image texture
-                var blendTexture = new THREE.ImageUtils.loadTexture('img/textures/blue_giant.png');
+                var blendTexture = new THREE.ImageUtils.loadTexture('images/textures/blue_giant.png');
                 blendTexture.wrapS = blendTexture.wrapT = THREE.RepeatWrapping;
-                // var blendTextureCircle = new THREE.ImageUtils.loadTexture('img/textures/protocircle2.png');
+                // var blendTextureCircle = new THREE.ImageUtils.loadTexture('images/textures/protocircle2.png');
                 // blendTextureCircle.wrapS = blendTextureCircle.wrapT = THREE.RepeatWrapping;
                 // multiplier for distortion speed
                 var blendSpeed = 0.01;
@@ -543,7 +543,7 @@ var stars = {
                     });
                 var sphereGeo = new THREE.SphereGeometry(64, 40, 40);
 
-                // var moonTexture = THREE.ImageUtils.loadTexture( 'img/textures/blue_giant.png' );
+                // var moonTexture = THREE.ImageUtils.loadTexture( 'images/textures/blue_giant.png' );
                 // var moonMaterial = new THREE.MeshBasicMaterial( { map: moonTexture } );
                 var moon = new THREE.Mesh(sphereGeo, customMaterial);
                 scene.add(moon);
@@ -566,7 +566,7 @@ var stars = {
 
 //                var spriteMaterial = new THREE.SpriteMaterial(
 //                    {
-//                        map: new THREE.ImageUtils.loadTexture('img/textures/glow.png'),
+//                        map: new THREE.ImageUtils.loadTexture('images/textures/glow.png'),
 //                        useScreenCoordinates: false,
 //                        alignment: THREE.SpriteAlignment.center,
 //                        color: 0xFFFFFF,
@@ -647,7 +647,7 @@ var stars = {
                 var light = new THREE.PointLight(0xffffff);
                 light.position.set(0, 250, 0);
                 scene.add(light);
-                var imagePrefix = "img/textures/skybox_";
+                var imagePrefix = "images/textures/skybox_";
                 var directions = ["right1", "left2", "top3", "bottom4", "front5", "back6"];
                 var imageSuffix = ".png";
                 var skyGeometry = new THREE.CubeGeometry(22000, 22000, 22000);
@@ -661,14 +661,14 @@ var stars = {
                 var skyMaterial = new THREE.MeshFaceMaterial(materialArray);
                 var skyBox = new THREE.Mesh(skyGeometry, skyMaterial);
                 scene.add(skyBox);
-                var lavaTexture = new THREE.ImageUtils.loadTexture('img/textures/blue_giant4.png');
+                var lavaTexture = new THREE.ImageUtils.loadTexture('images/textures/blue_giant4.png');
                 lavaTexture.wrapS = lavaTexture.wrapT = THREE.RepeatWrapping;
                 var baseSpeed = 0.02;
                 var repeatS = repeatT = 0.7;
-                var noiseTexture = new THREE.ImageUtils.loadTexture('img/fireball/cloud.png');
+                var noiseTexture = new THREE.ImageUtils.loadTexture('images/textures/cloud.png');
                 noiseTexture.wrapS = noiseTexture.wrapT = THREE.RepeatWrapping;
                 var noiseScale = 1;
-                var blendTexture = new THREE.ImageUtils.loadTexture('img/textures/blue_giant4.png');
+                var blendTexture = new THREE.ImageUtils.loadTexture('images/textures/blue_giant4.png');
                 blendTexture.wrapS = blendTexture.wrapT = THREE.RepeatWrapping;
                 var blendSpeed = 0.01;
                 // adjust lightness/darkness of blended texture
@@ -777,7 +777,7 @@ var stars = {
                 THREEx.FullScreen.bindKey({charCode: 'm'.charCodeAt(0)});
                 // CONTROLS
                 controls = new THREE.OrbitControls(camera, renderer.domElement);
-                var imagePrefix = "img/textures/skybox_";
+                var imagePrefix = "images/textures/skybox_";
                 var directions = ["right1", "left2", "top3", "bottom4", "front5", "back6"];
                 var imageSuffix = ".png";
                 var skyGeometry = new THREE.CubeGeometry(22000, 22000, 22000);
@@ -799,7 +799,7 @@ var stars = {
                 stats.domElement.style.bottom = '0px';
                 stats.domElement.style.zIndex = 100;
                 $('#graphic').html(renderer.domElement);
-                var lavaTexture = new THREE.ImageUtils.loadTexture('img/textures/neutron2.jpg');
+                var lavaTexture = new THREE.ImageUtils.loadTexture('images/textures/neutron2.jpg');
                 lavaTexture.wrapS = lavaTexture.wrapT = THREE.RepeatWrapping;
                 // multiplier for distortion speed
                 var baseSpeed = 0.02;
@@ -807,13 +807,13 @@ var stars = {
                 var repeatS = repeatT = 4.0;
 
                 // texture used to generate "randomness", distort all other textures
-                var noiseTexture = new THREE.ImageUtils.loadTexture('img/fireball/cloud.png');
+                var noiseTexture = new THREE.ImageUtils.loadTexture('images/textures/cloud.png');
                 noiseTexture.wrapS = noiseTexture.wrapT = THREE.RepeatWrapping;
                 // magnitude of noise effect
                 var noiseScale = 1;
 
                 // texture to additively blend with base image texture
-                var blendTexture = new THREE.ImageUtils.loadTexture('img/textures/neutron2.jpg');
+                var blendTexture = new THREE.ImageUtils.loadTexture('images/textures/neutron2.jpg');
                 blendTexture.wrapS = blendTexture.wrapT = THREE.RepeatWrapping;
                 // multiplier for distortion speed
                 var blendSpeed = 0.01;
@@ -861,7 +861,7 @@ var stars = {
                 scene.add(ball);
 //                var spriteMaterial = new THREE.SpriteMaterial(
 //                    {
-//                        map: new THREE.ImageUtils.loadTexture('img/textures/glowN.png'),
+//                        map: new THREE.ImageUtils.loadTexture('images/textures/glowN.png'),
 //                        useScreenCoordinates: true,
 //                        alignment: THREE.SpriteAlignment.center,
 //                        color: 0xFFFF00,
@@ -937,7 +937,7 @@ var stars = {
                 THREEx.FullScreen.bindKey({charCode: 'm'.charCodeAt(0)});
                 // CONTROLS
                 controls = new THREE.OrbitControls(camera, renderer.domElement);
-                var imagePrefix = "img/textures/skybox_";
+                var imagePrefix = "images/textures/skybox_";
                 var directions = ["right1", "left2", "top3", "bottom4", "front5", "back6"];
                 var imageSuffix = ".png";
                 var skyGeometry = new THREE.CubeGeometry(22000, 22000, 22000);
@@ -958,7 +958,7 @@ var stars = {
                 stats.domElement.style.bottom = '0px';
                 stats.domElement.style.zIndex = 100;
                 $('#graphic').html(renderer.domElement);
-                var lavaTexture = new THREE.ImageUtils.loadTexture('img/textures/suntype.jpg');
+                var lavaTexture = new THREE.ImageUtils.loadTexture('images/textures/suntype.jpg');
                 lavaTexture.wrapS = lavaTexture.wrapT = THREE.RepeatWrapping;
                 // multiplier for distortion speed
                 var baseSpeed = 0.008;
@@ -966,13 +966,13 @@ var stars = {
                 var repeatS = repeatT = 3.0;
 
                 // texture used to generate "randomness", distort all other textures
-                var noiseTexture = new THREE.ImageUtils.loadTexture('img/fireball/cloud.png');
+                var noiseTexture = new THREE.ImageUtils.loadTexture('images/textures/cloud.png');
                 noiseTexture.wrapS = noiseTexture.wrapT = THREE.RepeatWrapping;
                 // magnitude of noise effect
                 var noiseScale = 3;
 
                 // texture to additively blend with base image texture
-                var blendTexture = new THREE.ImageUtils.loadTexture('img/textures/suntype.jpg');
+                var blendTexture = new THREE.ImageUtils.loadTexture('images/textures/suntype.jpg');
                 blendTexture.wrapS = blendTexture.wrapT = THREE.RepeatWrapping;
                 // multiplier for distortion speed
                 var blendSpeed = 0.0001;
@@ -1020,7 +1020,7 @@ var stars = {
                 scene.add(ball);
                 var spriteMaterial = new THREE.SpriteMaterial(
                     {
-                        map: new THREE.ImageUtils.loadTexture('img/textures/glow.png'),
+                        map: new THREE.ImageUtils.loadTexture('images/textures/glow.png'),
                         useScreenCoordinates: false,
                         alignment: THREE.SpriteAlignment.center,
                         color: 0xFFCC33,
@@ -1096,7 +1096,7 @@ var stars = {
                 controls = new THREE.OrbitControls2(camera);
                 controls.radius = 600;
                 controls.speed = 1;
-//                var imagePrefix = "img/textures/skybox_";
+//                var imagePrefix = "images/textures/skybox_";
 //                var directions = ["right1", "left2", "top3", "bottom4", "front5", "back6"];
 //                var imageSuffix = ".png";
 //                var skyGeometry = new THREE.CubeGeometry(22000, 22000, 22000);
@@ -1305,7 +1305,7 @@ var stars = {
                 var light = new THREE.PointLight(0xffffff);
                 light.position.set(0, 250, 0);
                 scene.add(light);
-                var imagePrefix = "img/textures/skybox_";
+                var imagePrefix = "images/textures/skybox_";
                 var directions = ["right1", "left2", "top3", "bottom4", "front5", "back6"];
                 var imageSuffix = ".png";
                 var skyGeometry = new THREE.CubeGeometry(22000, 22000, 22000);
@@ -1319,14 +1319,14 @@ var stars = {
                 var skyMaterial = new THREE.MeshFaceMaterial(materialArray);
                 var skyBox = new THREE.Mesh(skyGeometry, skyMaterial);
                 scene.add(skyBox);
-                var lavaTexture = new THREE.ImageUtils.loadTexture('img/textures/whitedwarf.jpg');
+                var lavaTexture = new THREE.ImageUtils.loadTexture('images/textures/whitedwarf.jpg');
                 lavaTexture.wrapS = lavaTexture.wrapT = THREE.RepeatWrapping;
                 var baseSpeed = 0.004;
                 var repeatS = repeatT = 4.0;
-                var noiseTexture = new THREE.ImageUtils.loadTexture('img/fireball/cloud.png');
+                var noiseTexture = new THREE.ImageUtils.loadTexture('images/textures/cloud.png');
                 noiseTexture.wrapS = noiseTexture.wrapT = THREE.RepeatWrapping;
                 var noiseScale = 1;
-                var blendTexture = new THREE.ImageUtils.loadTexture('img/textures/whitedwarf.jpg');
+                var blendTexture = new THREE.ImageUtils.loadTexture('images/textures/whitedwarf.jpg');
                 blendTexture.wrapS = blendTexture.wrapT = THREE.RepeatWrapping;
                 var blendSpeed = 0.009;
                 // adjust lightness/darkness of blended texture
@@ -1441,7 +1441,7 @@ var stars = {
                 // CONTROLS
                 controls = new THREE.OrbitControls(camera, renderer.domElement);
                 // SKYBOX/FOG
-                var imagePrefix = "img/textures/skybox_";
+                var imagePrefix = "images/textures/skybox_";
                 var directions = ["right1", "left2", "top3", "bottom4", "front5", "back6"];
                 var imageSuffix = ".png";
                 var skyGeometry = new THREE.CubeGeometry(22000, 22000, 22000);
@@ -1464,7 +1464,7 @@ var stars = {
                 $('#graphic').html(renderer.domElement);
 
 
-                var lavaTexture = new THREE.ImageUtils.loadTexture('img/textures/red.jpg');
+                var lavaTexture = new THREE.ImageUtils.loadTexture('images/textures/red.jpg');
                 lavaTexture.wrapS = lavaTexture.wrapT = THREE.RepeatWrapping;
                 // multiplier for distortion speed
                 var baseSpeed = 0.02;
@@ -1472,13 +1472,13 @@ var stars = {
                 var repeatS = repeatT = 4.0;
 
                 // texture used to generate "randomness", distort all other textures
-                var noiseTexture = new THREE.ImageUtils.loadTexture('img/fireball/cloud.png');
+                var noiseTexture = new THREE.ImageUtils.loadTexture('images/textures/cloud.png');
                 noiseTexture.wrapS = noiseTexture.wrapT = THREE.RepeatWrapping;
                 // magnitude of noise effect
                 var noiseScale = 0.5;
 
                 // texture to additively blend with base image texture
-                var blendTexture = new THREE.ImageUtils.loadTexture('img/textures/red.jpg');
+                var blendTexture = new THREE.ImageUtils.loadTexture('images/textures/red.jpg');
                 blendTexture.wrapS = blendTexture.wrapT = THREE.RepeatWrapping;
                 // multiplier for distortion speed
                 var blendSpeed = 0.02;
@@ -1528,7 +1528,7 @@ var stars = {
 
                 var spriteMaterial = new THREE.SpriteMaterial(
                     {
-                        map: new THREE.ImageUtils.loadTexture('img/textures/glow.png'),
+                        map: new THREE.ImageUtils.loadTexture('images/textures/glow.png'),
                         useScreenCoordinates: false,
                         alignment: THREE.SpriteAlignment.center,
                         color: 0x990000,
@@ -1541,7 +1541,7 @@ var stars = {
 
                 var spriteMaterial2 = new THREE.SpriteMaterial(
                     {
-                        map: new THREE.ImageUtils.loadTexture('img/textures/glow.png'),
+                        map: new THREE.ImageUtils.loadTexture('images/textures/glow.png'),
                         useScreenCoordinates: false,
                         alignment: THREE.SpriteAlignment.center,
                         color: 0xFF0000,
@@ -1617,7 +1617,7 @@ var stars = {
                 // CONTROLS
                 controls = new THREE.OrbitControls(camera, renderer.domElement);
                 // STATS
-                var imagePrefix = "img/textures/skybox_";
+                var imagePrefix = "images/textures/skybox_";
                 var directions = ["right1", "left2", "top3", "bottom4", "front5", "back6"];
                 var imageSuffix = ".png";
                 var skyGeometry = new THREE.CubeGeometry(22000, 22000, 22000);
@@ -1637,7 +1637,7 @@ var stars = {
                 stats.domElement.style.bottom = '0px';
                 stats.domElement.style.zIndex = 100;
                 $('#graphic').html(renderer.domElement);
-                var lavaTexture = new THREE.ImageUtils.loadTexture('img/textures/brown.jpg');
+                var lavaTexture = new THREE.ImageUtils.loadTexture('images/textures/brown.jpg');
                 lavaTexture.wrapS = lavaTexture.wrapT = THREE.RepeatWrapping;
                 // multiplier for distortion speed
                 var baseSpeed = 0.01;
@@ -1645,13 +1645,13 @@ var stars = {
                 var repeatS = repeatT = 4.0;
 
                 // texture used to generate "randomness", distort all other textures
-                var noiseTexture = new THREE.ImageUtils.loadTexture('img/fireball/cloud.png');
+                var noiseTexture = new THREE.ImageUtils.loadTexture('images/textures/cloud.png');
                 noiseTexture.wrapS = noiseTexture.wrapT = THREE.RepeatWrapping;
                 // magnitude of noise effect
                 var noiseScale = 0.1;
 
                 // texture to additively blend with base image texture
-                var blendTexture = new THREE.ImageUtils.loadTexture('img/textures/brown.jpg');
+                var blendTexture = new THREE.ImageUtils.loadTexture('images/textures/brown.jpg');
                 blendTexture.wrapS = blendTexture.wrapT = THREE.RepeatWrapping;
                 // multiplier for distortion speed
                 var blendSpeed = 0.01;
