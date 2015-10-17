@@ -1717,3 +1717,47 @@ var stars = {
         }
     }
 };
+var StarsImages = {
+    proto1: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/protostar/proto1.jpg'>");
+        }
+    },
+    proto2: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/protostar/proto2.jpg'>");
+        }
+    },
+    proto3: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/protostar/proto4.jpg'>");
+        }
+    },
+    proto4: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/protostar/proto9.jpg'>");
+        }
+    },
+    proto5: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/protostar/proto10.jpg'>");
+        }
+    },
+    proto6: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/protostar/proto6.jpg'>");
+        }
+    }
+}

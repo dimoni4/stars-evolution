@@ -1,17 +1,27 @@
 <div class="container">
-
+<head>
+    <script src="js/util.js"></script>
+</head>
     <header class="major">
         <h2>Протозвезда</h2>
-
+        <style>
+            @font-face {
+                font-family: Esqadero; /* Имя шрифта */
+                src: url('../fonts/esqadero_ff_cy_4f-regular.ttf') format('ttf'); /* Путь к файлу со шрифтом */
+            }
+        </style>
     </header>
 
     <!--<a href="#" class="image fit"><img src="images/pic07.jpg" alt=""/></a>-->
     <div id="graphic"></div>
+
     <div class="row">
-        <section class="9u">
+        <section class="9u" >
             <p>Протозоря — астрономічний об'єкт, що перебуває на проміжному етапі зоряної еволюції— від фрагменту
                 газо-пилової хмари
                 до власне зорі на стадії головної послідовності.</p>
+            <section>
+            </section>
 
             <p> Навколо більшості ядра протозір існує кільце, що також утворюється з частинок молекулярної хмари.
                 Температури та
@@ -75,9 +85,10 @@
                 водневого циклу
                 (близько 3 млн К). </p>
         </section>
+        <div id="ImageContainer" >
+        </div>
         <section class="3u stats">
             <h4>Характеристики</h4>
-
             <div class="table-wrapper">
                 <table class="alt">
                     <thead>
@@ -98,9 +109,30 @@
                     </tbody>
                 </table>
             </div>
+            <div class="image fit">
+                <section id="proto1" class="12u starimage">
+                    <img  src="images/stars/protostar/proto1.jpg"/>
+                </section>
+                <section id="proto2" class="12u starimage">
+                    <img src="images/stars/protostar/proto2.jpg"/>
+                </section>
+                <section id="proto3" class="12u starimage">
+                    <img src="images/stars/protostar/proto4.jpg"/>
+                </section>
+                <section id="proto4" class="12u starimage">
+                    <img src="images/stars/protostar/proto9.jpg"/>
+                </section>
+                <section id="proto5" class="12u starimage">
+                    <img src="images/stars/protostar/proto10.jpg"/>
+                </section>
+                <section id="proto6" class="12u starimage">
+                    <img src="images/stars/protostar/proto6.jpg"/>
+                </section>
+            </div>
         </section>
     </div>
 </div>
+
 <script>
     stars.protostar.draw();
 </script>
