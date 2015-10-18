@@ -18,6 +18,7 @@
     <script src="js/skel-layers.min.js"></script>
     <script src="js/init.js"></script>
     <script src="js/data.js"></script>
+
     <script src="js/util.js"></script>
     <script src="js/lib/jquery-ui.js"></script>
     <script src="js/lib/three.min.js"></script>
@@ -35,58 +36,7 @@
     <script src="js/lib/FBOUtils.js"></script>
     <script src="js/lib/OrbitControls2.js"></script>
     <script src="js/lib/dat.gui.min.js"></script>
-    <script type='text/javascript' src="js/lib/supernova/Wagner.js"></script>
-    <script type='text/javascript' src="js/lib/supernova/WagnerPositionPass.js"></script>
-    <script type='text/javascript' src="js/lib/supernova/WagnerVelocityPass.js"></script>
-    <script type='text/javascript' src="js/lib/supernova/ColorConverter.js"></script>
-    <script src="js/supernova.js"></script>
 
-    <script type="x-shader/x-vertex" id="vertexshaderP">
-
-
-    attribute float size;
-    attribute vec3 customColor;
-    attribute vec2 aPoints;
-    uniform sampler2D texture;
-    varying vec3 vColor;
-
-    void main() {
-
-    vColor = customColor;
-
-
-    vec4 pos=vec4(texture2D(texture,aPoints).xyz,1.0)+vec4(position,1.0);
-    //vec4 pos=vec4(position,1.0);
-    vec4 mvPosition =modelViewMatrix * pos;
-    gl_PointSize = size * ( 1000.0 / length( mvPosition.xyz ) );
-    gl_Position = projectionMatrix * mvPosition;
-
-    }
-
-
-
-    </script>
-
-    <script type="x-shader/x-fragment" id="fragmentshaderP">
-    #ifdef GL_ES
-    precision highp float;
-    #endif
-
-    uniform vec3 color;
-    uniform sampler2D texture_point;
-
-    varying vec3 vColor;
-
-    void main() {
-
-    gl_FragColor = vec4( color * vColor, 1.0 );
-    gl_FragColor = gl_FragColor * texture2D( texture_point, gl_PointCoord );
-
-    }
-
-
-
-    </script>
     <script id="vertexShader" type="x-shader/x-vertex">
         uniform sampler2D noiseTexture;
         uniform float noiseScale;

@@ -1759,5 +1759,96 @@ var StarsImages = {
             ImageContainer.empty();
             ImageContainer.html("<img width='80%' src='images/stars/protostar/proto6.jpg'>");
         }
+    },
+    bsg1: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/bluesupergiant/bsg1.jpg'>");
+        }
+    },
+    bsg2: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/bluesupergiant/bsg2.jpg'>");
+        }
+    },
+    bsg3: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/bluesupergiant/bsg3.jpg'>");
+        }
+    },
+    bsg4: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/bluesupergiant/bsg4.gif>");
+        }
+    },
+    bsg5: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/bluesupergiant/bsg5.jpg'>");
+        }
+    },
+    supernova1: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/supernova/sp1.jpg'>");
+        }
+    },
+    supernova2: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/supernova/sp2.jpg'>");
+        }
+    },
+    supernova3: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/supernova/sp3.jpg'>");
+        }
+    },
+    supernova4: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/supernova/sp4.jpg'>");
+        }
+    },
+    supernova5: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/supernova/sp5.jpg'>");
+        }
+    },
+    supernova6: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/supernova/sp6.jpg'>");
+        }
+    },
+    supernova7: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/supernova/sp7.jpg'>");
+        }
+    },
+    supernova8: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/supernova/sp8.jpg'>");
+        }
     }
 }
