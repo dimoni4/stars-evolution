@@ -123,22 +123,22 @@
             </div>
             <div class="image fit">
                 <section id="proto1" class="12u starimage">
-                    <img  src="images/stars/protostar/proto1.jpg"/>
+                    <img  src="images/stars/protostar/proto1.jpg" onclick="showBigPicture('proto1')"/>
                 </section>
                 <section id="proto2" class="12u starimage">
-                    <img src="images/stars/protostar/proto2.jpg"/>
-                </section>
-                <section id="proto3" class="12u starimage">
-                    <img src="images/stars/protostar/proto4.jpg"/>
+                    <img  src="images/stars/protostar/proto2.jpg" onclick="showBigPicture('proto2')"/>
                 </section>
                 <section id="proto4" class="12u starimage">
-                    <img src="images/stars/protostar/proto9.jpg"/>
+                    <img  src="images/stars/protostar/proto4.jpg" onclick="showBigPicture('proto4')"/>
                 </section>
-                <section id="proto5" class="12u starimage">
-                    <img src="images/stars/protostar/proto10.jpg"/>
+                <section id="proto9" class="12u starimage">
+                    <img  src="images/stars/protostar/proto9.jpg" onclick="showBigPicture('proto9')"/>
+                </section>
+                <section id="proto10" class="12u starimage">
+                    <img  src="images/stars/protostar/proto10.jpg" onclick="showBigPicture('proto10')"/>
                 </section>
                 <section id="proto6" class="12u starimage">
-                    <img src="images/stars/protostar/proto6.jpg"/>
+                    <img  src="images/stars/protostar/proto6.jpg" onclick="showBigPicture('proto6')"/>
                 </section>
             </div>
         </section>
@@ -146,8 +146,9 @@
 </div>
 
 <script>
+    document.getElementById('ImageContainer').onclick = function () {
+        $('#ImageContainer').hide(100);
+    };
+
     stars.protostar.draw();
-</script>
-<script>
-    protoevents();
 </script>

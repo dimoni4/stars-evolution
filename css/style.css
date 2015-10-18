@@ -531,11 +531,12 @@ input[type="radio"] + label:before {
 /* Image */
 #ImageContainer {
     position: fixed;
-    width: 80%;
-    left: 10%;
-    right: 10%;
+    width: 60%;
+    left: 20%;
+    right: 20%;
     top: 10%;
     z-index: 1;
+    cursor: pointer;
 }
 
 #ImageContainer img {

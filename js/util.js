@@ -6,44 +6,14 @@ function showHide(divId) {
         div.show(100);
     }
 };
-function protoevents() {
-    document.getElementById('ImageContainer').onclick = function () {
-        showHide('ImageContainer');
-    };
-    document.getElementById('proto1').onclick = function () {
-        showHide('ImageContainer');
-        StarsImages.proto1.drawImage();
-    };
-    document.getElementById('proto2').onclick = function () {
-        showHide('ImageContainer');
-        StarsImages.proto2.drawImage();
-    };
-    document.getElementById('proto3').onclick = function () {
-        showHide('ImageContainer');
-        StarsImages.proto3.drawImage();
-    };
-    document.getElementById('proto4').onclick = function () {
-        showHide('ImageContainer');
-        StarsImages.proto4.drawImage();
-    };
-    document.getElementById('proto5').onclick = function () {
-        showHide('ImageContainer');
-        StarsImages.proto5.drawImage();
-    };
-    document.getElementById('proto6').onclick = function () {
-        showHide('ImageContainer');
-        StarsImages.proto6.drawImage();
-    };
 
-
-};
 function bsgevents() {
     document.getElementById('ImageContainer').onclick = function () {
         showHide('ImageContainer');
     };
     document.getElementById('bsg1').onclick = function () {
-        showHide('ImageContainer');
         StarsImages.bsg1.drawImage();
+        showHide('ImageContainer');
     };
     document.getElementById('bsg2').onclick = function () {
         showHide('ImageContainer');
