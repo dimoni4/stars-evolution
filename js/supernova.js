@@ -64,7 +64,7 @@ stars.supernova = {
                 amplitude: { type: "f", value: 1.0 },
                 color: { type: "c", value: new THREE.Color(0xffffff) },
                 texture: { type: "t", value: null },
-                texture_point: { type: "t", value: THREE.ImageUtils.loadTexture("old/img/supernova/assets/textures/spark1.png") }
+                texture_point: { type: "t", value: THREE.ImageUtils.loadTexture("images/supernova/assets/textures/spark1.png") }
 
             };
 

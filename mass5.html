@@ -36,7 +36,158 @@
     <script src="js/lib/FBOUtils.js"></script>
     <script src="js/lib/OrbitControls2.js"></script>
     <script src="js/lib/dat.gui.min.js"></script>
+    <script type='text/javascript' src="js/lib/supernova/Wagner.js"></script>
+    <script type='text/javascript' src="js/lib/supernova/WagnerPositionPass.js"></script>
+    <script type='text/javascript' src="js/lib/supernova/WagnerVelocityPass.js"></script>
+    <script type='text/javascript' src="js/lib/supernova/ColorConverter.js"></script>
+    <script src="js/supernova.js"></script>
 
+    <script type="x-shader/x-vertex" id="vertexshaderP">
+
+
+    attribute float size;
+    attribute vec3 customColor;
+    attribute vec2 aPoints;
+    uniform sampler2D texture;
+    varying vec3 vColor;
+
+    void main() {
+
+    vColor = customColor;
+
+
+    vec4 pos=vec4(texture2D(texture,aPoints).xyz,1.0)+vec4(position,1.0);
+    //vec4 pos=vec4(position,1.0);
+    vec4 mvPosition =modelViewMatrix * pos;
+    gl_PointSize = size * ( 1000.0 / length( mvPosition.xyz ) );
+    gl_Position = projectionMatrix * mvPosition;
+
+    }
+
+
+
+    </script>
+
+    <script type="x-shader/x-fragment" id="fragmentshaderP">
+    #ifdef GL_ES
+    precision highp float;
+    #endif
+
+    uniform vec3 color;
+    uniform sampler2D texture_point;
+
+    varying vec3 vColor;
+
+    void main() {
+
+    gl_FragColor = vec4( color * vColor, 1.0 );
+    gl_FragColor = gl_FragColor * texture2D( texture_point, gl_PointCoord );
+
+    }
+
+
+
+    </script>
+    <script id="texture_vertex_simulation_shader" type="x-shader/x-vertex">
+
+			varying vec2 vUv;
+
+			void main() {
+
+				vUv = vec2(uv.x, 1.0 - uv.y);
+				gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+
+			}
+
+
+    </script>
+    <script id="texture_fragment_simulation_shader" type="x-shader/x-fragment">
+
+			// simulation
+			varying vec2 vUv;
+
+			uniform vec3 origin;
+			uniform sampler2D tPositions;
+
+			uniform float timer;
+
+
+			float rand(vec2 co){
+			    return fract(sin(dot(co.xy ,vec2(12.9898,78.233))) * 43758.5453);
+			}
+
+			void main() {
+
+
+				vec3 pos = texture2D( tPositions, vUv ).xyz;
+
+				if ( rand( vUv + timer ) > 0.99 ) {
+
+					pos = origin;
+
+					vec3 random = vec3( rand( vUv + 1.0 ) - 1.0, rand( vUv + 2.0 ) - 1.0, rand( vUv + 3.0 ) - 1.0 );
+					pos += normalize( random ) * rand( vUv + 1.0 );
+
+				} else {
+
+					float x = pos.x + timer;
+					float y = pos.y;
+					float z = pos.z;
+
+					pos.x += sin( y * 3.3 ) * cos( z * 10.3 ) * 0.005;
+					pos.y += sin( x * 3.5 ) * cos( z * 10.5 ) * 0.005;
+					pos.z += sin( x * 3.7 ) * cos( y * 10.7 ) * 0.005;
+
+				}
+
+
+				// Write new position out
+				gl_FragColor = vec4(pos, 1.0);
+
+
+			}
+
+
+
+    </script>
+    <script id="vs-particles" type="x-shader/x-vertex">
+
+			uniform sampler2D map;
+
+			uniform float width;
+			uniform float height;
+
+			uniform float pointSize;
+
+			varying vec2 vUv;
+			varying vec4 vPosition;
+			varying vec4 vColor;
+
+			void main() {
+
+				vec2 uv = position.xy + vec2( 0.5 / width, 0.5 / height );
+				vec3 color = texture2D( map, uv ).rgb * 200.0 - 100.0;
+
+				gl_PointSize = pointSize;
+				gl_Position = projectionMatrix * modelViewMatrix * vec4( color, 1.0 );
+
+			}
+
+
+    </script>
+
+    <script id="fs-particles" type="x-shader/x-fragment">
+
+			uniform vec4 pointColor;
+
+			void main() {
+
+				gl_FragColor = pointColor;
+
+			}
+
+
+    </script>
     <script id="vertexShader" type="x-shader/x-vertex">
         uniform sampler2D noiseTexture;
         uniform float noiseScale;
@@ -155,13 +306,22 @@
 <section class="wrapper slider">
     <div class="container">
         <div class="row image fit">
-            <section class="4u">
+            <section class="2u">
                 <img src="images/menu/protostar.jpg" onclick="$('#main').load('stars/protostar.html');"/>
             </section>
-            <section class="4u">
-                <img src="images/menu/bluesupergiant.jpeg" onclick="$('#main').load('stars/bluesupergiant.html');"/>
+            <section class="2u">
+                <img src="images/menu/sun.jpg" onclick="$('#main').load('stars/suntype.html');"/>
             </section>
-            <section class="4u">
+            <section class="2u">
+                <img src="images/menu/redgiant.jpg" onclick="$('#main').load('stars/redgiant.html');"/>
+            </section>
+            <section class="2u">
+                <img src="images/menu/planetremnant.jpg" onclick="$('#main').load('stars/planetremnant.html');"/>
+            </section>
+            <section class="2u">
+                <img src="images/menu/whitedwarf.jpg" onclick="$('#main').load('stars/whitedwarf.html');"/>
+            </section>
+            <section class="2u">
                 <img src="images/menu/supernova.jpg" onclick="$('#main').load('stars/supernova.html');"/>
             </section>
         </div>

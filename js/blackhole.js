@@ -182,12 +182,12 @@ stars.black_hole = {
 
 
         skyTexFilenames = [
-            'img/black_hole/sky-visible-cube-xp.png',
-            'img/black_hole/sky-visible-cube-xn.png',
-            'img/black_hole/sky-visible-cube-yp.png',
-            'img/black_hole/sky-visible-cube-yn.png',
-            'img/black_hole/sky-visible-cube-zp.png',
-            'img/black_hole/sky-visible-cube-zn.png'
+            'images/black_hole/sky-visible-cube-xp.png',
+            'images/black_hole/sky-visible-cube-xn.png',
+            'images/black_hole/sky-visible-cube-yp.png',
+            'images/black_hole/sky-visible-cube-yn.png',
+            'images/black_hole/sky-visible-cube-zp.png',
+            'images/black_hole/sky-visible-cube-zn.png'
         ];
 
         function main1() {

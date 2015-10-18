@@ -1850,5 +1850,432 @@ var StarsImages = {
             ImageContainer.empty();
             ImageContainer.html("<img width='80%' src='images/stars/supernova/sp8.jpg'>");
         }
-    }
+    },
+    bh1: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/BLACKHOLE/bh1.jpg'>");
+        }
+    },
+    bh2: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/BLACKHOLE/bh2.jpg'>");
+        }
+    },
+    bh3: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/BLACKHOLE/bh3.jpg'>");
+        }
+    },
+    bh4: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/BLACKHOLE/bh4.jpg'>");
+        }
+    },
+    bh5: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/BLACKHOLE/bh5.jpg'>");
+        }
+    },
+    bh6: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/BLACKHOLE/bh6.jpg'>");
+        }
+    },
+    bh7: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/BLACKHOLE/bh7.jpg'>");
+        }
+    },
+    bh8: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/BLACKHOLE/bh8.jpg'>");
+        }
+    },
+    bh9: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/BLACKHOLE/inter.jpg'>");
+        }
+    },
+    rg1: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/redgiant/rg1.jpg'>");
+        }
+    },
+    rg2: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/redgiant/rg2.jpeg'>");
+        }
+    },
+    rg3: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/redgiant/rg3.jpg'>");
+        }
+    },
+    rg4: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/redgiant/rg4.jpg'>");
+        }
+    },
+    rg5: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/redgiant/rg5.jpg'>");
+        }
+    },
+    rg6: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/redgiant/rg6.jpg'>");
+        }
+    },
+    rg7: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/redgiant/rg7.jpg'>");
+        }
+    },
+    rg8: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/redgiant/rg8.jpeg'>");
+        }
+    },
+    bg1: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/bluegiant/bg1.jpg'>");
+        }
+    },
+    bg2: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/bluegiant/bg2.jpg'>");
+        }
+    },
+    bg3: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/bluegiant/bg3.jpg'>");
+        }
+    },
+    bg4: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/bluegiant/bg4.png'>");
+        }
+    },
+    bg5: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/bluegiant/bg5.jpg'>");
+        }
+    },
+    bg6: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/bluegiant/bg6.png'>");
+        }
+    },
+    bg7: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/bluegiant/bg7.jpg'>");
+        }
+    },
+    ns1: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/neutronstar/ns1.jpg'>");
+        }
+    },
+    ns2: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/neutronstar/ns3.jpg'>");
+        }
+    },
+    ns3: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/neutronstar/ns4.jpg'>");
+        }
+    },
+    ns4: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/neutronstar/ns5.jpg'>");
+        }
+    },
+    ns5: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/neutronstar/ns6.jpg'>");
+        }
+    },
+    ns6: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/neutronstar/ns7.jpg'>");
+        }
+    },
+    ns7: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/neutronstar/ns8.jpg'>");
+        }
+    },
+    wd1: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/whitedwarf/wd1.jpg'>");
+        }
+    },
+    wd2: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/whitedwarf/wd2.jpg'>");
+        }
+    },
+    wd3: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/whitedwarf/wd3.jpg'>");
+        }
+    },
+    wd4: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/whitedwarf/wd4.jpg'>");
+        }
+    },
+    wd5: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/whitedwarf/wd5.jpg'>");
+        }
+    },
+    wd6: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/whitedwarf/wd6.jpg'>");
+        }
+    },
+    pr1: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/planetremnant/pr1.jpg'>");
+        }
+    },
+    pr2: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/planetremnant/pr2.jpg'>");
+        }
+    },
+    pr3: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/planetremnant/pr3.png'>");
+        }
+    },
+    pr4: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/planetremnant/pr4.jpg'>");
+        }
+    },
+    pr5: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/planetremnant/pr5.jpg'>");
+        }
+    },
+    pr6: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/planetremnant/pr6.jpg'>");
+        }
+    },
+    pr7: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/planetremnant/pr7.jpg'>");
+        }
+    },
+    pr8: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/planetremnant/pr8.jpg'>");
+        }
+    },
+    pr9: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/planetremnant/pr9.jpg'>");
+        }
+    },
+    sun1: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/suntype/sn1.jpg'>");
+        }
+    },
+    sun2: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/suntype/sn2.jpg'>");
+        }
+    },
+    sun3: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/suntype/sn3.jpg'>");
+        }
+    },
+    sun4: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/suntype/sn4.jpg'>");
+        }
+    },
+    sun5: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/suntype/sn5.jpg'>");
+        }
+    },
+    rd1: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/reddwarf/rd1.jpg'>");
+        }
+    },
+    rd2: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/reddwarf/rd2.jpg'>");
+        }
+    },
+    rd3: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/reddwarf/rd3.jpg'>");
+        }
+    },
+    rd4: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/reddwarf/rd4.jpg'>");
+        }
+    },
+    rd5: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/reddwarf/rd5.jpg'>");
+        }
+    },
+    bd5: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/browndwarf/bd5.jpg'>");
+        }
+    },
+    bd1: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/browndwarf/bd1.jpg'>");
+        }
+    },
+    bd2: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/browndwarf/bd2.jpg'>");
+        }
+    },
+    bd3: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/browndwarf/bd3.jpg'>");
+        }
+    },
+    bd4: {
+        drawImage: function () {
+            var ImageContainer = $('#ImageContainer');
+            ImageContainer.empty();
+            ImageContainer.html("<img width='80%' src='images/stars/browndwarf/bd4.jpg'>");
+        }
+    },
 }

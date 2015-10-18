@@ -1,12 +1,10 @@
 <div class="container">
 
     <header class="major">
-        <h2>Сверхновая</h2>
+        <h2>Бурий карлик</h2>
 
     </header>
-
-    <a href="#" class="image fit"><img src="../images/pic07.jpg" alt=""/></a>
-
+    <div id="graphic"></div>
     <div class="row">
         <section class="9u">
 
@@ -53,6 +51,8 @@
             </p>
 
         </section>
+        <div id="ImageContainer" >
+        </div>
         <section class="3u stats">
             <h4>Характеристики</h4>
 
@@ -76,6 +76,29 @@
                     </tbody>
                 </table>
             </div>
+            <div class="image fit">
+                <section id="bd1" class="12u starimage">
+                    <img  src="images/stars/browndwarf/bd1.jpg"/>
+                </section>
+                <section id="bd2" class="12u starimage">
+                    <img src="images/stars/browndwarf/bd2.jpg"/>
+                </section>
+                <section id="bd3" class="12u starimage">
+                    <img src="images/stars/browndwarf/bd3.jpg"/>
+                </section>
+                <section id="bd4" class="12u starimage">
+                    <img src="images/stars/browndwarf/bd4.jpg"/>
+                </section>
+                <section id="bd5" class="12u starimage">
+                    <img src="images/stars/browndwarf/bd5.jpg"/>
+                </section>
+            </div>
         </section>
     </div>
 </div>
+<script>
+    stars.brown_dwarf.draw();
+</script>
+<script>
+    browndwarfevents();
+</script>
