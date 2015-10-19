@@ -561,6 +561,11 @@ input[type="radio"] + label:before {
     display: block;
 }
 
+.index img {
+    border-radius: 4px;
+    display: block;
+}
+
 .image.left {
     float: left;
     padding: 0 1.5em 1em 0;
@@ -1093,7 +1098,7 @@ body.landing #header nav a {
 
 .wrapper {
     background-color: #000;
-    padding: 1em 0em 2em;
+    padding: 1em 0em 1em;
     /* Style 1 Wrapper */
     /* Style 2 Wrapper */
     /* Style 3 Wrapper */
@@ -1131,19 +1136,27 @@ body.landing #header nav a {
     width: 1200px;
 }
 
+.massname {
+    color: #F5F5F5;
+    padding-top: 50px;
+}
+
+.star img {
+    height: 150px;
+    width: 150px;
+}
+
 .star .row {
-    border-width: thick;
-    border-style: solid;
-    border-color: dimgray;
-    border-radius: 10px;
+    border-width: 2px;
+    border-color: #474747;
+}
+
+.star .row.last{
+    border-width: 0;
 }
 
 #graphic {
     height: 500px;
-    width: 100%;
-}
-
-.star img {
     width: 100%;
 }
 
