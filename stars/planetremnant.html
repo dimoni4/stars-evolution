@@ -73,31 +73,31 @@
             </div>
             <div class="image fit">
                 <section id="pr1" class="12u starimage">
-                    <img  src="images/stars/planetremnant/pr1.jpg"/>
+                    <img src="images/stars/planetremnant/pr1.jpg" onclick="showBigPicture('pr1','planetremnant')"/>
                 </section>
                 <section id="pr2" class="12u starimage">
-                    <img src="images/stars/planetremnant/pr2.jpg"/>
+                    <img src="images/stars/planetremnant/pr2.jpg" onclick="showBigPicture('pr2','planetremnant')"/>
                 </section>
                 <section id="pr3" class="12u starimage">
-                    <img src="images/stars/planetremnant/pr3.png"/>
+                    <img src="images/stars/planetremnant/pr3.jpg" onclick="showBigPicture('pr3','planetremnant')"/>
                 </section>
                 <section id="pr4" class="12u starimage">
-                    <img src="images/stars/planetremnant/pr4.jpg"/>
+                    <img src="images/stars/planetremnant/pr4.jpg" onclick="showBigPicture('pr4','planetremnant')"/>
                 </section>
                 <section id="pr5" class="12u starimage">
-                    <img src="images/stars/planetremnant/pr5.jpg"/>
+                    <img src="images/stars/planetremnant/pr5.jpg" onclick="showBigPicture('pr5','planetremnant')"/>
                 </section>
                 <section id="pr6" class="12u starimage">
-                    <img src="images/stars/planetremnant/pr6.jpg"/>
+                    <img src="images/stars/planetremnant/pr6.jpg" onclick="showBigPicture('pr6','planetremnant')"/>
                 </section>
                 <section id="pr7" class="12u starimage">
-                    <img src="images/stars/planetremnant/pr7.jpg"/>
+                    <img src="images/stars/planetremnant/pr7.jpg" onclick="showBigPicture('pr7','planetremnant')"/>
                 </section>
                 <section id="pr8" class="12u starimage">
-                    <img src="images/stars/planetremnant/pr8.jpg"/>
+                    <img src="images/stars/planetremnant/pr8.jpg" onclick="showBigPicture('pr8','planetremnant')"/>
                 </section>
                 <section id="pr9" class="12u starimage">
-                    <img src="images/stars/planetremnant/pr9.jpg"/>
+                    <img src="images/stars/planetremnant/pr9.jpg" onclick="showBigPicture('pr9','planetremnant')"/>
                 </section>
             </div>
         </section>
@@ -105,8 +105,8 @@
 
 </div>
 <script>
+    document.getElementById('ImageContainer').onclick = function () {
+        $('#ImageContainer').hide(100);
+    };
     stars.planet_remnant.draw();
-</script>
-<script>
-    prevents();
 </script>
