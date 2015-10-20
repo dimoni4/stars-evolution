@@ -12,6 +12,7 @@ stars.black_hole = {
     cell5: '',
     cell6: '',
     draw: function () {
+        cancelAnimationFrame( idAnimationFrame );
        glMaxCubeMapTextureSize = {};
        canvas = {};
        gl = {};

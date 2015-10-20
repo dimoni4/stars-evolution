@@ -1,3 +1,4 @@
+idAnimationFrame = 0;
 var stars = {
     red_gigant: {
         myImage: 'img/red_giant_gif.gif',
@@ -6,9 +7,8 @@ var stars = {
         infoRight: '<p> Приклади:</p> <p>Mira</p> <p>Albireo</p> <p>4 Cassiopeiae</p>',
         temperature: '3000−5000K',
         light: ' 10^5-10^6 Lsol',
-
-
         draw: function () {
+            cancelAnimationFrame( idAnimationFrame );
             var container, scene, camera, renderer, controls, stats;
             var keyboard = new THREEx.KeyboardState();
             var clock = new THREE.Clock();
@@ -181,6 +181,7 @@ var stars = {
 
 
         draw: function () {
+            cancelAnimationFrame( idAnimationFrame );
             SCREEN_WIDTH = $('#graphic').width();
             SCREEN_HEIGHT = $('#graphic').height() - 5;
             var container, scene, camera, renderer, controls, stats, camera2;
@@ -421,6 +422,7 @@ var stars = {
         light: '105−106 LSol',
 
         draw: function () {
+            cancelAnimationFrame( idAnimationFrame );
             var container, scene, camera, renderer, controls, stats;
             var keyboard = new THREEx.KeyboardState();
             var clock = new THREE.Clock();
@@ -604,6 +606,7 @@ var stars = {
         light: '10 LSol',
 
         draw: function () {
+            cancelAnimationFrame( idAnimationFrame );
             var container, scene, camera, renderer, controls, stats;
             var keyboard = new THREEx.KeyboardState();
             var clock = new THREE.Clock();
@@ -745,6 +748,7 @@ var stars = {
         light: '105−106LSol',
 
         draw: function () {
+            cancelAnimationFrame( idAnimationFrame );
             var container, scene, camera, renderer, controls, stats;
             var keyboard = new THREEx.KeyboardState();
             var clock = new THREE.Clock();
@@ -905,6 +909,7 @@ var stars = {
         cell5: '',
         cell6: '',
         draw: function () {
+            cancelAnimationFrame( idAnimationFrame );
             var container, scene, camera, renderer, controls, stats;
             var keyboard = new THREEx.KeyboardState();
             var clock = new THREE.Clock();
@@ -1063,6 +1068,7 @@ var stars = {
         cell5: '',
         cell6: '',
         draw: function () {
+            cancelAnimationFrame( idAnimationFrame );
             var container;
             SCREEN_WIDTH = $('#graphic').width();
             SCREEN_HEIGHT = $('#graphic').height() - 5;
@@ -1262,6 +1268,7 @@ var stars = {
         cell5: '',
         cell6: '',
         draw: function () {
+            cancelAnimationFrame( idAnimationFrame );
             var container, scene, camera, renderer, controls, stats;
             var keyboard = new THREEx.KeyboardState();
             var clock = new THREE.Clock();
@@ -1408,6 +1415,7 @@ var stars = {
         cell5: '',
         cell6: '',
         draw: function () {
+            cancelAnimationFrame( idAnimationFrame );
             var container, scene, camera, renderer, controls, stats;
             var keyboard = new THREEx.KeyboardState();
             var clock = new THREE.Clock();
@@ -1584,6 +1592,7 @@ var stars = {
         cell5: '',
         cell6: '',
         draw: function () {
+            cancelAnimationFrame( idAnimationFrame );
             var container, scene, camera, renderer, controls, stats;
             var keyboard = new THREEx.KeyboardState();
             var clock = new THREE.Clock();

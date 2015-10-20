@@ -12,7 +12,7 @@ stars.supernova = {
     cell5: '',
     cell6: '',
     draw: function () {
-
+        cancelAnimationFrame( idAnimationFrame );
         container = {};
         stats = {};
 
@@ -194,8 +194,7 @@ stars.supernova = {
         }
 
         function animate() {
-
-            requestAnimationFrame(animate);
+            idAnimationFrame = requestAnimationFrame(animate);
             render();
 
         }
