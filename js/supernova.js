@@ -42,7 +42,7 @@ stars.supernova = {
 
             container = document.getElementById('graphic');
             scene = new THREE.Scene();
-            var ambient = new THREE.AmbientLight(0x444444);
+            var ambient = new THREE.AmbientLight(0xFFFFFF);
             scene.add(ambient);
 
             camera = new THREE.PerspectiveCamera(45,  windowHalfX / windowHalfY, 1, 1000000);
@@ -62,7 +62,7 @@ stars.supernova = {
             var uniforms = {
 
                 amplitude: { type: "f", value: 1.0 },
-                color: { type: "c", value: new THREE.Color(0xffffff) },
+                color: { type: "c", value: new THREE.Color(0x0066FF) },
                 texture: { type: "t", value: null },
                 texture_point: { type: "t", value: THREE.ImageUtils.loadTexture("images/supernova/assets/textures/spark1.png") }
 
@@ -102,7 +102,7 @@ stars.supernova = {
             for (var v = 0; v < vertices.length; v++) {
 
                 values_size[ v ] = 10;
-                values_color[ v ] = new THREE.Color(0xffaa00);
+                values_color[ v ] = new THREE.Color(0xFFFFFF);
 
                 if (vertices[ v ].x < 0)
                     THREE.ColorConverter.setHSV(values_color[ v ], 0.5 + 0.1 * ( v / vertices.length ), 0.7, 0.9);
