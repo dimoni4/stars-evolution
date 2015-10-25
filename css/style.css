@@ -591,15 +591,28 @@ input[type="radio"] + label:before {
 }
 
 .image.fit {
+     display: block;
+     margin: 0 0 2em 0;
+     width: 100%;
+     cursor: pointer;
+ }
+.image.fit img {
+    width: 100%;
+}
+.image.massimage {
     display: block;
     margin: 0 0 2em 0;
     width: 100%;
     cursor: pointer;
 }
-
-.image.fit img {
-    width: 100%;
+.image.massimage img{
+    max-width:100%;
+    height: 180px;
+    display: block;
+    margin: auto;
 }
+
+
 
 /* List */
 
