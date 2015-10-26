@@ -126,7 +126,7 @@
     <script>
         window.onload = function () {
             //первая звезда в массе
-            $('#main').load('stars/protostar.html');
+            importStarPage('stars/protostar.html');
         };
     </script>
     <noscript>
@@ -153,13 +153,13 @@
     <div class="container">
         <div class="row image massimage">
             <section class="4u">
-                <img src="images/menu/protostar.jpg" onclick="$('#main').load('stars/protostar.html');"/>
+                <img src="images/menu/protostar.jpg" onclick="importStarPage('stars/protostar.html');"/>
             </section>
             <section class="4u">
-                <img src="images/menu/reddwarf.jpg" onclick="$('#main').load('stars/reddwarf.html');"/>
+                <img src="images/menu/reddwarf.jpg" onclick="importStarPage('stars/reddwarf.html');"/>
             </section>
             <section class="4u">
-                <img src="images/menu/whitedwarf.jpg" onclick="$('#main').load('stars/whitedwarf.html');"/>
+                <img src="images/menu/whitedwarf.jpg" onclick="importStarPage('stars/whitedwarf.html');"/>
             </section>
         </div>
     </div>

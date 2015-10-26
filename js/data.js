@@ -1727,8 +1727,12 @@ var stars = {
     }
 };
 
-function showBigPicture(picName,StarName) {
+function showBigPicture(picName,starName) {
     $('#ImageContainer').hide(0);
-    $('#ImageContainer').html("<img width='100%' src='images/stars/"+StarName+"/"+picName+".jpg'>");
+    $('#ImageContainer').html("<img width='100%' src='images/stars/"+starName+"/"+picName+".jpg'>");
     $('#ImageContainer').show(100);
+}
+
+function importStarPage(starName) {
+    $('#main').load(starName);
 }

@@ -1155,7 +1155,7 @@ body.landing #header nav a {
 
 .massname {
     color: #F5F5F5;
-    padding-top: 50px;
+    padding-top: 64px;
 }
 
 .star img {
@@ -1164,12 +1164,15 @@ body.landing #header nav a {
 }
 
 .star .row {
-    border-width: 2px;
-    border-color: #474747;
+    border: solid 1px #000;
 }
 
-.star .row.last{
-    border-width: 0;
+.star .row:hover {
+    border: solid 1px #474747;
+}
+
+.clicked {
+    border: solid 1px #474747;
 }
 
 #graphic {
