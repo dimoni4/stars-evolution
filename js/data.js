@@ -185,25 +185,17 @@ var stars = {
             SCREEN_WIDTH = $('#graphic').width();
             SCREEN_HEIGHT = $('#graphic').height() - 5;
             var container, scene, camera, renderer, controls, stats, camera2;
-            var keyboard = new THREEx.KeyboardState();
             var clock = new THREE.Clock();
-            // custom global variables
             init();
             animate();
 
 
             // FUNCTIONS
             function init() {
-
-                // SCENE
                 scene = new THREE.Scene();
-                // CAMERA
-
                 VIEW_ANGLE = 45, ASPECT = SCREEN_WIDTH / SCREEN_HEIGHT, NEAR = 0.1, FAR = 20000;
                 camera = new THREE.PerspectiveCamera(VIEW_ANGLE, ASPECT, NEAR, FAR);
                 camera.position.set(200, 200, 150);
-                // camera.lookAt(scene.position);
-                // RENDERER
                 if (Detector.webgl)
                     renderer = new THREE.WebGLRenderer({antialias: true});
                 else
@@ -211,18 +203,14 @@ var stars = {
                 renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
                 container = document.getElementById('graphic');
                 $('#graphic').html(renderer.domElement);
-                // EVENTS
                 THREEx.WindowResize(renderer, camera);
                 THREEx.FullScreen.bindKey({charCode: 'm'.charCodeAt(0)});
-                // CONTROLS
                 controls = new THREE.OrbitControls(camera, renderer.domElement);
-                // STATS
                 stats = new Stats();
                 var imagePrefix = "images/textures/skybox_";
                 var directions = ["right1", "left2", "top3", "bottom4", "front5", "back6"];
                 var imageSuffix = ".png";
                 var skyGeometry = new THREE.CubeGeometry(22000, 22000, 22000);
-
                 var materialArray = [];
                 for (var i = 0; i < 6; i++)
                     materialArray.push(new THREE.MeshBasicMaterial({
@@ -241,40 +229,22 @@ var stars = {
                 lavaTexture.wrapS = lavaTexture.wrapT = THREE.RepeatWrapping;
                 var lavaTextureCircle = new THREE.ImageUtils.loadTexture('images/textures/protocircle2.png');
                 lavaTextureCircle.wrapS = lavaTextureCircle.wrapT = THREE.RepeatWrapping;
-                // multiplier for distortion speed
                 var baseSpeed = 0.02;
-                // number of times to repeat texture in each direction
                 var repeatS = repeatT = 4.0;
-
-                // texture used to generate "randomness", distort all other textures
                 var noiseTexture = new THREE.ImageUtils.loadTexture('images/textures/cloud.png');
                 noiseTexture.wrapS = noiseTexture.wrapT = THREE.RepeatWrapping;
-                // magnitude of noise effect
                 var noiseScale = 1;
-
-                // texture to additively blend with base image texture
-
-
-                // texture to additively blend with base image texture
                 var blendTexture = new THREE.ImageUtils.loadTexture('images/textures/proto.jpg');
                 blendTexture.wrapS = blendTexture.wrapT = THREE.RepeatWrapping;
                 var blendTextureCircle = new THREE.ImageUtils.loadTexture('images/textures/protocircle2.png');
                 blendTextureCircle.wrapS = blendTextureCircle.wrapT = THREE.RepeatWrapping;
-                // multiplier for distortion speed
                 var blendSpeed = 0.01;
-                // adjust lightness/darkness of blended texture
                 var blendOffset = 0.25;
-
-                // texture to determine normal displacement
                 var bumpTexture = noiseTexture;
                 bumpTexture.wrapS = bumpTexture.wrapT = THREE.RepeatWrapping;
-                // multiplier for distortion speed
                 var bumpSpeed = 0.007;
-                // magnitude of normal displacement
                 var bumpScale = 10.0;
-
                 var bumpSpeedCircle = 0.0001;
-                // magnitude of normal displacement
                 var bumpScaleCircle = 15.0;
 
 
@@ -310,10 +280,6 @@ var stars = {
                     alpha: {type: "f", value: 1.0},
                     time: {type: "f", value: 1.0}
                 };
-
-
-                // create custom material from the shader code above
-                //   that is within specially labeled script tags
                 var customMaterial = new THREE.ShaderMaterial(
                     {
                         uniforms: customUniforms,
@@ -328,46 +294,15 @@ var stars = {
 
                     }
                 );
-                // var circleTexture = THREE.ImageUtils.loadTexture( 'images/textures/circle.jpg' );
-                //  var customMaterialCircle = new THREE.MeshBasicMaterial( { map: circleTexture } );
                 var discGeometry = new THREE.CircleGeometry(130, 90, 20, 20);
-                // var discGeometry2 = new THREE.CircleGeometry(140,90,20,20);
-                // var discGeometry3 = new THREE.CircleGeometry(120,90,20,20);
                 var disc = new THREE.Mesh(discGeometry, customCircleMaterial);
                 var ballGeometry = new THREE.SphereGeometry(20, 64, 64);
-                // var disc2 = new THREE.Mesh(discGeometry2, customCircleMaterial);
-                //  var disc3 = new THREE.Mesh(discGeometry3, customCircleMaterial);
-
                 disc.position.set(0, 0, -2.5);
-                // disc3.position.set(0,0,2.5);
-                //   disc2.position.set(0,0,0);
                 scene.add(disc);
-                // scene.add(disc2);
-                //   scene.add(disc3);
-
-
                 var ball = new THREE.Mesh(ballGeometry, customMaterial);
                 ball.position.set(0, 0, 0);
                 scene.add(ball);
-
                 ball.position.set(0, 0, 0);
-
-
-//                var customMaterialGlow = new THREE.ShaderMaterial(
-//                    {
-//                        uniforms: {  },
-//                        vertexShader:   document.getElementById( 'vertexShaderGlow'   ).textContent,
-//                        fragmentShader: document.getElementById( 'fragmentShaderGlow' ).textContent,
-//                        side: THREE.BackSide,
-//                        blending: THREE.AdditiveBlending,
-//                        transparent: true
-//                    }   );
-//
-//                var glowGeometry = new THREE.SphereGeometry( 80, 32, 16 );
-//                var glow = new THREE.Mesh( glowGeometry, customMaterialGlow );
-//                scene.add( glow );
-                // SUPER SIMPLE GLOW EFFECT
-                // use sprite because it appears the same from all angles
                 var spriteMaterial = new THREE.SpriteMaterial(
                     {
                         map: new THREE.ImageUtils.loadTexture('images/textures/glow.png'),
@@ -391,7 +326,7 @@ var stars = {
                     });
                 var sprite2 = new THREE.Sprite(spriteMaterial2);
                 sprite2.scale.set(340, 340, 1.0);
-                ball.add(sprite2); // this centers the glow at the mesh
+                ball.add(sprite2);
             }
 
 

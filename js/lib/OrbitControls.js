@@ -292,14 +292,15 @@ THREE.OrbitControls = function ( object, domElement ) {
 
 			zoomStart.copy( zoomEnd );
 
-		} else if ( state === STATE.PAN ) {
-
-			var movementX = event.movementX || event.mozMovementX || event.webkitMovementX || 0;
-			var movementY = event.movementY || event.mozMovementY || event.webkitMovementY || 0;
-
-			scope.pan( new THREE.Vector3( - movementX, movementY, 0 ) );
-
 		}
+		// else if ( state === STATE.PAN ) {
+        //
+		//	var movementX = event.movementX || event.mozMovementX || event.webkitMovementX || 0;
+		//	var movementY = event.movementY || event.mozMovementY || event.webkitMovementY || 0;
+        //
+		//	scope.pan( new THREE.Vector3( - movementX, movementY, 0 ) );
+        //
+		//}
 
 	}
 
@@ -347,7 +348,7 @@ THREE.OrbitControls = function ( object, domElement ) {
 	function onKeyDown( event ) {
 
 		if ( scope.enabled === false ) return;
-		if ( scope.userPan === false ) return;
+		//if ( scope.userPan === false ) return;
 
 		switch ( event.keyCode ) {
 
@@ -393,8 +394,8 @@ THREE.OrbitControls = function ( object, domElement ) {
 
 	this.domElement.addEventListener( 'contextmenu', function ( event ) { event.preventDefault(); }, false );
 	this.domElement.addEventListener( 'mousedown', onMouseDown, false );
-	this.domElement.addEventListener( 'mousewheel', onMouseWheel, false );
-	this.domElement.addEventListener( 'DOMMouseScroll', onMouseWheel, false ); // firefox
+	//this.domElement.addEventListener( 'mousewheel', onMouseWheel, false );
+	//this.domElement.addEventListener( 'DOMMouseScroll', onMouseWheel, false ); // firefox
 	window.addEventListener( 'keydown', onKeyDown, false );
 	window.addEventListener( 'keyup', onKeyUp, false );
 

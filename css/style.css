@@ -547,7 +547,8 @@ input[type="radio"] + label:before {
 .starimage {
     margin-bottom: 10px;
 }
-.youtube{
+
+.youtube {
     margin: auto;
     width: 60%;
 }
@@ -591,28 +592,29 @@ input[type="radio"] + label:before {
 }
 
 .image.fit {
-     display: block;
-     margin: 0 0 2em 0;
-     width: 100%;
-     cursor: pointer;
- }
+    display: block;
+    margin: 0 0 2em 0;
+    width: 100%;
+    cursor: pointer;
+}
+
 .image.fit img {
     width: 100%;
 }
+
 .image.massimage {
     display: block;
     margin: 0 0 2em 0;
     width: 100%;
     cursor: pointer;
 }
-.image.massimage img{
-    max-width:100%;
+
+.image.massimage img {
+    max-width: 100%;
     height: 180px;
     display: block;
     margin: auto;
 }
-
-
 
 /* List */
 
@@ -817,7 +819,6 @@ table.alt thead {
 table.alt tfoot {
     border-top: 0;
 }
-
 /* Button */
 
 input[type="submit"],
@@ -1108,7 +1109,20 @@ body.landing #header nav a {
 
 #banner p {
     font-size: 1.5em;
-    margin-bottom: 1.75em;
+    margin: 0 0 0 0;
+}
+
+#banner ul {
+    color: white;
+    font-size: 1.45em;
+    list-style-type: none;
+    text-align: right;
+    padding: 20px;
+}
+#banner div{
+    position: absolute;
+    right: 0px;
+    width: 500px;
 }
 
 /* Wrapper */
