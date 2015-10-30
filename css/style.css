@@ -1123,6 +1123,7 @@ body.landing #header nav a {
     position: absolute;
     right: 0px;
     width: 500px;
+    display: block;
 }
 
 /* Wrapper */

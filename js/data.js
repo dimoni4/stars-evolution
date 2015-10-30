@@ -8,7 +8,7 @@ var stars = {
         temperature: '3000−5000K',
         light: ' 10^5-10^6 Lsol',
         draw: function () {
-            cancelAnimationFrame( idAnimationFrame );
+            cancelAnimationFrame(idAnimationFrame);
             var container, scene, camera, renderer, controls, stats;
             var keyboard = new THREEx.KeyboardState();
             var clock = new THREE.Clock();
@@ -181,7 +181,7 @@ var stars = {
 
 
         draw: function () {
-            cancelAnimationFrame( idAnimationFrame );
+            cancelAnimationFrame(idAnimationFrame);
             SCREEN_WIDTH = $('#graphic').width();
             SCREEN_HEIGHT = $('#graphic').height() - 5;
             var container, scene, camera, renderer, controls, stats, camera2;
@@ -195,7 +195,7 @@ var stars = {
                 scene = new THREE.Scene();
                 VIEW_ANGLE = 45, ASPECT = SCREEN_WIDTH / SCREEN_HEIGHT, NEAR = 0.1, FAR = 20000;
                 camera = new THREE.PerspectiveCamera(VIEW_ANGLE, ASPECT, NEAR, FAR);
-                camera.position.set(200, 200, 150);
+                camera.position.set(300, -100, 300);
                 if (Detector.webgl)
                     renderer = new THREE.WebGLRenderer({antialias: true});
                 else
@@ -244,7 +244,7 @@ var stars = {
                 bumpTexture.wrapS = bumpTexture.wrapT = THREE.RepeatWrapping;
                 var bumpSpeed = 0.007;
                 var bumpScale = 10.0;
-                var bumpSpeedCircle = 0.0001;
+                var bumpSpeedCircle = 0.0006;
                 var bumpScaleCircle = 15.0;
 
 
@@ -294,11 +294,25 @@ var stars = {
 
                     }
                 );
-                var discGeometry = new THREE.CircleGeometry(130, 90, 20, 20);
-                var disc = new THREE.Mesh(discGeometry, customCircleMaterial);
-                var ballGeometry = new THREE.SphereGeometry(20, 64, 64);
-                disc.position.set(0, 0, -2.5);
+                var discGeometry = new THREE.TorusGeometry(150, 7, 50, 50);
+                disc = new THREE.Mesh(discGeometry, customCircleMaterial);
+                disc.position.set(0, 0, 0);
+                disc.geometry.applyMatrix(new THREE.Matrix4().makeTranslation( 0, 0, 0 ) );
                 scene.add(disc);
+
+                var discGeometry2 = new THREE.TorusGeometry(130, 8, 50, 50);
+                disc2 = new THREE.Mesh(discGeometry2, customCircleMaterial);
+                disc2.position.set(0, 0, 0);
+                disc2.geometry.applyMatrix(new THREE.Matrix4().makeTranslation( 0, 0, 0 ) );
+                scene.add(disc2);
+
+                var discGeometry3 = new THREE.TorusGeometry(110, 9, 50, 50);
+                disc3 = new THREE.Mesh(discGeometry3, customCircleMaterial);
+                disc3.position.set(0, 0, 0);
+                disc3.geometry.applyMatrix(new THREE.Matrix4().makeTranslation( 0, 0, 0 ) );
+                scene.add(disc3);
+
+                var ballGeometry = new THREE.SphereGeometry(20, 64, 64);
                 var ball = new THREE.Mesh(ballGeometry, customMaterial);
                 ball.position.set(0, 0, 0);
                 scene.add(ball);
@@ -329,9 +343,16 @@ var stars = {
                 ball.add(sprite2);
             }
 
+            function rotateDisc() {
+                disc.rotation.z += 0.004;
+                disc2.rotation.z += 0.011;
+                disc3.rotation.z += 0.016;
+               // flatG.rotation.z += 10.005;
+            }
 
             function animate() {
                 idAnimationFrame = requestAnimationFrame(animate);
+                rotateDisc();
                 render();
                 update();
             }
@@ -357,7 +378,7 @@ var stars = {
         light: '105−106 LSol',
 
         draw: function () {
-            cancelAnimationFrame( idAnimationFrame );
+            cancelAnimationFrame(idAnimationFrame);
             var container, scene, camera, renderer, controls, stats;
             var keyboard = new THREEx.KeyboardState();
             var clock = new THREE.Clock();
@@ -541,7 +562,7 @@ var stars = {
         light: '10 LSol',
 
         draw: function () {
-            cancelAnimationFrame( idAnimationFrame );
+            cancelAnimationFrame(idAnimationFrame);
             var container, scene, camera, renderer, controls, stats;
             var keyboard = new THREEx.KeyboardState();
             var clock = new THREE.Clock();
@@ -683,7 +704,7 @@ var stars = {
         light: '105−106LSol',
 
         draw: function () {
-            cancelAnimationFrame( idAnimationFrame );
+            cancelAnimationFrame(idAnimationFrame);
             var container, scene, camera, renderer, controls, stats;
             var keyboard = new THREEx.KeyboardState();
             var clock = new THREE.Clock();
@@ -844,7 +865,7 @@ var stars = {
         cell5: '',
         cell6: '',
         draw: function () {
-            cancelAnimationFrame( idAnimationFrame );
+            cancelAnimationFrame(idAnimationFrame);
             var container, scene, camera, renderer, controls, stats;
             var keyboard = new THREEx.KeyboardState();
             var clock = new THREE.Clock();
@@ -1003,7 +1024,7 @@ var stars = {
         cell5: '',
         cell6: '',
         draw: function () {
-            cancelAnimationFrame( idAnimationFrame );
+            cancelAnimationFrame(idAnimationFrame);
             var container;
             SCREEN_WIDTH = $('#graphic').width();
             SCREEN_HEIGHT = $('#graphic').height() - 5;
@@ -1203,7 +1224,7 @@ var stars = {
         cell5: '',
         cell6: '',
         draw: function () {
-            cancelAnimationFrame( idAnimationFrame );
+            cancelAnimationFrame(idAnimationFrame);
             var container, scene, camera, renderer, controls, stats;
             var keyboard = new THREEx.KeyboardState();
             var clock = new THREE.Clock();
@@ -1350,7 +1371,7 @@ var stars = {
         cell5: '',
         cell6: '',
         draw: function () {
-            cancelAnimationFrame( idAnimationFrame );
+            cancelAnimationFrame(idAnimationFrame);
             var container, scene, camera, renderer, controls, stats;
             var keyboard = new THREEx.KeyboardState();
             var clock = new THREE.Clock();
@@ -1527,7 +1548,7 @@ var stars = {
         cell5: '',
         cell6: '',
         draw: function () {
-            cancelAnimationFrame( idAnimationFrame );
+            cancelAnimationFrame(idAnimationFrame);
             var container, scene, camera, renderer, controls, stats;
             var keyboard = new THREEx.KeyboardState();
             var clock = new THREE.Clock();
@@ -1662,9 +1683,9 @@ var stars = {
     }
 };
 
-function showBigPicture(picName,starName) {
+function showBigPicture(picName, starName) {
     $('#ImageContainer').hide(0);
-    $('#ImageContainer').html("<img width='100%' src='images/stars/"+starName+"/"+picName+".jpg'>");
+    $('#ImageContainer').html("<img width='100%' src='images/stars/" + starName + "/" + picName + ".jpg'>");
     $('#ImageContainer').show(100);
 }
 
