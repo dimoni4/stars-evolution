@@ -240,6 +240,7 @@ var stars = {
                 blendTextureCircle.wrapS = blendTextureCircle.wrapT = THREE.RepeatWrapping;
                 var blendSpeed = 0.01;
                 var blendOffset = 0.25;
+                var blendOffsetCircle = 0.15;
                 var bumpTexture = noiseTexture;
                 bumpTexture.wrapS = bumpTexture.wrapT = THREE.RepeatWrapping;
                 var bumpSpeed = 0.007;
@@ -273,7 +274,7 @@ var stars = {
                     noiseScale: {type: "f", value: noiseScale},
                     blendTexture: {type: "t", value: blendTextureCircle},
                     blendSpeed: {type: "f", value: blendSpeed},
-                    blendOffset: {type: "f", value: blendOffset},
+                    blendOffset: {type: "f", value: blendOffsetCircle},
                     bumpTexture: {type: "t", value: bumpTexture},
                     bumpSpeed: {type: "f", value: bumpSpeedCircle},
                     bumpScale: {type: "f", value: bumpScaleCircle},
@@ -294,23 +295,48 @@ var stars = {
 
                     }
                 );
-                var discGeometry = new THREE.TorusGeometry(150, 7, 50, 50);
+                var customMaterialGlow = new THREE.ShaderMaterial(
+                    {
+                        uniforms: {},
+                        vertexShader: document.getElementById('vertexShaderGlow').textContent,
+                        fragmentShader: document.getElementById('fragmentShaderGlow').textContent,
+                        side: THREE.BackSide,
+                        blending: THREE.AdditiveBlending,
+                        transparent: true
+                    });
+
+                var GlowTorus = new THREE.TorusGeometry(140, 12, 50, 50);
+                var Glow = new THREE.Mesh(GlowTorus, customMaterialGlow);
+                scene.add(Glow);
+                var discGeometry = new THREE.TorusGeometry(140, 5, 50, 50);
                 disc = new THREE.Mesh(discGeometry, customCircleMaterial);
                 disc.position.set(0, 0, 0);
                 disc.geometry.applyMatrix(new THREE.Matrix4().makeTranslation( 0, 0, 0 ) );
                 scene.add(disc);
 
-                var discGeometry2 = new THREE.TorusGeometry(130, 8, 50, 50);
+                var discGeometry2 = new THREE.TorusGeometry(130, 6, 50, 50);
                 disc2 = new THREE.Mesh(discGeometry2, customCircleMaterial);
                 disc2.position.set(0, 0, 0);
                 disc2.geometry.applyMatrix(new THREE.Matrix4().makeTranslation( 0, 0, 0 ) );
                 scene.add(disc2);
 
-                var discGeometry3 = new THREE.TorusGeometry(110, 9, 50, 50);
+                var discGeometry3 = new THREE.TorusGeometry(120, 7, 50, 50);
                 disc3 = new THREE.Mesh(discGeometry3, customCircleMaterial);
                 disc3.position.set(0, 0, 0);
                 disc3.geometry.applyMatrix(new THREE.Matrix4().makeTranslation( 0, 0, 0 ) );
                 scene.add(disc3);
+
+                var discGeometry4 = new THREE.TorusGeometry(110, 8.5, 50, 50);
+                disc4 = new THREE.Mesh(discGeometry4, customCircleMaterial);
+                disc4.position.set(0, 0, 0);
+                disc4.geometry.applyMatrix(new THREE.Matrix4().makeTranslation( 0, 0, 0 ) );
+                scene.add(disc4);
+
+                var discGeometry5 = new THREE.TorusGeometry(100, 9, 50, 50);
+                disc5 = new THREE.Mesh(discGeometry5, customCircleMaterial);
+                disc5.position.set(0, 0, 0);
+                disc5.geometry.applyMatrix(new THREE.Matrix4().makeTranslation( 0, 0, 0 ) );
+                scene.add(disc4);
 
                 var ballGeometry = new THREE.SphereGeometry(20, 64, 64);
                 var ball = new THREE.Mesh(ballGeometry, customMaterial);
@@ -345,8 +371,10 @@ var stars = {
 
             function rotateDisc() {
                 disc.rotation.z += 0.004;
-                disc2.rotation.z += 0.011;
-                disc3.rotation.z += 0.016;
+                disc2.rotation.z += 0.005;
+                disc3.rotation.z += 0.006;
+                disc4.rotation.z += 0.007;
+                disc5.rotation.z += 0.008;
                // flatG.rotation.z += 10.005;
             }
 
@@ -511,8 +539,8 @@ var stars = {
                 var customMaterial = new THREE.ShaderMaterial(
                     {
                         uniforms: {},
-                        vertexShader: document.getElementById('vertexShaderGlow').textContent,
-                        fragmentShader: document.getElementById('fragmentShaderGlow').textContent,
+                        vertexShader: document.getElementById('vertexShaderGlow2').textContent,
+                        fragmentShader: document.getElementById('fragmentShaderGlow2').textContent,
                         side: THREE.BackSide,
                         blending: THREE.AdditiveBlending,
                         transparent: true
