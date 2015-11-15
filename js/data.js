@@ -195,7 +195,7 @@ var stars = {
                 scene = new THREE.Scene();
                 VIEW_ANGLE = 45, ASPECT = SCREEN_WIDTH / SCREEN_HEIGHT, NEAR = 0.1, FAR = 20000;
                 camera = new THREE.PerspectiveCamera(VIEW_ANGLE, ASPECT, NEAR, FAR);
-                camera.position.set(300, -100, 300);
+                camera.position.set(300, -400, 300);
                 if (Detector.webgl)
                     renderer = new THREE.WebGLRenderer({antialias: true});
                 else
@@ -225,7 +225,7 @@ var stars = {
                 stats.domElement.style.bottom = '0px';
                 stats.domElement.style.zIndex = 100;
                 $('#graphic').html(renderer.domElement);
-                var lavaTexture = new THREE.ImageUtils.loadTexture('images/textures/proto.jpg');
+                var lavaTexture = new THREE.ImageUtils.loadTexture('images/textures/newproto.jpg');
                 lavaTexture.wrapS = lavaTexture.wrapT = THREE.RepeatWrapping;
                 var lavaTextureCircle = new THREE.ImageUtils.loadTexture('images/textures/protocircle2.png');
                 lavaTextureCircle.wrapS = lavaTextureCircle.wrapT = THREE.RepeatWrapping;
@@ -234,13 +234,23 @@ var stars = {
                 var noiseTexture = new THREE.ImageUtils.loadTexture('images/textures/cloud.png');
                 noiseTexture.wrapS = noiseTexture.wrapT = THREE.RepeatWrapping;
                 var noiseScale = 1;
-                var blendTexture = new THREE.ImageUtils.loadTexture('images/textures/proto.jpg');
+                var blendTexture = new THREE.ImageUtils.loadTexture('images/textures/newproto.jpg');
                 blendTexture.wrapS = blendTexture.wrapT = THREE.RepeatWrapping;
                 var blendTextureCircle = new THREE.ImageUtils.loadTexture('images/textures/protocircle2.png');
                 blendTextureCircle.wrapS = blendTextureCircle.wrapT = THREE.RepeatWrapping;
                 var blendSpeed = 0.01;
-                var blendOffset = 0.25;
-                var blendOffsetCircle = 0.15;
+
+                var blendOffset = 0.695;
+                var blendOffset0 = 0.42;
+                var blendOffset1 = 0.129;
+                var blendOffset2 = 0.015;
+                var blendOffset3 = 0.39;
+                var blendOffset4 = 0.23;
+                var blendOffset5 = 0.125;
+                var blendOffset6 = 0.25;
+                var blendOffset7 = 0.08;
+                var blendOffset8 = 0.005;
+
                 var bumpTexture = noiseTexture;
                 bumpTexture.wrapS = bumpTexture.wrapT = THREE.RepeatWrapping;
                 var bumpSpeed = 0.007;
@@ -265,7 +275,7 @@ var stars = {
                     alpha: {type: "f", value: 1.0},
                     time: {type: "f", value: 1.0}
                 };
-                customUniformsCircle = {
+                customUniformsCircle1 = {
                     baseTexture: {type: "t", value: lavaTextureCircle},
                     baseSpeed: {type: "f", value: baseSpeed},
                     repeatS: {type: "f", value: repeatS},
@@ -274,7 +284,134 @@ var stars = {
                     noiseScale: {type: "f", value: noiseScale},
                     blendTexture: {type: "t", value: blendTextureCircle},
                     blendSpeed: {type: "f", value: blendSpeed},
-                    blendOffset: {type: "f", value: blendOffsetCircle},
+                    blendOffset: {type: "f", value: blendOffset1},
+                    bumpTexture: {type: "t", value: bumpTexture},
+                    bumpSpeed: {type: "f", value: bumpSpeedCircle},
+                    bumpScale: {type: "f", value: bumpScaleCircle},
+                    alpha: {type: "f", value: 1.0},
+                    time: {type: "f", value: 1.0}
+                };
+                customUniformsCircle2 = {
+                    baseTexture: {type: "t", value: lavaTextureCircle},
+                    baseSpeed: {type: "f", value: baseSpeed},
+                    repeatS: {type: "f", value: repeatS},
+                    repeatT: {type: "f", value: repeatT},
+                    noiseTexture: {type: "t", value: noiseTexture},
+                    noiseScale: {type: "f", value: noiseScale},
+                    blendTexture: {type: "t", value: blendTextureCircle},
+                    blendSpeed: {type: "f", value: blendSpeed},
+                    blendOffset: {type: "f", value: blendOffset2},
+                    bumpTexture: {type: "t", value: bumpTexture},
+                    bumpSpeed: {type: "f", value: bumpSpeedCircle},
+                    bumpScale: {type: "f", value: bumpScaleCircle},
+                    alpha: {type: "f", value: 1.0},
+                    time: {type: "f", value: 1.0}
+                };
+                customUniformsCircle3 = {
+                    baseTexture: {type: "t", value: lavaTextureCircle},
+                    baseSpeed: {type: "f", value: baseSpeed},
+                    repeatS: {type: "f", value: repeatS},
+                    repeatT: {type: "f", value: repeatT},
+                    noiseTexture: {type: "t", value: noiseTexture},
+                    noiseScale: {type: "f", value: noiseScale},
+                    blendTexture: {type: "t", value: blendTextureCircle},
+                    blendSpeed: {type: "f", value: blendSpeed},
+                    blendOffset: {type: "f", value: blendOffset3},
+                    bumpTexture: {type: "t", value: bumpTexture},
+                    bumpSpeed: {type: "f", value: bumpSpeedCircle},
+                    bumpScale: {type: "f", value: bumpScaleCircle},
+                    alpha: {type: "f", value: 1.0},
+                    time: {type: "f", value: 1.0}
+                };
+                customUniformsCircle4 = {
+                    baseTexture: {type: "t", value: lavaTextureCircle},
+                    baseSpeed: {type: "f", value: baseSpeed},
+                    repeatS: {type: "f", value: repeatS},
+                    repeatT: {type: "f", value: repeatT},
+                    noiseTexture: {type: "t", value: noiseTexture},
+                    noiseScale: {type: "f", value: noiseScale},
+                    blendTexture: {type: "t", value: blendTextureCircle},
+                    blendSpeed: {type: "f", value: blendSpeed},
+                    blendOffset: {type: "f", value: blendOffset4},
+                    bumpTexture: {type: "t", value: bumpTexture},
+                    bumpSpeed: {type: "f", value: bumpSpeedCircle},
+                    bumpScale: {type: "f", value: bumpScaleCircle},
+                    alpha: {type: "f", value: 1.0},
+                    time: {type: "f", value: 1.0}
+                };
+                customUniformsCircle5 = {
+                    baseTexture: {type: "t", value: lavaTextureCircle},
+                    baseSpeed: {type: "f", value: baseSpeed},
+                    repeatS: {type: "f", value: repeatS},
+                    repeatT: {type: "f", value: repeatT},
+                    noiseTexture: {type: "t", value: noiseTexture},
+                    noiseScale: {type: "f", value: noiseScale},
+                    blendTexture: {type: "t", value: blendTextureCircle},
+                    blendSpeed: {type: "f", value: blendSpeed},
+                    blendOffset: {type: "f", value: blendOffset5},
+                    bumpTexture: {type: "t", value: bumpTexture},
+                    bumpSpeed: {type: "f", value: bumpSpeedCircle},
+                    bumpScale: {type: "f", value: bumpScaleCircle},
+                    alpha: {type: "f", value: 1.0},
+                    time: {type: "f", value: 1.0}
+                };
+                customUniformsCircle6 = {
+                    baseTexture: {type: "t", value: lavaTextureCircle},
+                    baseSpeed: {type: "f", value: baseSpeed},
+                    repeatS: {type: "f", value: repeatS},
+                    repeatT: {type: "f", value: repeatT},
+                    noiseTexture: {type: "t", value: noiseTexture},
+                    noiseScale: {type: "f", value: noiseScale},
+                    blendTexture: {type: "t", value: blendTextureCircle},
+                    blendSpeed: {type: "f", value: blendSpeed},
+                    blendOffset: {type: "f", value: blendOffset6},
+                    bumpTexture: {type: "t", value: bumpTexture},
+                    bumpSpeed: {type: "f", value: bumpSpeedCircle},
+                    bumpScale: {type: "f", value: bumpScaleCircle},
+                    alpha: {type: "f", value: 1.0},
+                    time: {type: "f", value: 1.0}
+                };
+                customUniformsCircle7 = {
+                    baseTexture: {type: "t", value: lavaTextureCircle},
+                    baseSpeed: {type: "f", value: baseSpeed},
+                    repeatS: {type: "f", value: repeatS},
+                    repeatT: {type: "f", value: repeatT},
+                    noiseTexture: {type: "t", value: noiseTexture},
+                    noiseScale: {type: "f", value: noiseScale},
+                    blendTexture: {type: "t", value: blendTextureCircle},
+                    blendSpeed: {type: "f", value: blendSpeed},
+                    blendOffset: {type: "f", value: blendOffset7},
+                    bumpTexture: {type: "t", value: bumpTexture},
+                    bumpSpeed: {type: "f", value: bumpSpeedCircle},
+                    bumpScale: {type: "f", value: bumpScaleCircle},
+                    alpha: {type: "f", value: 1.0},
+                    time: {type: "f", value: 1.0}
+                };customUniformsCircle8 = {
+                    baseTexture: {type: "t", value: lavaTextureCircle},
+                    baseSpeed: {type: "f", value: baseSpeed},
+                    repeatS: {type: "f", value: repeatS},
+                    repeatT: {type: "f", value: repeatT},
+                    noiseTexture: {type: "t", value: noiseTexture},
+                    noiseScale: {type: "f", value: noiseScale},
+                    blendTexture: {type: "t", value: blendTextureCircle},
+                    blendSpeed: {type: "f", value: blendSpeed},
+                    blendOffset: {type: "f", value: blendOffset8},
+                    bumpTexture: {type: "t", value: bumpTexture},
+                    bumpSpeed: {type: "f", value: bumpSpeedCircle},
+                    bumpScale: {type: "f", value: bumpScaleCircle},
+                    alpha: {type: "f", value: 1.0},
+                    time: {type: "f", value: 1.0}
+                };
+                customUniformsCircle0 = {
+                    baseTexture: {type: "t", value: lavaTextureCircle},
+                    baseSpeed: {type: "f", value: baseSpeed},
+                    repeatS: {type: "f", value: repeatS},
+                    repeatT: {type: "f", value: repeatT},
+                    noiseTexture: {type: "t", value: noiseTexture},
+                    noiseScale: {type: "f", value: noiseScale},
+                    blendTexture: {type: "t", value: blendTextureCircle},
+                    blendSpeed: {type: "f", value: blendSpeed},
+                    blendOffset: {type: "f", value: blendOffset0},
                     bumpTexture: {type: "t", value: bumpTexture},
                     bumpSpeed: {type: "f", value: bumpSpeedCircle},
                     bumpScale: {type: "f", value: bumpScaleCircle},
@@ -287,9 +424,73 @@ var stars = {
                         vertexShader: document.getElementById('vertexShader').textContent,
                         fragmentShader: document.getElementById('fragmentShader').textContent
                     });
-                var customCircleMaterial = new THREE.ShaderMaterial(
+                var customCircleMaterial0 = new THREE.ShaderMaterial(
                     {
-                        uniforms: customUniformsCircle,
+                        uniforms: customUniformsCircle0,
+                        vertexShader: document.getElementById('vertexShader').textContent,
+                        fragmentShader: document.getElementById('fragmentShader').textContent
+
+                    }
+                );
+                var customCircleMaterial1 = new THREE.ShaderMaterial(
+                    {
+                        uniforms: customUniformsCircle1,
+                        vertexShader: document.getElementById('vertexShader').textContent,
+                        fragmentShader: document.getElementById('fragmentShader').textContent
+
+                    }
+                );
+                var customCircleMaterial2 = new THREE.ShaderMaterial(
+                    {
+                        uniforms: customUniformsCircle2,
+                        vertexShader: document.getElementById('vertexShader').textContent,
+                        fragmentShader: document.getElementById('fragmentShader').textContent
+
+                    }
+                );
+                var customCircleMaterial3 = new THREE.ShaderMaterial(
+                    {
+                        uniforms: customUniformsCircle3,
+                        vertexShader: document.getElementById('vertexShader').textContent,
+                        fragmentShader: document.getElementById('fragmentShader').textContent
+
+                    }
+                );
+                var customCircleMaterial4 = new THREE.ShaderMaterial(
+                    {
+                        uniforms: customUniformsCircle4,
+                        vertexShader: document.getElementById('vertexShader').textContent,
+                        fragmentShader: document.getElementById('fragmentShader').textContent
+
+                    }
+                );
+                var customCircleMaterial5 = new THREE.ShaderMaterial(
+                    {
+                        uniforms: customUniformsCircle5,
+                        vertexShader: document.getElementById('vertexShader').textContent,
+                        fragmentShader: document.getElementById('fragmentShader').textContent
+
+                    }
+                );
+                var customCircleMaterial6 = new THREE.ShaderMaterial(
+                    {
+                        uniforms: customUniformsCircle6,
+                        vertexShader: document.getElementById('vertexShader').textContent,
+                        fragmentShader: document.getElementById('fragmentShader').textContent
+
+                    }
+                );
+                var customCircleMaterial7 = new THREE.ShaderMaterial(
+                    {
+                        uniforms: customUniformsCircle7,
+                        vertexShader: document.getElementById('vertexShader').textContent,
+                        fragmentShader: document.getElementById('fragmentShader').textContent
+
+                    }
+                );
+                var customCircleMaterial8 = new THREE.ShaderMaterial(
+                    {
+                        uniforms: customUniformsCircle8,
                         vertexShader: document.getElementById('vertexShader').textContent,
                         fragmentShader: document.getElementById('fragmentShader').textContent
 
@@ -305,38 +506,67 @@ var stars = {
                         transparent: true
                     });
 
-                var GlowTorus = new THREE.TorusGeometry(140, 12, 50, 50);
-                var Glow = new THREE.Mesh(GlowTorus, customMaterialGlow);
-                scene.add(Glow);
-                var discGeometry = new THREE.TorusGeometry(140, 5, 50, 50);
-                disc = new THREE.Mesh(discGeometry, customCircleMaterial);
+                //var GlowTorus = new THREE.TorusGeometry(260, 12, 50, 50);
+                //var Glow = new THREE.Mesh(GlowTorus, customMaterialGlow);
+                //scene.add(Glow);
+
+                var discGeometry = new THREE.TorusGeometry(250, 3, 50, 50);
+                disc = new THREE.Mesh(discGeometry, customCircleMaterial0);
                 disc.position.set(0, 0, 0);
                 disc.geometry.applyMatrix(new THREE.Matrix4().makeTranslation( 0, 0, 0 ) );
                 scene.add(disc);
 
-                var discGeometry2 = new THREE.TorusGeometry(130, 6, 50, 50);
-                disc2 = new THREE.Mesh(discGeometry2, customCircleMaterial);
+                var discGeometry1 = new THREE.TorusGeometry(240, 4, 50, 50);
+                disc1 = new THREE.Mesh(discGeometry1, customCircleMaterial1);
+                disc1.position.set(0, 0, 0);
+                disc1.geometry.applyMatrix(new THREE.Matrix4().makeTranslation( 0, 0, 0 ) );
+                scene.add(disc1);
+
+                var discGeometry2 = new THREE.TorusGeometry(230, 5, 50, 50);
+                disc2 = new THREE.Mesh(discGeometry2, customCircleMaterial2);
                 disc2.position.set(0, 0, 0);
                 disc2.geometry.applyMatrix(new THREE.Matrix4().makeTranslation( 0, 0, 0 ) );
                 scene.add(disc2);
 
-                var discGeometry3 = new THREE.TorusGeometry(120, 7, 50, 50);
-                disc3 = new THREE.Mesh(discGeometry3, customCircleMaterial);
+                /*-------------------------*/
+
+                var discGeometry3 = new THREE.TorusGeometry(170, 6, 50, 50);
+                disc3 = new THREE.Mesh(discGeometry3, customCircleMaterial3);
                 disc3.position.set(0, 0, 0);
                 disc3.geometry.applyMatrix(new THREE.Matrix4().makeTranslation( 0, 0, 0 ) );
                 scene.add(disc3);
 
-                var discGeometry4 = new THREE.TorusGeometry(110, 8.5, 50, 50);
-                disc4 = new THREE.Mesh(discGeometry4, customCircleMaterial);
+                var discGeometry4 = new THREE.TorusGeometry(160, 7, 50, 50);
+                disc4 = new THREE.Mesh(discGeometry4, customCircleMaterial4);
                 disc4.position.set(0, 0, 0);
                 disc4.geometry.applyMatrix(new THREE.Matrix4().makeTranslation( 0, 0, 0 ) );
                 scene.add(disc4);
 
-                var discGeometry5 = new THREE.TorusGeometry(100, 9, 50, 50);
-                disc5 = new THREE.Mesh(discGeometry5, customCircleMaterial);
+                var discGeometry5 = new THREE.TorusGeometry(150, 8, 50, 50);
+                disc5 = new THREE.Mesh(discGeometry5, customCircleMaterial5);
                 disc5.position.set(0, 0, 0);
                 disc5.geometry.applyMatrix(new THREE.Matrix4().makeTranslation( 0, 0, 0 ) );
-                scene.add(disc4);
+                scene.add(disc5);
+                /*-------------------------*/
+
+                var discGeometry6 = new THREE.TorusGeometry(100, 7, 50, 50);
+                disc6 = new THREE.Mesh(discGeometry6, customCircleMaterial6);
+                disc6.position.set(0, 0, 0);
+                disc6.geometry.applyMatrix(new THREE.Matrix4().makeTranslation( 0, 0, 0 ) );
+                scene.add(disc6);
+
+                var discGeometry7 = new THREE.TorusGeometry(90, 6, 50, 50);
+                disc7 = new THREE.Mesh(discGeometry7, customCircleMaterial7);
+                disc7.position.set(0, 0, 0);
+                disc7.geometry.applyMatrix(new THREE.Matrix4().makeTranslation( 0, 0, 0 ) );
+                scene.add(disc7);
+
+                var discGeometry8 = new THREE.TorusGeometry(80, 5, 50, 50);
+                disc8 = new THREE.Mesh(discGeometry8, customCircleMaterial8);
+                disc8.position.set(0, 0, 0);
+                disc8.geometry.applyMatrix(new THREE.Matrix4().makeTranslation( 0, 0, 0 ) );
+                scene.add(disc8);
+                /*-------------------------*/
 
                 var ballGeometry = new THREE.SphereGeometry(20, 64, 64);
                 var ball = new THREE.Mesh(ballGeometry, customMaterial);
@@ -370,11 +600,15 @@ var stars = {
             }
 
             function rotateDisc() {
-                disc.rotation.z += 0.004;
+                disc.rotation.z += 0.003;
+                disc1.rotation.z += 0.004;
                 disc2.rotation.z += 0.005;
                 disc3.rotation.z += 0.006;
                 disc4.rotation.z += 0.007;
                 disc5.rotation.z += 0.008;
+                disc6.rotation.z += 0.0085;
+                disc7.rotation.z += 0.009;
+                disc8.rotation.z += 0.0095;
                // flatG.rotation.z += 10.005;
             }
 
@@ -387,7 +621,14 @@ var stars = {
 
             function update() {
                 customUniforms.time.value += clock.getDelta();
-                customUniformsCircle.time.value = customUniforms.time.value;
+                customUniformsCircle1.time.value = customUniforms.time.value;
+                customUniformsCircle2.time.value = customUniforms.time.value;
+                customUniformsCircle3.time.value = customUniforms.time.value;
+                customUniformsCircle4.time.value = customUniforms.time.value;
+                customUniformsCircle5.time.value = customUniforms.time.value;
+                customUniformsCircle6.time.value = customUniforms.time.value;
+                customUniformsCircle7.time.value = customUniforms.time.value;
+                customUniformsCircle8.time.value = customUniforms.time.value;
                 controls.update();
                 stats.update();
             }
