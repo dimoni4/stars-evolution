@@ -1,12 +1,6 @@
 idAnimationFrame = 0;
 var stars = {
     red_gigant: {
-        myImage: 'img/red_giant_gif.gif',
-        mainLabel: 'Червоний гігант',
-        infoLeft: 'Червоні гіганти і надгіганти - зірки пізніх спектральних класів з високою світністю і протяжними оболонкамиами.',
-        infoRight: '<p> Приклади:</p> <p>Mira</p> <p>Albireo</p> <p>4 Cassiopeiae</p>',
-        temperature: '3000−5000K',
-        light: ' 10^5-10^6 Lsol',
         draw: function () {
             cancelAnimationFrame(idAnimationFrame);
             var container, scene, camera, renderer, controls, stats;
@@ -172,14 +166,6 @@ var stars = {
         }
     },
     protostar: {
-        myImage: 'img/1.jpg',
-        mainLabel: 'Протозоря',
-        infoLeft: 'Протозоря - зірка на завершальному етапі свого формування, аж до моменту загоряння термоядерних реакцій в ядрі, після якого стиск протозірки припиняється і вона стає зіркою головної послідовності..',
-        infoRight: '<p>Приклади:</p> <p>V1647 Orionis</p>',
-        temperature: '10-20K',
-        light: '~100 LSol',
-
-
         draw: function () {
             cancelAnimationFrame(idAnimationFrame);
             SCREEN_WIDTH = $('#graphic').width();
@@ -638,198 +624,184 @@ var stars = {
             }
         }
     },
-    blue_sverx_giant: {
-        myImage: 'img/2.jpg',
-        mainLabel: 'Блакитний надгігант',
-        infoLeft: 'Блакитний надгігант - тип понад гігантських зірок спектральних класів A і B. Це молоді дуже гарячі і яскраві зірки з температурою поверхні 20 000-50 000 ° C.',
-        infoRight: '<p> Приклади:</p> <p>Ригель</p> <p>Гамма Парусов</p> <p>Альфа Жирафа</p> <p>Дзета Ориона</p> <p>Тау Большого Пса</p> <p>Дзета Кормы</p>',
-        temperature: '10,000–50,000 K',
-        light: '105−106 LSol',
-
-        draw: function () {
-            cancelAnimationFrame(idAnimationFrame);
-            var container, scene, camera, renderer, controls, stats;
-            var keyboard = new THREEx.KeyboardState();
-            var clock = new THREE.Clock();
-            // custom global variables
-
-            init();
-            animate();
-
-            // FUNCTIONS
-            function init() {
-
-                // SCENE
-                scene = new THREE.Scene();
-                // CAMERA
-                SCREEN_WIDTH = $('#graphic').width();
-                SCREEN_HEIGHT = $('#graphic').height() - 5;
-                VIEW_ANGLE = 45, ASPECT = SCREEN_WIDTH / SCREEN_HEIGHT, NEAR = 0.1, FAR = 20000;
-                camera = new THREE.PerspectiveCamera(VIEW_ANGLE, ASPECT, NEAR, FAR);
-                camera.position.set(100, 200, 150);
-
-                if (Detector.webgl)
-                    renderer = new THREE.WebGLRenderer({antialias: true});
-                else
-                    renderer = new THREE.CanvasRenderer();
-                renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
-                container = document.getElementById('graphic');
-                $('#graphic').html(renderer.domElement);
-                // EVENTS
-                THREEx.WindowResize(renderer, camera);
-                THREEx.FullScreen.bindKey({charCode: 'm'.charCodeAt(0)});
-                // CONTROLS
-                controls = new THREE.OrbitControls(camera, renderer.domElement);
-                // STATS
-                stats = new Stats();
-                stats.domElement.style.display = 'none';
-                stats.domElement.style.position = 'absolute';
-                stats.domElement.style.bottom = '0px';
-                stats.domElement.style.zIndex = 100;
-                $('#graphic').html(renderer.domElement);
-                // LIGHT
-                var light = new THREE.PointLight(0xffffff);
-                light.position.set(0, 250, 0);
-                scene.add(light);
-                // SKYBOX/FOG
-                var imagePrefix = "images/textures/skybox_";
-                var directions = ["right1", "left2", "top3", "bottom4", "front5", "back6"];
-                var imageSuffix = ".png";
-                var skyGeometry = new THREE.CubeGeometry(22000, 22000, 22000);
-
-                var materialArray = [];
-                for (var i = 0; i < 6; i++)
-                    materialArray.push(new THREE.MeshBasicMaterial({
-                        map: THREE.ImageUtils.loadTexture(imagePrefix + directions[i] + imageSuffix),
-                        side: THREE.BackSide
-                    }));
-                var skyMaterial = new THREE.MeshFaceMaterial(materialArray);
-                var skyBox = new THREE.Mesh(skyGeometry, skyMaterial);
-                scene.add(skyBox);
-
-                var lavaTexture = new THREE.ImageUtils.loadTexture('images/textures/blue_giant.png');
-                lavaTexture.wrapS = lavaTexture.wrapT = THREE.RepeatWrapping;
-
-                var baseSpeed = 0.02;
-                // number of times to repeat texture in each direction
-                var repeatS = repeatT = 1.0;
-
-                // texture used to generate "randomness", distort all other textures
-                var noiseTexture = new THREE.ImageUtils.loadTexture('images/textures/cloud.png');
-                noiseTexture.wrapS = noiseTexture.wrapT = THREE.RepeatWrapping;
-                // magnitude of noise effect
-                var noiseScale = 1;
-
-                // texture to additively blend with base image texture
-
-
-                // texture to additively blend with base image texture
-                var blendTexture = new THREE.ImageUtils.loadTexture('images/textures/blue_giant.png');
-                blendTexture.wrapS = blendTexture.wrapT = THREE.RepeatWrapping;
-                // var blendTextureCircle = new THREE.ImageUtils.loadTexture('images/textures/protocircle2.png');
-                // blendTextureCircle.wrapS = blendTextureCircle.wrapT = THREE.RepeatWrapping;
-                // multiplier for distortion speed
-                var blendSpeed = 0.01;
-                // adjust lightness/darkness of blended texture
-                var blendOffset = 0.005;
-
-                // texture to determine normal displacement
-                var bumpTexture = noiseTexture;
-                bumpTexture.wrapS = bumpTexture.wrapT = THREE.RepeatWrapping;
-                // multiplier for distortion speed
-                var bumpSpeed = 0.007;
-                // magnitude of normal displacement
-                var bumpScale = 10.0;
-
-//                var bumpSpeedCircle = 0.0001;
+//    blue_sverx_giant: {
+//        draw: function () {
+//            cancelAnimationFrame(idAnimationFrame);
+//            var container, scene, camera, renderer, controls, stats;
+//            var keyboard = new THREEx.KeyboardState();
+//            var clock = new THREE.Clock();
+//            // custom global variables
+//
+//            init();
+//            animate();
+//
+//            // FUNCTIONS
+//            function init() {
+//
+//                // SCENE
+//                scene = new THREE.Scene();
+//                // CAMERA
+//                SCREEN_WIDTH = $('#graphic').width();
+//                SCREEN_HEIGHT = $('#graphic').height() - 5;
+//                VIEW_ANGLE = 45, ASPECT = SCREEN_WIDTH / SCREEN_HEIGHT, NEAR = 0.1, FAR = 20000;
+//                camera = new THREE.PerspectiveCamera(VIEW_ANGLE, ASPECT, NEAR, FAR);
+//                camera.position.set(100, 200, 150);
+//
+//                if (Detector.webgl)
+//                    renderer = new THREE.WebGLRenderer({antialias: true});
+//                else
+//                    renderer = new THREE.CanvasRenderer();
+//                renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
+//                container = document.getElementById('graphic');
+//                $('#graphic').html(renderer.domElement);
+//                // EVENTS
+//                THREEx.WindowResize(renderer, camera);
+//                THREEx.FullScreen.bindKey({charCode: 'm'.charCodeAt(0)});
+//                // CONTROLS
+//                controls = new THREE.OrbitControls(camera, renderer.domElement);
+//                // STATS
+//                stats = new Stats();
+//                stats.domElement.style.display = 'none';
+//                stats.domElement.style.position = 'absolute';
+//                stats.domElement.style.bottom = '0px';
+//                stats.domElement.style.zIndex = 100;
+//                $('#graphic').html(renderer.domElement);
+//                // LIGHT
+//                var light = new THREE.PointLight(0xffffff);
+//                light.position.set(0, 250, 0);
+//                scene.add(light);
+//                // SKYBOX/FOG
+//                var imagePrefix = "images/textures/skybox_";
+//                var directions = ["right1", "left2", "top3", "bottom4", "front5", "back6"];
+//                var imageSuffix = ".png";
+//                var skyGeometry = new THREE.CubeGeometry(22000, 22000, 22000);
+//
+//                var materialArray = [];
+//                for (var i = 0; i < 6; i++)
+//                    materialArray.push(new THREE.MeshBasicMaterial({
+//                        map: THREE.ImageUtils.loadTexture(imagePrefix + directions[i] + imageSuffix),
+//                        side: THREE.BackSide
+//                    }));
+//                var skyMaterial = new THREE.MeshFaceMaterial(materialArray);
+//                var skyBox = new THREE.Mesh(skyGeometry, skyMaterial);
+//                scene.add(skyBox);
+//
+//                var lavaTexture = new THREE.ImageUtils.loadTexture('images/textures/blue_giant.png');
+//                lavaTexture.wrapS = lavaTexture.wrapT = THREE.RepeatWrapping;
+//
+//                var baseSpeed = 0.02;
+//                // number of times to repeat texture in each direction
+//                var repeatS = repeatT = 1.0;
+//
+//                // texture used to generate "randomness", distort all other textures
+//                var noiseTexture = new THREE.ImageUtils.loadTexture('images/textures/cloud.png');
+//                noiseTexture.wrapS = noiseTexture.wrapT = THREE.RepeatWrapping;
+//                // magnitude of noise effect
+//                var noiseScale = 1;
+//
+//                // texture to additively blend with base image texture
+//
+//
+//                // texture to additively blend with base image texture
+//                var blendTexture = new THREE.ImageUtils.loadTexture('images/textures/blue_giant.png');
+//                blendTexture.wrapS = blendTexture.wrapT = THREE.RepeatWrapping;
+//                // var blendTextureCircle = new THREE.ImageUtils.loadTexture('images/textures/protocircle2.png');
+//                // blendTextureCircle.wrapS = blendTextureCircle.wrapT = THREE.RepeatWrapping;
+//                // multiplier for distortion speed
+//                var blendSpeed = 0.01;
+//                // adjust lightness/darkness of blended texture
+//                var blendOffset = 0.005;
+//
+//                // texture to determine normal displacement
+//                var bumpTexture = noiseTexture;
+//                bumpTexture.wrapS = bumpTexture.wrapT = THREE.RepeatWrapping;
+//                // multiplier for distortion speed
+//                var bumpSpeed = 0.007;
 //                // magnitude of normal displacement
-//                var bumpScaleCircle = 15.0;
-
-
-                customUniforms = {
-                    baseTexture: {type: "t", value: lavaTexture},
-                    baseSpeed: {type: "f", value: baseSpeed},
-                    repeatS: {type: "f", value: repeatS},
-                    repeatT: {type: "f", value: repeatT},
-                    noiseTexture: {type: "t", value: noiseTexture},
-                    noiseScale: {type: "f", value: noiseScale},
-                    blendTexture: {type: "t", value: blendTexture},
-                    blendSpeed: {type: "f", value: blendSpeed},
-                    blendOffset: {type: "f", value: blendOffset},
-                    bumpTexture: {type: "t", value: bumpTexture},
-                    bumpSpeed: {type: "f", value: bumpSpeed},
-                    bumpScale: {type: "f", value: bumpScale},
-                    alpha: {type: "f", value: 1.0},
-                    time: {type: "f", value: 1.0}
-                };
-                var customMaterial = new THREE.ShaderMaterial(
-                    {
-                        uniforms: customUniforms,
-                        vertexShader: document.getElementById('vertexShader').textContent,
-                        fragmentShader: document.getElementById('fragmentShader').textContent
-                    });
-                var sphereGeo = new THREE.SphereGeometry(64, 40, 40);
-
-                // var moonTexture = THREE.ImageUtils.loadTexture( 'images/textures/blue_giant.png' );
-                // var moonMaterial = new THREE.MeshBasicMaterial( { map: moonTexture } );
-                var moon = new THREE.Mesh(sphereGeo, customMaterial);
-                scene.add(moon);
-
-                // create custom material from the shader code above
-                //   that is within specially labeled script tags
-                var customMaterial = new THREE.ShaderMaterial(
-                    {
-                        uniforms: {},
-                        vertexShader: document.getElementById('vertexShaderGlow2').textContent,
-                        fragmentShader: document.getElementById('fragmentShaderGlow2').textContent,
-                        side: THREE.BackSide,
-                        blending: THREE.AdditiveBlending,
-                        transparent: true
-                    });
-
-                var ballGeometry = new THREE.SphereGeometry(77, 32, 16);
-                var ball = new THREE.Mesh(ballGeometry, customMaterial);
-                scene.add(ball);
-
-//                var spriteMaterial = new THREE.SpriteMaterial(
+//                var bumpScale = 10.0;
+//
+////                var bumpSpeedCircle = 0.0001;
+////                // magnitude of normal displacement
+////                var bumpScaleCircle = 15.0;
+//
+//
+//                customUniforms = {
+//                    baseTexture: {type: "t", value: lavaTexture},
+//                    baseSpeed: {type: "f", value: baseSpeed},
+//                    repeatS: {type: "f", value: repeatS},
+//                    repeatT: {type: "f", value: repeatT},
+//                    noiseTexture: {type: "t", value: noiseTexture},
+//                    noiseScale: {type: "f", value: noiseScale},
+//                    blendTexture: {type: "t", value: blendTexture},
+//                    blendSpeed: {type: "f", value: blendSpeed},
+//                    blendOffset: {type: "f", value: blendOffset},
+//                    bumpTexture: {type: "t", value: bumpTexture},
+//                    bumpSpeed: {type: "f", value: bumpSpeed},
+//                    bumpScale: {type: "f", value: bumpScale},
+//                    alpha: {type: "f", value: 1.0},
+//                    time: {type: "f", value: 1.0}
+//                };
+//                var customMaterial = new THREE.ShaderMaterial(
 //                    {
-//                        map: new THREE.ImageUtils.loadTexture('images/textures/glow.png'),
-//                        useScreenCoordinates: false,
-//                        alignment: THREE.SpriteAlignment.center,
-//                        color: 0xFFFFFF,
-//                        transparent: false,
-//                        blending: THREE.AdditiveBlending
+//                        uniforms: customUniforms,
+//                        vertexShader: document.getElementById('vertexShader').textContent,
+//                        fragmentShader: document.getElementById('fragmentShader').textContent
 //                    });
-//                var sprite = new THREE.Sprite(spriteMaterial);
-//                sprite.scale.set(440, 440, 1.0);
-//                ball.add(sprite);
-            }
-
-            function animate() {
-                idAnimationFrame = requestAnimationFrame(animate);
-                render();
-                update();
-            }
-
-            function update() {
-                customUniforms.time.value += clock.getDelta();
-                controls.update();
-                stats.update();
-            }
-
-            function render() {
-                renderer.render(scene, camera);
-            }
-        }
-    },
+//                var sphereGeo = new THREE.SphereGeometry(64, 40, 40);
+//
+//                // var moonTexture = THREE.ImageUtils.loadTexture( 'images/textures/blue_giant.png' );
+//                // var moonMaterial = new THREE.MeshBasicMaterial( { map: moonTexture } );
+//                var moon = new THREE.Mesh(sphereGeo, customMaterial);
+//                scene.add(moon);
+//
+//                // create custom material from the shader code above
+//                //   that is within specially labeled script tags
+//                var customMaterial = new THREE.ShaderMaterial(
+//                    {
+//                        uniforms: {},
+//                        vertexShader: document.getElementById('vertexShaderGlow2').textContent,
+//                        fragmentShader: document.getElementById('fragmentShaderGlow2').textContent,
+//                        side: THREE.BackSide,
+//                        blending: THREE.AdditiveBlending,
+//                        transparent: true
+//                    });
+//
+//                var ballGeometry = new THREE.SphereGeometry(77, 32, 16);
+//                var ball = new THREE.Mesh(ballGeometry, customMaterial);
+//                scene.add(ball);
+//
+////                var spriteMaterial = new THREE.SpriteMaterial(
+////                    {
+////                        map: new THREE.ImageUtils.loadTexture('images/textures/glow.png'),
+////                        useScreenCoordinates: false,
+////                        alignment: THREE.SpriteAlignment.center,
+////                        color: 0xFFFFFF,
+////                        transparent: false,
+////                        blending: THREE.AdditiveBlending
+////                    });
+////                var sprite = new THREE.Sprite(spriteMaterial);
+////                sprite.scale.set(440, 440, 1.0);
+////                ball.add(sprite);
+//            }
+//
+//            function animate() {
+//                idAnimationFrame = requestAnimationFrame(animate);
+//                render();
+//                update();
+//            }
+//
+//            function update() {
+//                customUniforms.time.value += clock.getDelta();
+//                controls.update();
+//                stats.update();
+//            }
+//
+//            function render() {
+//                renderer.render(scene, camera);
+//            }
+//        }
+//    },
     blue_giant: {
-        myImage: 'img/4.jpg',
-        mainLabel: 'Блакитний гігант',
-        infoLeft: 'Блакитний гігант - зірка спектрального класу O або B. Блакитні гіганти - молоді гарячі масивні зірки, які на діаграмі Герцшпрунга - Рассела розміщуються в області головної послідовності.',
-        infoRight: '<p> Приклади:</p> <p>Alcyone</p>',
-        temperature: '> 30,000 K',
-        light: '10 LSol',
-
         draw: function () {
             cancelAnimationFrame(idAnimationFrame);
             var container, scene, camera, renderer, controls, stats;
@@ -965,13 +937,6 @@ var stars = {
         }
     },
     neutronstar: {
-        myImage: 'img/6.jpg',
-        mainLabel: 'Нейтронна зоря',
-        infoLeft: 'Є одним з кінцевих продуктів еволюції зірок, що складається, в основному, з нейтронної серцевини, покритої порівняно тонкої (~1 км) корою речовини у вигляді важких атомних ядер і електронів. Мають надзвичайно високу швидкістю обертання, до тисячі обертів на секунду. ',
-        infoRight: '<p> Приклади:</p> <p> PSR B1509-58</p> <p> LGM-1</p> <p> SWIFT J1756.9-2508 </p>',
-        temperature: '6 x 105 K',
-        light: '105−106LSol',
-
         draw: function () {
             cancelAnimationFrame(idAnimationFrame);
             var container, scene, camera, renderer, controls, stats;
@@ -1121,18 +1086,6 @@ var stars = {
         }
     },
     sun_type: {
-        myImage: 'img/sun_type.jpg',
-        mainLabel: 'Зірки сонячного типу',
-        infoLeft: 'Зірки сонячного типу - це категорія зірок, більш-менш схожих на Сонце. Вивчення цих зірок вельми важливо для кращого розуміння властивостей Сонця, його унікальності або, навпаки, типовості серед інших зірок, а також можливості існування населених планет біля інших зірок.',
-        infoRight: '<p> Приклади:</p> <p> Тау Кита</p> <p> 40 Эридана A</p> <p> Солнце</p> <p>Дельта Павлина	</p>',
-        temperature: '5778 K ',
-        light: '3.75×1028 lm',
-        cell1: '',
-        cell2: '',
-        cell3: '',
-        cell4: '',
-        cell5: '',
-        cell6: '',
         draw: function () {
             cancelAnimationFrame(idAnimationFrame);
             var container, scene, camera, renderer, controls, stats;
@@ -1280,18 +1233,6 @@ var stars = {
         }
     },
     planet_remnant: {
-        myImage: 'img/planet_remnant.jpg',
-        mainLabel: 'Планетарна туманність',
-        infoLeft: 'Планетарна туманність - астрономічний об"єкт, що складається з іонізованої газової оболонки і центральної зірки, білого карлика. Планетарні туманності утворюються при скиданні зовнішніх шарів червоних гігантів і надгігантів на завершальній стадії їх еволюції.',
-        infoRight: '<p> Приклади:</p> <p>NGC 7354</p> <p>NGC 7662</p> <p>Туманность Кошачий Глаз</p> <p>Эйбелл 39</p>',
-        temperature: '10 000 К',
-        light: '105−106LSol',
-        cell1: '',
-        cell2: '',
-        cell3: '',
-        cell4: '',
-        cell5: '',
-        cell6: '',
         draw: function () {
             cancelAnimationFrame(idAnimationFrame);
             var container;
@@ -1480,18 +1421,6 @@ var stars = {
 
     },
     white_dwarf: {
-        myImage: 'img/white dwarf.jpg',
-        mainLabel: 'Білий карлик',
-        infoLeft: ' Білі карлики є компактні зірки з масами, порівнянними з масою Сонця, але з радіусами в 100 разів менше. За поширеністю білі карлики складають, за різними оцінками, 3-10% зоряного населення нашої Галактики.',
-        infoRight: '<p> Приклади:</p> <p>IK Pegasi</p> <p>BPM 37093</p> <p>G29-38 </p>',
-        temperature: '1000 K',
-        light: '1—2·108 К ',
-        cell1: '',
-        cell2: '',
-        cell3: '',
-        cell4: '',
-        cell5: '',
-        cell6: '',
         draw: function () {
             cancelAnimationFrame(idAnimationFrame);
             var container, scene, camera, renderer, controls, stats;
@@ -1627,18 +1556,6 @@ var stars = {
         }
     },
     red_dwarf: {
-        myImage: 'img/red_dwarf.jpg',
-        mainLabel: 'Червоний карлик',
-        infoLeft: 'Червоний карлик - маленька і відносно холодна зірка головної послідовності, що має спектральний клас М або верхній К.',
-        infoRight: '<p> Приклади:</p> <p>Проксима Центавра</p> <p>Звезда Барнарда</p> <p>Вольф 359</p> <p>Глизе 581</p> <p>Росс 128</p>',
-        temperature: '4000 K.',
-        light: '3.75×100 lm',
-        cell1: '',
-        cell2: '',
-        cell3: '',
-        cell4: '',
-        cell5: '',
-        cell6: '',
         draw: function () {
             cancelAnimationFrame(idAnimationFrame);
             var container, scene, camera, renderer, controls, stats;
@@ -1804,18 +1721,6 @@ var stars = {
         }
     },
     brown_dwarf: {
-        myImage: 'img/brown_dwarf.jpg',
-        mainLabel: 'Коричневий карлик',
-        infoLeft: 'Коричневі або бурі карлики - суб зоряні об"єкти після вичерпання запасів ядер легких елементів, термоядерні реакції в їхніх надрах припиняються, після чого вони відносно швидко остигають, перетворюючись на планетоподобні об"єкти.',
-        infoRight: '<p> Приклади:</p> <p>GD 165 B</p> <p>2M1207</p> <p>OTS 44 </p>',
-        temperature: '1000 K',
-        light: '~10 LSol',
-        cell1: '',
-        cell2: '',
-        cell3: '',
-        cell4: '',
-        cell5: '',
-        cell6: '',
         draw: function () {
             cancelAnimationFrame(idAnimationFrame);
             var container, scene, camera, renderer, controls, stats;

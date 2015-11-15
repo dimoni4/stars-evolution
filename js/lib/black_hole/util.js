@@ -1,5 +1,4 @@
-//https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/Array/indexOf
-//because IE sucks
+
 if (!Array.prototype.indexOf) {
 	Array.prototype.indexOf = function (searchElement /*, fromIndex */ ) {
 		"use strict";
@@ -32,8 +31,6 @@ if (!Array.prototype.indexOf) {
 		return -1;
 	}
 }
-
-//http://stackoverflow.com/questions/3954438/remove-item-from-array-by-value
 Array.prototype.remove = function() {
 	var what, a= arguments, L= a.length, ax;
 	while(L && this.length){

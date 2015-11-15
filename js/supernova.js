@@ -1,16 +1,4 @@
 stars.supernova = {
-    myImage: 'img/supernova1.jpg',
-    mainLabel: 'Наднова зірка',
-    infoLeft: 'Наднові зірки - зірки, блиск яких при спалаху збільшується на десятки зоряних величин протягом декількох діб. У максимумі блиску наднова порівнянна по яскравості з усією галактикою, в якій вона спалахнула, і навіть може перевершувати її. ',
-    infoRight: '<p> Приклади:</p> <p>SN 1972E </p> <p>SN 1572</p> <p>SN 1604 (Сверхновая Кеплера)</p> <p> SN 2006gy</p>',
-    temperature: '100 billion K',
-    light: '5*10^25 LSol',
-    cell1: '',
-    cell2: '',
-    cell3: '',
-    cell4: '',
-    cell5: '',
-    cell6: '',
     draw: function () {
         cancelAnimationFrame( idAnimationFrame );
         container = {};

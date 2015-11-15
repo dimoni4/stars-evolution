@@ -1,16 +1,4 @@
 stars.black_hole = {
-    myImage: 'img/blackhole.jpg',
-    mainLabel: 'Чорна діра ',
-    infoLeft: 'Чорна діра - область у просторі-часі, гравітаційне тяжіння якої настільки велике, що покинути її не можуть навіть об"єкти, які рухаються зі швидкістю світла, в тому числі кванти самого світла. Межа цієї області називається горизонтом подій.',
-    infoRight: '<p> Приклади:</p><p>NGC 4889</p><p>OJ 287</p>',
-    temperature: '0',
-    light: '0',
-    cell1: '',
-    cell2: '',
-    cell3: '',
-    cell4: '',
-    cell5: '',
-    cell6: '',
     draw: function () {
         cancelAnimationFrame( idAnimationFrame );
        glMaxCubeMapTextureSize = {};
