@@ -6,6 +6,9 @@ function showHide(divId) {
         div.show(100);
     }
 };
+//function remove(elem) {
+//    return elem.parentNode ? elem.parentNode.removeChild(elem) : elem;
+//}
 jQuery(document).ready(function ($) {
     var offset = 500,
         offset_opacity = 1900,

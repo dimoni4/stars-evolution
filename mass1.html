@@ -38,6 +38,7 @@
     <script type='text/javascript' src="js/lib/supernova/ColorConverter.js"></script>
     <script src="js/supernova.js"></script>
 
+    <!--<script type='text/javascript' src="js/lib/Bluesupergiant/Three.js"></script>-->
     <script type='text/javascript' src="js/lib/Bluesupergiant/RenderPass.js"></script>
     <script type='text/javascript' src="js/lib/Bluesupergiant/BloomPass.js"></script>
     <script type='text/javascript' src="js/lib/Bluesupergiant/EffectComposer.js"></script>
@@ -52,7 +53,7 @@
     <script type='text/javascript' src='js/lib/Bluesupergiant/GUI/ControllerString.js'></script>
     <script type='text/javascript' src='js/lib/Bluesupergiant/GUI/ControllerFunction.js'></script>
     <script type='text/javascript' src='js/lib/Bluesupergiant/GUI/ControllerNumber.js'></script>
-    <script type='text/javascript' src='js/lib/Bluesupergiant/Three.js'></script>
+    <!--<script id="ThreePulpo" type='text/javascript' src='js/lib/Bluesupergiant/Three.js'></script>-->
     <script type='text/javascript' src='js/lib/Bluesupergiant/GUI/jquery-1.11.1.min.js'></script>
 
     <script src="js/bluesupergiant.js"></script>
@@ -81,6 +82,7 @@
 
 
 
+
     </script>
 
     <script type="x-shader/x-fragment" id="fragmentshaderP">
@@ -99,6 +101,7 @@
     gl_FragColor = gl_FragColor * texture2D( texture_point, gl_PointCoord );
 
     }
+
 
 
 
@@ -136,6 +139,7 @@
             gl_Position = projectionMatrix * modelViewMatrix * vec4( newPosition, 1.0 );
         }
 
+
     </script>
     <script id="fragmentShader" type="x-shader/x-vertex">
         uniform sampler2D baseTexture;
@@ -172,6 +176,7 @@
             gl_FragColor = theColor;
         }
 
+
     </script>
     <script id="vertexShaderGlow" type="x-shader/x-vertex">
         varying vec3 vNormal;
@@ -180,6 +185,7 @@
             vNormal = normalize( normalMatrix * normal );
             gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
         }
+
 
     </script>
     <script id="fragmentShaderGlow" type="x-shader/x-vertex">
@@ -190,6 +196,7 @@
             gl_FragColor = vec4( 9.0, 5.0, 0.7, 0.7 ) * intensity;
         }
 
+
     </script>
     <script id="vertexShaderGlow2" type="x-shader/x-vertex">
         varying vec3 vNormal;
@@ -199,6 +206,7 @@
             gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
         }
 
+
     </script>
     <script id="fragmentShaderGlow2" type="x-shader/x-vertex">
         varying vec3 vNormal;
@@ -207,6 +215,7 @@
             float intensity = pow( 0.7 - dot( vNormal, vec3( 0.0, 0.0, 1.0 ) ), 4.0 );
             gl_FragColor = vec4( 1.0, 1.0, 1.0, 1.0 ) * intensity;
         }
+
 
     </script>
 

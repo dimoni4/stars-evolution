@@ -372,7 +372,8 @@ var stars = {
                     bumpScale: {type: "f", value: bumpScaleCircle},
                     alpha: {type: "f", value: 1.0},
                     time: {type: "f", value: 1.0}
-                };customUniformsCircle8 = {
+                };
+                customUniformsCircle8 = {
                     baseTexture: {type: "t", value: lavaTextureCircle},
                     baseSpeed: {type: "f", value: baseSpeed},
                     repeatS: {type: "f", value: repeatS},
@@ -496,22 +497,22 @@ var stars = {
                 //var Glow = new THREE.Mesh(GlowTorus, customMaterialGlow);
                 //scene.add(Glow);
 
-                var discGeometry = new THREE.TorusGeometry(250, 3, 50, 50);
+                var discGeometry = new THREE.TorusGeometry(235, 3, 50, 50);
                 disc = new THREE.Mesh(discGeometry, customCircleMaterial0);
                 disc.position.set(0, 0, 0);
-                disc.geometry.applyMatrix(new THREE.Matrix4().makeTranslation( 0, 0, 0 ) );
+                disc.geometry.applyMatrix(new THREE.Matrix4().makeTranslation(0, 0, 0));
                 scene.add(disc);
 
-                var discGeometry1 = new THREE.TorusGeometry(240, 4, 50, 50);
+                var discGeometry1 = new THREE.TorusGeometry(225, 4, 50, 50);
                 disc1 = new THREE.Mesh(discGeometry1, customCircleMaterial1);
                 disc1.position.set(0, 0, 0);
-                disc1.geometry.applyMatrix(new THREE.Matrix4().makeTranslation( 0, 0, 0 ) );
+                disc1.geometry.applyMatrix(new THREE.Matrix4().makeTranslation(0, 0, 0));
                 scene.add(disc1);
 
-                var discGeometry2 = new THREE.TorusGeometry(230, 5, 50, 50);
+                var discGeometry2 = new THREE.TorusGeometry(215, 5, 50, 50);
                 disc2 = new THREE.Mesh(discGeometry2, customCircleMaterial2);
                 disc2.position.set(0, 0, 0);
-                disc2.geometry.applyMatrix(new THREE.Matrix4().makeTranslation( 0, 0, 0 ) );
+                disc2.geometry.applyMatrix(new THREE.Matrix4().makeTranslation(0, 0, 0));
                 scene.add(disc2);
 
                 /*-------------------------*/
@@ -519,38 +520,38 @@ var stars = {
                 var discGeometry3 = new THREE.TorusGeometry(170, 6, 50, 50);
                 disc3 = new THREE.Mesh(discGeometry3, customCircleMaterial3);
                 disc3.position.set(0, 0, 0);
-                disc3.geometry.applyMatrix(new THREE.Matrix4().makeTranslation( 0, 0, 0 ) );
+                disc3.geometry.applyMatrix(new THREE.Matrix4().makeTranslation(0, 0, 0));
                 scene.add(disc3);
 
                 var discGeometry4 = new THREE.TorusGeometry(160, 7, 50, 50);
                 disc4 = new THREE.Mesh(discGeometry4, customCircleMaterial4);
                 disc4.position.set(0, 0, 0);
-                disc4.geometry.applyMatrix(new THREE.Matrix4().makeTranslation( 0, 0, 0 ) );
+                disc4.geometry.applyMatrix(new THREE.Matrix4().makeTranslation(0, 0, 0));
                 scene.add(disc4);
 
                 var discGeometry5 = new THREE.TorusGeometry(150, 8, 50, 50);
                 disc5 = new THREE.Mesh(discGeometry5, customCircleMaterial5);
                 disc5.position.set(0, 0, 0);
-                disc5.geometry.applyMatrix(new THREE.Matrix4().makeTranslation( 0, 0, 0 ) );
+                disc5.geometry.applyMatrix(new THREE.Matrix4().makeTranslation(0, 0, 0));
                 scene.add(disc5);
                 /*-------------------------*/
 
                 var discGeometry6 = new THREE.TorusGeometry(100, 7, 50, 50);
                 disc6 = new THREE.Mesh(discGeometry6, customCircleMaterial6);
                 disc6.position.set(0, 0, 0);
-                disc6.geometry.applyMatrix(new THREE.Matrix4().makeTranslation( 0, 0, 0 ) );
+                disc6.geometry.applyMatrix(new THREE.Matrix4().makeTranslation(0, 0, 0));
                 scene.add(disc6);
 
                 var discGeometry7 = new THREE.TorusGeometry(90, 6, 50, 50);
                 disc7 = new THREE.Mesh(discGeometry7, customCircleMaterial7);
                 disc7.position.set(0, 0, 0);
-                disc7.geometry.applyMatrix(new THREE.Matrix4().makeTranslation( 0, 0, 0 ) );
+                disc7.geometry.applyMatrix(new THREE.Matrix4().makeTranslation(0, 0, 0));
                 scene.add(disc7);
 
                 var discGeometry8 = new THREE.TorusGeometry(80, 5, 50, 50);
                 disc8 = new THREE.Mesh(discGeometry8, customCircleMaterial8);
                 disc8.position.set(0, 0, 0);
-                disc8.geometry.applyMatrix(new THREE.Matrix4().makeTranslation( 0, 0, 0 ) );
+                disc8.geometry.applyMatrix(new THREE.Matrix4().makeTranslation(0, 0, 0));
                 scene.add(disc8);
                 /*-------------------------*/
 
@@ -595,7 +596,7 @@ var stars = {
                 disc6.rotation.z += 0.0085;
                 disc7.rotation.z += 0.009;
                 disc8.rotation.z += 0.0095;
-               // flatG.rotation.z += 10.005;
+                // flatG.rotation.z += 10.005;
             }
 
             function animate() {
@@ -956,7 +957,7 @@ var stars = {
                 SCREEN_HEIGHT = $('#graphic').height() - 5;
                 var VIEW_ANGLE = 45, ASPECT = SCREEN_WIDTH / SCREEN_HEIGHT, NEAR = 0.1, FAR = 20000;
                 camera = new THREE.PerspectiveCamera(VIEW_ANGLE, ASPECT, NEAR, FAR);
-                camera.position.set(100, 200, 150);
+                camera.position.set(400, 200, 150);
                 // camera.lookAt(scene.position);
                 // RENDERER
                 if (Detector.webgl)
@@ -995,6 +996,8 @@ var stars = {
                 $('#graphic').html(renderer.domElement);
                 var lavaTexture = new THREE.ImageUtils.loadTexture('images/textures/neutron2.jpg');
                 lavaTexture.wrapS = lavaTexture.wrapT = THREE.RepeatWrapping;
+                var lavaTexture2 = new THREE.ImageUtils.loadTexture('images/textures/blue_giant.png');
+                lavaTexture2.wrapS = lavaTexture2.wrapT = THREE.RepeatWrapping;
                 // multiplier for distortion speed
                 var baseSpeed = 0.02;
                 // number of times to repeat texture in each direction
@@ -1009,16 +1012,22 @@ var stars = {
                 // texture to additively blend with base image texture
                 var blendTexture = new THREE.ImageUtils.loadTexture('images/textures/neutron2.jpg');
                 blendTexture.wrapS = blendTexture.wrapT = THREE.RepeatWrapping;
+
+                var blendTexture2 = new THREE.ImageUtils.loadTexture('images/textures/blue_giant.png');
+                blendTexture2.wrapS = blendTexture2.wrapT = THREE.RepeatWrapping;
                 // multiplier for distortion speed
                 var blendSpeed = 0.01;
+                var blendSpeed2 = 0.1;
                 // adjust lightness/darkness of blended texture
                 var blendOffset = 0.2;
+                var blendOffset2 = 0.02;
 
                 // texture to determine normal displacement
                 var bumpTexture = noiseTexture;
                 bumpTexture.wrapS = bumpTexture.wrapT = THREE.RepeatWrapping;
                 // multiplier for distortion speed
                 var bumpSpeed = 0.007;
+                var bumpSpeed2 = 0.009;
                 // magnitude of normal displacement
                 var bumpScale = 10.0;
 
@@ -1039,6 +1048,22 @@ var stars = {
                     time: {type: "f", value: 1.0}
                 };
 
+                customUniforms2 = {
+                    baseTexture: {type: "t", value: lavaTexture2},
+                    baseSpeed: {type: "f", value: baseSpeed},
+                    repeatS: {type: "f", value: repeatS},
+                    repeatT: {type: "f", value: repeatT},
+                    noiseTexture: {type: "t", value: noiseTexture},
+                    noiseScale: {type: "f", value: noiseScale},
+                    blendTexture: {type: "t", value: blendTexture2},
+                    blendSpeed: {type: "f", value: blendSpeed2},
+                    blendOffset: {type: "f", value: blendOffset2},
+                    bumpTexture: {type: "t", value: bumpTexture},
+                    bumpSpeed: {type: "f", value: bumpSpeed2},
+                    bumpScale: {type: "f", value: bumpScale},
+                    alpha: {type: "f", value: 1.0},
+                    time: {type: "f", value: 1.0}
+                };
                 // create custom material from the shader code above
                 //   that is within specially labeled script tags
                 var customMaterial = new THREE.ShaderMaterial(
@@ -1047,34 +1072,59 @@ var stars = {
                         vertexShader: document.getElementById('vertexShader').textContent,
                         fragmentShader: document.getElementById('fragmentShader').textContent
                     });
+                var customMaterial2 = new THREE.ShaderMaterial(
+                    {
+                        uniforms: customUniforms2,
+                        vertexShader: document.getElementById('vertexShader').textContent,
+                        fragmentShader: document.getElementById('fragmentShader').textContent
+                    });
 
                 var ballGeometry = new THREE.SphereGeometry(50, 64, 64);
-                var ball = new THREE.Mesh(ballGeometry, customMaterial);
+                ball = new THREE.Mesh(ballGeometry, customMaterial);
                 ball.position.set(0, 0, 0);
-
+                disc8.geometry.applyMatrix(new THREE.Matrix4().makeTranslation(0, 0, 0));
                 scene.add(ball);
-//                var spriteMaterial = new THREE.SpriteMaterial(
-//                    {
-//                        map: new THREE.ImageUtils.loadTexture('images/textures/glowN.png'),
-//                        useScreenCoordinates: true,
-//                        alignment: THREE.SpriteAlignment.center,
-//                        color: 0xFFFF00,
-//                        transparent: false,
-//                        blending: THREE.AdditiveBlending
-//                    });
-//                var sprite = new THREE.Sprite(spriteMaterial);
-//                sprite.scale.set(240, 240, 1.0);
-//                ball.add(sprite);
+
+                var cylinderGeometry = new THREE.CylinderGeometry(15, 1, 2800, 30, 50, true);
+                cylinder1 = new THREE.Mesh(cylinderGeometry, customMaterial2);
+                cylinder1.position.set(0, 0, 0);
+                scene.add(cylinder1);
+
+                var cylinderGeometry2 = new THREE.CylinderGeometry(1, 15, 2800, 30, 50, true);
+                cylinder2 = new THREE.Mesh(cylinderGeometry2, customMaterial2);
+                cylinder2.position.set(0, 0, 0);
+                scene.add(cylinder2);
+
+                spriteMaterial = new THREE.SpriteMaterial(
+                    {
+                        map: new THREE.ImageUtils.loadTexture('images/textures/1234.png'),
+                        useScreenCoordinates: false,
+                        alignment: THREE.SpriteAlignment.center,
+                        color: 0x9966CC,
+                        transparent: false,
+                        blending: THREE.AdditiveBlending
+                    });
+                var sprite = new THREE.Sprite(spriteMaterial);
+                sprite.scale.set(200, 200, 1.0);
+                ball.add(sprite);
+            }
+
+            function rotateNeutron() {
+                cylinder1.rotation.x += 0.003;
+                cylinder2.rotation.x += 0.003;
+                ball.rotation.x += 0.003;
             }
 
             function animate() {
                 idAnimationFrame = requestAnimationFrame(animate);
+                rotateNeutron();
                 render();
                 update();
             }
 
             function update() {
-                customUniforms.time.value += clock.getDelta();
+                customUniforms.time.value += clock.getDelta()
+                customUniforms2.time.value = customUniforms.time.value;
                 controls.update();
                 stats.update();
             }

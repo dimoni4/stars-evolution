@@ -16,7 +16,7 @@ stars.supernova = {
 
         shaderMaterial = {};
 
-        numParticles = gup('particles') || 256;
+        numParticles = gup('particles') || 456;
 
         composerVel = {};
         composerPos = {};
