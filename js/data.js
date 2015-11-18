@@ -1072,13 +1072,20 @@ var stars = {
                         vertexShader: document.getElementById('vertexShader').textContent,
                         fragmentShader: document.getElementById('fragmentShader').textContent
                     });
-                var customMaterial2 = new THREE.ShaderMaterial(
+                var customMaterial3 = new THREE.ShaderMaterial(
                     {
                         uniforms: customUniforms2,
                         vertexShader: document.getElementById('vertexShader').textContent,
                         fragmentShader: document.getElementById('fragmentShader').textContent
                     });
-
+                var customMaterial2 = new THREE.ShaderMaterial(
+                    {
+                        uniforms: {},
+                        vertexShader: document.getElementById('vertexShaderGlow2').textContent,
+                        fragmentShader: document.getElementById('fragmentShaderGlow2').textContent,
+                        blending: THREE.AdditiveBlending,
+                        transparent: true
+                    });
                 var ballGeometry = new THREE.SphereGeometry(50, 64, 64);
                 ball = new THREE.Mesh(ballGeometry, customMaterial);
                 ball.position.set(0, 0, 0);
@@ -1094,6 +1101,16 @@ var stars = {
                 cylinder2 = new THREE.Mesh(cylinderGeometry2, customMaterial2);
                 cylinder2.position.set(0, 0, 0);
                 scene.add(cylinder2);
+
+                var cylinderGeometryHearth = new THREE.CylinderGeometry(5, 1, 2800, 30, 50, true);
+                cylinderHearth1 = new THREE.Mesh(cylinderGeometryHearth, customMaterial3);
+                cylinderHearth1.position.set(0, 0, 0);
+                scene.add(cylinderHearth1);
+
+                var cylinderGeometryHearth2 = new THREE.CylinderGeometry(1, 5, 2800, 30, 50, true);
+                cylinderHearth2 = new THREE.Mesh(cylinderGeometryHearth2, customMaterial3);
+                cylinderHearth2.position.set(0, 0, 0);
+                scene.add(cylinderHearth2);
 
                 spriteMaterial = new THREE.SpriteMaterial(
                     {
@@ -1112,6 +1129,8 @@ var stars = {
             function rotateNeutron() {
                 cylinder1.rotation.x += 0.003;
                 cylinder2.rotation.x += 0.003;
+                cylinderHearth1.rotation.x += 0.003;
+                cylinderHearth2.rotation.x += 0.003;
                 ball.rotation.x += 0.003;
             }
 
