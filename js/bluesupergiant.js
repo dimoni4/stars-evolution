@@ -10741,10 +10741,14 @@ stars.blue_sverx_giant = {
 
         ////-------------------------------------------------------
         function init() {
+            //var imagePrefix = "images/textures/skybox_";
+            //var directions = ["right1", "left2", "top3", "bottom4", "front5", "back6"];
+            //var imageSuffix = ".png";
+            //var materialArray = [];
+            //var skyGeometry = new THREE.CubeGeometry(22000, 22000, 22000);
             container = document.getElementById('graphic');
-            document.body.appendChild(container);
             camera = new THREE.Camera(14.32, winnerWidth / winnerHeight, 1, 5000);
-            camera.position.z = 1000;
+            camera.position.z = 670;
 //                controls = new THREE.OrbitControls( camera );
 //                controls.addEventListener( 'change', render );
             //
@@ -10752,18 +10756,29 @@ stars.blue_sverx_giant = {
             // scene.fog = new THREE.Fog( 0x020209, 0, 25000 );
             scene.matrixAutoUpdate = true;
             //
+            //for (var i = 0; i < 6; i++)
+            //    materialArray.push(new THREE.MeshBasicMaterial({
+            //        map: THREE.ImageUtils.loadTexture(imagePrefix + directions[i] + imageSuffix),
+            //        side: THREE.BackSide
+            //    }));
+            //var skyMaterial = new THREE.MeshFaceMaterial(materialArray);
+            //var skyBox = new THREE.Mesh(skyGeometry, skyMaterial);
+            //THREE.EffectComposer.scene.addObject(skyBox);
+           // scene.addObject(skyBox);
+
             renderer = new THREE.WebGLRenderer({clearAlpha: 1, antialias: false});
             renderer.setSize(winnerWidth, winnerHeight);
             renderer.sortElements = true;
             renderer.autoClear = !pospo;
             // renderer.setClearColor( scene.fog.color, 1 );
-            container.appendChild(renderer.domElement);
+            $('#graphic').html(renderer.domElement);
             //
             if (_stats) {
                 stats = new Stats();
                 stats.domElement.style.position = 'absolute';
                 stats.domElement.style.top = '0px';
-                container.appendChild(stats.domElement);
+                stats.domElement.style.display = 'none';
+                $('#graphic').html(renderer.domElement);
             }
             //
             document.addEventListener('mousemove', onDocumentMouseMove, false);

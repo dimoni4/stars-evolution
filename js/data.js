@@ -831,7 +831,7 @@ var stars = {
                     renderer = new THREE.CanvasRenderer();
                 renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
                 container = document.getElementById('graphic');
-                $('#graphic').html(renderer.domElement);
+               // $('#graphic').html(renderer.domElement);
                 // EVENTS
                 THREEx.WindowResize(renderer, camera);
                 THREEx.FullScreen.bindKey({charCode: 'm'.charCodeAt(0)});
@@ -957,7 +957,7 @@ var stars = {
                 SCREEN_HEIGHT = $('#graphic').height() - 5;
                 var VIEW_ANGLE = 45, ASPECT = SCREEN_WIDTH / SCREEN_HEIGHT, NEAR = 0.1, FAR = 20000;
                 camera = new THREE.PerspectiveCamera(VIEW_ANGLE, ASPECT, NEAR, FAR);
-                camera.position.set(400, 200, 150);
+                camera.position.set(200, 200, 150);
                 // camera.lookAt(scene.position);
                 // RENDERER
                 if (Detector.webgl)
@@ -994,9 +994,9 @@ var stars = {
                 stats.domElement.style.bottom = '0px';
                 stats.domElement.style.zIndex = 100;
                 $('#graphic').html(renderer.domElement);
-                var lavaTexture = new THREE.ImageUtils.loadTexture('images/textures/neutron2.jpg');
+                var lavaTexture = new THREE.ImageUtils.loadTexture('images/textures/blue_giant.png');
                 lavaTexture.wrapS = lavaTexture.wrapT = THREE.RepeatWrapping;
-                var lavaTexture2 = new THREE.ImageUtils.loadTexture('images/textures/blue_giant.png');
+                var lavaTexture2 = new THREE.ImageUtils.loadTexture('images/textures/neutronCylinder.png');
                 lavaTexture2.wrapS = lavaTexture2.wrapT = THREE.RepeatWrapping;
                 // multiplier for distortion speed
                 var baseSpeed = 0.02;
@@ -1010,10 +1010,10 @@ var stars = {
                 var noiseScale = 1;
 
                 // texture to additively blend with base image texture
-                var blendTexture = new THREE.ImageUtils.loadTexture('images/textures/neutron2.jpg');
+                var blendTexture = new THREE.ImageUtils.loadTexture('images/textures/blue_giant.png');
                 blendTexture.wrapS = blendTexture.wrapT = THREE.RepeatWrapping;
 
-                var blendTexture2 = new THREE.ImageUtils.loadTexture('images/textures/blue_giant.png');
+                var blendTexture2 = new THREE.ImageUtils.loadTexture('images/textures/neutronCylinder.png');
                 blendTexture2.wrapS = blendTexture2.wrapT = THREE.RepeatWrapping;
                 // multiplier for distortion speed
                 var blendSpeed = 0.01;
@@ -1092,22 +1092,22 @@ var stars = {
                 disc8.geometry.applyMatrix(new THREE.Matrix4().makeTranslation(0, 0, 0));
                 scene.add(ball);
 
-                var cylinderGeometry = new THREE.CylinderGeometry(15, 1, 2800, 30, 50, true);
+                var cylinderGeometry = new THREE.CylinderGeometry(15, 1, 3800, 30, 50, true);
                 cylinder1 = new THREE.Mesh(cylinderGeometry, customMaterial2);
                 cylinder1.position.set(0, 0, 0);
                 scene.add(cylinder1);
 
-                var cylinderGeometry2 = new THREE.CylinderGeometry(1, 15, 2800, 30, 50, true);
+                var cylinderGeometry2 = new THREE.CylinderGeometry(1, 15, 3800, 30, 50, true);
                 cylinder2 = new THREE.Mesh(cylinderGeometry2, customMaterial2);
                 cylinder2.position.set(0, 0, 0);
                 scene.add(cylinder2);
 
-                var cylinderGeometryHearth = new THREE.CylinderGeometry(5, 1, 2800, 30, 50, true);
+                var cylinderGeometryHearth = new THREE.CylinderGeometry(5, 1, 3800, 30, 50, true);
                 cylinderHearth1 = new THREE.Mesh(cylinderGeometryHearth, customMaterial3);
                 cylinderHearth1.position.set(0, 0, 0);
                 scene.add(cylinderHearth1);
 
-                var cylinderGeometryHearth2 = new THREE.CylinderGeometry(1, 5, 2800, 30, 50, true);
+                var cylinderGeometryHearth2 = new THREE.CylinderGeometry(1, 5, 3800, 30, 50, true);
                 cylinderHearth2 = new THREE.Mesh(cylinderGeometryHearth2, customMaterial3);
                 cylinderHearth2.position.set(0, 0, 0);
                 scene.add(cylinderHearth2);
@@ -1127,11 +1127,11 @@ var stars = {
             }
 
             function rotateNeutron() {
-                cylinder1.rotation.x += 0.003;
-                cylinder2.rotation.x += 0.003;
-                cylinderHearth1.rotation.x += 0.003;
-                cylinderHearth2.rotation.x += 0.003;
-                ball.rotation.x += 0.003;
+                cylinder1.rotation.x += 0.029;
+                cylinder2.rotation.x += 0.029;
+                cylinderHearth1.rotation.x += 0.029;
+                cylinderHearth2.rotation.x += 0.029;
+                ball.rotation.x += 0.029;
             }
 
             function animate() {
