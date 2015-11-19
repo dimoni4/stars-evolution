@@ -611,7 +611,7 @@ input[type="radio"] + label:before {
 
 .image.massimage img {
     max-width: 100%;
-    height: 180px;
+    max-height: 100%;
     display: block;
     margin: auto;
 }

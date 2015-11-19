@@ -10825,7 +10825,7 @@ stars.blue_sverx_giant = {
                 mi_pulpo.inst().rotation.y += 0.03;
             }
 
-            requestAnimationFrame(animate);
+            idAnimationFrame = requestAnimationFrame(animate);
             //controls.update();
             render();
             stats.update();
