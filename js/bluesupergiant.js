@@ -10458,8 +10458,8 @@ stars.blue_sverx_giant = {
         var mouseX = 0, mouseY = 0;
         var count = 0
         var mouseDn = 0
-        var winnerWidth = 1200
-        var winnerHeight = 495
+        var winnerWidth = $('#graphic').width();
+        var winnerHeight = ($('#graphic').height() - 5);
         var windowHalfX = winnerWidth / 2;
         var windowHalfY = winnerHeight / 2;
         var postprocessing = {enabled: false};

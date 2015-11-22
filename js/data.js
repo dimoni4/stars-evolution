@@ -169,7 +169,7 @@ var stars = {
         draw: function () {
             cancelAnimationFrame(idAnimationFrame);
             SCREEN_WIDTH = $('#graphic').width();
-            SCREEN_HEIGHT = $('#graphic').height() - 5;
+            SCREEN_HEIGHT = $('#graphic').height()-5;
             var container, scene, camera, renderer, controls, stats, camera2;
             var clock = new THREE.Clock();
             init();
@@ -179,9 +179,9 @@ var stars = {
             // FUNCTIONS
             function init() {
                 scene = new THREE.Scene();
-                VIEW_ANGLE = 45, ASPECT = SCREEN_WIDTH / SCREEN_HEIGHT, NEAR = 0.1, FAR = 20000;
+                VIEW_ANGLE = 47, ASPECT = SCREEN_WIDTH / SCREEN_HEIGHT, NEAR = 0.1, FAR = 20000;
                 camera = new THREE.PerspectiveCamera(VIEW_ANGLE, ASPECT, NEAR, FAR);
-                camera.position.set(300, -400, 300);
+                camera.position.set(335, -400, 300);
                 if (Detector.webgl)
                     renderer = new THREE.WebGLRenderer({antialias: true});
                 else
@@ -625,183 +625,6 @@ var stars = {
             }
         }
     },
-//    blue_sverx_giant: {
-//        draw: function () {
-//            cancelAnimationFrame(idAnimationFrame);
-//            var container, scene, camera, renderer, controls, stats;
-//            var keyboard = new THREEx.KeyboardState();
-//            var clock = new THREE.Clock();
-//            // custom global variables
-//
-//            init();
-//            animate();
-//
-//            // FUNCTIONS
-//            function init() {
-//
-//                // SCENE
-//                scene = new THREE.Scene();
-//                // CAMERA
-//                SCREEN_WIDTH = $('#graphic').width();
-//                SCREEN_HEIGHT = $('#graphic').height() - 5;
-//                VIEW_ANGLE = 45, ASPECT = SCREEN_WIDTH / SCREEN_HEIGHT, NEAR = 0.1, FAR = 20000;
-//                camera = new THREE.PerspectiveCamera(VIEW_ANGLE, ASPECT, NEAR, FAR);
-//                camera.position.set(100, 200, 150);
-//
-//                if (Detector.webgl)
-//                    renderer = new THREE.WebGLRenderer({antialias: true});
-//                else
-//                    renderer = new THREE.CanvasRenderer();
-//                renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
-//                container = document.getElementById('graphic');
-//                $('#graphic').html(renderer.domElement);
-//                // EVENTS
-//                THREEx.WindowResize(renderer, camera);
-//                THREEx.FullScreen.bindKey({charCode: 'm'.charCodeAt(0)});
-//                // CONTROLS
-//                controls = new THREE.OrbitControls(camera, renderer.domElement);
-//                // STATS
-//                stats = new Stats();
-//                stats.domElement.style.display = 'none';
-//                stats.domElement.style.position = 'absolute';
-//                stats.domElement.style.bottom = '0px';
-//                stats.domElement.style.zIndex = 100;
-//                $('#graphic').html(renderer.domElement);
-//                // LIGHT
-//                var light = new THREE.PointLight(0xffffff);
-//                light.position.set(0, 250, 0);
-//                scene.add(light);
-//                // SKYBOX/FOG
-//                var imagePrefix = "images/textures/skybox_";
-//                var directions = ["right1", "left2", "top3", "bottom4", "front5", "back6"];
-//                var imageSuffix = ".png";
-//                var skyGeometry = new THREE.CubeGeometry(22000, 22000, 22000);
-//
-//                var materialArray = [];
-//                for (var i = 0; i < 6; i++)
-//                    materialArray.push(new THREE.MeshBasicMaterial({
-//                        map: THREE.ImageUtils.loadTexture(imagePrefix + directions[i] + imageSuffix),
-//                        side: THREE.BackSide
-//                    }));
-//                var skyMaterial = new THREE.MeshFaceMaterial(materialArray);
-//                var skyBox = new THREE.Mesh(skyGeometry, skyMaterial);
-//                scene.add(skyBox);
-//
-//                var lavaTexture = new THREE.ImageUtils.loadTexture('images/textures/blue_giant.png');
-//                lavaTexture.wrapS = lavaTexture.wrapT = THREE.RepeatWrapping;
-//
-//                var baseSpeed = 0.02;
-//                // number of times to repeat texture in each direction
-//                var repeatS = repeatT = 1.0;
-//
-//                // texture used to generate "randomness", distort all other textures
-//                var noiseTexture = new THREE.ImageUtils.loadTexture('images/textures/cloud.png');
-//                noiseTexture.wrapS = noiseTexture.wrapT = THREE.RepeatWrapping;
-//                // magnitude of noise effect
-//                var noiseScale = 1;
-//
-//                // texture to additively blend with base image texture
-//
-//
-//                // texture to additively blend with base image texture
-//                var blendTexture = new THREE.ImageUtils.loadTexture('images/textures/blue_giant.png');
-//                blendTexture.wrapS = blendTexture.wrapT = THREE.RepeatWrapping;
-//                // var blendTextureCircle = new THREE.ImageUtils.loadTexture('images/textures/protocircle2.png');
-//                // blendTextureCircle.wrapS = blendTextureCircle.wrapT = THREE.RepeatWrapping;
-//                // multiplier for distortion speed
-//                var blendSpeed = 0.01;
-//                // adjust lightness/darkness of blended texture
-//                var blendOffset = 0.005;
-//
-//                // texture to determine normal displacement
-//                var bumpTexture = noiseTexture;
-//                bumpTexture.wrapS = bumpTexture.wrapT = THREE.RepeatWrapping;
-//                // multiplier for distortion speed
-//                var bumpSpeed = 0.007;
-//                // magnitude of normal displacement
-//                var bumpScale = 10.0;
-//
-////                var bumpSpeedCircle = 0.0001;
-////                // magnitude of normal displacement
-////                var bumpScaleCircle = 15.0;
-//
-//
-//                customUniforms = {
-//                    baseTexture: {type: "t", value: lavaTexture},
-//                    baseSpeed: {type: "f", value: baseSpeed},
-//                    repeatS: {type: "f", value: repeatS},
-//                    repeatT: {type: "f", value: repeatT},
-//                    noiseTexture: {type: "t", value: noiseTexture},
-//                    noiseScale: {type: "f", value: noiseScale},
-//                    blendTexture: {type: "t", value: blendTexture},
-//                    blendSpeed: {type: "f", value: blendSpeed},
-//                    blendOffset: {type: "f", value: blendOffset},
-//                    bumpTexture: {type: "t", value: bumpTexture},
-//                    bumpSpeed: {type: "f", value: bumpSpeed},
-//                    bumpScale: {type: "f", value: bumpScale},
-//                    alpha: {type: "f", value: 1.0},
-//                    time: {type: "f", value: 1.0}
-//                };
-//                var customMaterial = new THREE.ShaderMaterial(
-//                    {
-//                        uniforms: customUniforms,
-//                        vertexShader: document.getElementById('vertexShader').textContent,
-//                        fragmentShader: document.getElementById('fragmentShader').textContent
-//                    });
-//                var sphereGeo = new THREE.SphereGeometry(64, 40, 40);
-//
-//                // var moonTexture = THREE.ImageUtils.loadTexture( 'images/textures/blue_giant.png' );
-//                // var moonMaterial = new THREE.MeshBasicMaterial( { map: moonTexture } );
-//                var moon = new THREE.Mesh(sphereGeo, customMaterial);
-//                scene.add(moon);
-//
-//                // create custom material from the shader code above
-//                //   that is within specially labeled script tags
-//                var customMaterial = new THREE.ShaderMaterial(
-//                    {
-//                        uniforms: {},
-//                        vertexShader: document.getElementById('vertexShaderGlow2').textContent,
-//                        fragmentShader: document.getElementById('fragmentShaderGlow2').textContent,
-//                        side: THREE.BackSide,
-//                        blending: THREE.AdditiveBlending,
-//                        transparent: true
-//                    });
-//
-//                var ballGeometry = new THREE.SphereGeometry(77, 32, 16);
-//                var ball = new THREE.Mesh(ballGeometry, customMaterial);
-//                scene.add(ball);
-//
-////                var spriteMaterial = new THREE.SpriteMaterial(
-////                    {
-////                        map: new THREE.ImageUtils.loadTexture('images/textures/glow.png'),
-////                        useScreenCoordinates: false,
-////                        alignment: THREE.SpriteAlignment.center,
-////                        color: 0xFFFFFF,
-////                        transparent: false,
-////                        blending: THREE.AdditiveBlending
-////                    });
-////                var sprite = new THREE.Sprite(spriteMaterial);
-////                sprite.scale.set(440, 440, 1.0);
-////                ball.add(sprite);
-//            }
-//
-//            function animate() {
-//                idAnimationFrame = requestAnimationFrame(animate);
-//                render();
-//                update();
-//            }
-//
-//            function update() {
-//                customUniforms.time.value += clock.getDelta();
-//                controls.update();
-//                stats.update();
-//            }
-//
-//            function render() {
-//                renderer.render(scene, camera);
-//            }
-//        }
-//    },
     blue_giant: {
         draw: function () {
             cancelAnimationFrame(idAnimationFrame);
@@ -909,8 +732,8 @@ var stars = {
                 var customMaterial = new THREE.ShaderMaterial(
                     {
                         uniforms: {},
-                        vertexShader: document.getElementById('vertexShaderGlow').textContent,
-                        fragmentShader: document.getElementById('fragmentShaderGlow').textContent,
+                        vertexShader: document.getElementById('vertexShaderGlow3').textContent,
+                        fragmentShader: document.getElementById('fragmentShaderGlow3').textContent,
                         side: THREE.BackSide,
                         blending: THREE.AdditiveBlending,
                         transparent: true
@@ -954,7 +777,7 @@ var stars = {
                 scene = new THREE.Scene();
                 // CAMERA
                 SCREEN_WIDTH = $('#graphic').width();
-                SCREEN_HEIGHT = $('#graphic').height() - 5;
+                SCREEN_HEIGHT = $('#graphic').height()-5;
                 var VIEW_ANGLE = 45, ASPECT = SCREEN_WIDTH / SCREEN_HEIGHT, NEAR = 0.1, FAR = 20000;
                 camera = new THREE.PerspectiveCamera(VIEW_ANGLE, ASPECT, NEAR, FAR);
                 camera.position.set(200, 200, 150);
@@ -1127,11 +950,11 @@ var stars = {
             }
 
             function rotateNeutron() {
-                cylinder1.rotation.x += 0.029;
-                cylinder2.rotation.x += 0.029;
-                cylinderHearth1.rotation.x += 0.029;
-                cylinderHearth2.rotation.x += 0.029;
-                ball.rotation.x += 0.029;
+                cylinder1.rotation.x += 0.019;
+                cylinder2.rotation.x += 0.019;
+                cylinderHearth1.rotation.x += 0.019;
+                cylinderHearth2.rotation.x += 0.019;
+                ball.rotation.x += 0.019;
             }
 
             function animate() {
@@ -1596,8 +1419,8 @@ var stars = {
                 var customMaterial = new THREE.ShaderMaterial(
                     {
                         uniforms: {},
-                        vertexShader: document.getElementById('vertexShaderGlow').textContent,
-                        fragmentShader: document.getElementById('fragmentShaderGlow').textContent,
+                        vertexShader: document.getElementById('vertexShaderGlow3').textContent,
+                        fragmentShader: document.getElementById('fragmentShaderGlow3').textContent,
                         side: THREE.BackSide,
                         blending: THREE.AdditiveBlending,
                         transparent: true
@@ -1931,7 +1754,11 @@ function showBigPicture(picName, starName) {
     $('#ImageContainer').html("<img width='100%' src='images/stars/" + starName + "/" + picName + ".jpg'>");
     $('#ImageContainer').show(100);
 }
-
+function showBigPictureTheory(picName) {
+    $('#ImageContainerTheory').hide(0);
+    $('#ImageContainerTheory').html("<img width='70%' src='images/theoryImg/" + picName + ".jpg'>");
+    $('#ImageContainerTheory').show(100);
+}
 function importStarPage(starName) {
     $('#main').load(starName);
 }
