@@ -6,12 +6,12 @@ WAGNER.PositionPass = function() {
     var width = numParticles;
     var height =numParticles;
     var n = width * height;
-    var data = new Float32Array( n * 4 ),radius, q, l,xp,yp,zp;
+    var data = new Float32Array( n * 4 ),radius, q, l,xp,yp,zp,maxxp=0;
 
     for (var k = 0; k < (n*4); k+=4) {
         radius=Math.random()*800+800;
         q=Math.random()*Math.PI*2;
-        l=Math.random()*2-1
+        l=Math.random()*2-1;
         xp=(Math.cos(q)*Math.sqrt(1-Math.pow(l,2)))*radius;
         yp=(Math.sin(q)*Math.sqrt(1-Math.pow(l,2)))*radius;
         zp=l*radius;

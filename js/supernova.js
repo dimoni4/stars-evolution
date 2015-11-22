@@ -1,6 +1,6 @@
 stars.supernova = {
     draw: function () {
-        cancelAnimationFrame( idAnimationFrame );
+        cancelAnimationFrame(idAnimationFrame);
         container = {};
         stats = {};
 
@@ -25,7 +25,6 @@ stars.supernova = {
 
         init();
         animate();
-
         function init() {
 
             container = document.getElementById('graphic');
@@ -33,7 +32,7 @@ stars.supernova = {
             var ambient = new THREE.AmbientLight(0xFFFFFF);
             scene.add(ambient);
 
-            camera = new THREE.PerspectiveCamera(45,  windowHalfX / windowHalfY, 1, 1000000);
+            camera = new THREE.PerspectiveCamera(45, windowHalfX / windowHalfY, 1, 1000000);
             camera.position.z = 500;
             camera.lookAt(scene.position);
             scene.add(camera);
@@ -41,18 +40,21 @@ stars.supernova = {
 
             var attributes = {
 
-                size: { type: 'f', value: [] },
-                customColor: { type: 'c', value: [] },
-                aPoints: { type: 'v2', value: [new THREE.Vector2()] }
+                size: {type: 'f', value: []},
+                customColor: {type: 'c', value: []},
+                aPoints: {type: 'v2', value: [new THREE.Vector2()]}
 
             };
 
             var uniforms = {
 
-                amplitude: { type: "f", value: 1.0 },
-                color: { type: "c", value: new THREE.Color(0x0066FF) },
-                texture: { type: "t", value: null },
-                texture_point: { type: "t", value: THREE.ImageUtils.loadTexture("images/supernova/assets/textures/spark1.png") }
+                amplitude: {type: "f", value: 1.0},
+                color: {type: "c", value: new THREE.Color(0x0066FF)},
+                texture: {type: "t", value: null},
+                texture_point: {
+                    type: "t",
+                    value: THREE.ImageUtils.loadTexture("images/supernova/assets/textures/spark1.png")
+                }
 
             };
 
@@ -64,7 +66,7 @@ stars.supernova = {
                 fragmentShader: document.getElementById('fragmentshaderP').textContent,
                 blending: THREE.AdditiveBlending,
                 depthTest: false,
-                depthWrite:false,
+                depthWrite: false,
                 transparent: true
 
 
@@ -89,13 +91,13 @@ stars.supernova = {
 
             for (var v = 0; v < vertices.length; v++) {
 
-                values_size[ v ] = 10;
-                values_color[ v ] = new THREE.Color(0xFFFFFF);
+                values_size[v] = 10;
+                values_color[v] = new THREE.Color(0xFFFFFF);
 
-                if (vertices[ v ].x < 0)
-                    THREE.ColorConverter.setHSV(values_color[ v ], 0.5 + 0.1 * ( v / vertices.length ), 0.7, 0.9);
+                if (vertices[v].x < 0)
+                    THREE.ColorConverter.setHSV(values_color[v], 0.5 + 0.1 * ( v / vertices.length ), 0.7, 0.9);
                 else
-                    THREE.ColorConverter.setHSV(values_color[ v ], 0.0 + 0.1 * ( v / vertices.length ), 0.9, 0.9);
+                    THREE.ColorConverter.setHSV(values_color[v], 0.0 + 0.1 * ( v / vertices.length ), 0.9, 0.9);
 
 
             }
@@ -104,7 +106,6 @@ stars.supernova = {
             for (var y = d / 2; y < 1; y += d) {
                 for (var x = d / 2; x < 1; x += d) {
                     particles.push(new THREE.Vector2(x, y));
-
                 }
             }
 
@@ -116,11 +117,11 @@ stars.supernova = {
 
             renderer = new THREE.WebGLRenderer();//{ antialias: false, alpha: true });
             renderer.autoClear = true;
-            renderer.setSize(windowHalfX,  windowHalfY);
+            renderer.setSize(windowHalfX, windowHalfY);
             container.appendChild(renderer.domElement);
 
 
-            var settingsVel={
+            var settingsVel = {
                 useRGBA: true,
                 wrapS: THREE.RepeatWrapping,
                 wrapT: THREE.RepeatWrapping,
@@ -131,7 +132,7 @@ stars.supernova = {
                 stencilBuffer: false
             };
 
-            var settingsPos={
+            var settingsPos = {
                 useRGBA: true,
                 wrapS: THREE.RepeatWrapping,
                 wrapT: THREE.RepeatWrapping,
@@ -153,7 +154,6 @@ stars.supernova = {
             onWindowResize();
 
 
-
             composerPos.reset();
             composerVel.reset();
 
@@ -163,7 +163,7 @@ stars.supernova = {
 
             var s = 1,
                 w = windowHalfX,
-                h =  windowHalfY;
+                h = windowHalfY;
 
             renderer.setSize(s * w, s * h);
             camera.projectionMatrix.makePerspective(45, w / h, camera.near, camera.far);
@@ -187,6 +187,7 @@ stars.supernova = {
 
         }
         var ready = false;
+
         function render() {
 
             if (composerPos.copyPass.isLoaded() && composerVel.copyPass.isLoaded() && !ready) {
@@ -196,11 +197,11 @@ stars.supernova = {
                 composerPos.setSource(posPass.temptexture);
 
             }
-            if(!ready) return;
+            if (!ready) return;
 
 
             camera.position.x += ( mouseX - camera.position.x ) * .05;
-            camera.position.y += ( - mouseY - camera.position.y ) * .05;
+            camera.position.y += ( -mouseY - camera.position.y ) * .05;
             camera.lookAt(scene.position);
 
 

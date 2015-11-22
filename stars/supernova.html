@@ -166,6 +166,6 @@
     document.getElementById('ImageContainer').onclick = function () {
         $('#ImageContainer').hide(100);
     };
-
     stars.supernova.draw();
+    setTimeout(function() {  cancelAnimationFrame(idAnimationFrame); } , 6200);
 </script>
