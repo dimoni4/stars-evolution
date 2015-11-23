@@ -16,7 +16,7 @@ stars.supernova = {
 
         shaderMaterial = {};
 
-        numParticles = gup('particles') || 456;
+        numParticles = gup('particles') || 430;
 
         composerVel = {};
         composerPos = {};
@@ -195,7 +195,7 @@ stars.supernova = {
                 ready = true;
                 composerVel.setSource(velPass.temptexture);
                 composerPos.setSource(posPass.temptexture);
-
+                setTimeout(function() {  cancelAnimationFrame(idAnimationFrame); } , 6201);
             }
             if (!ready) return;
 
