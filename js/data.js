@@ -629,45 +629,31 @@ var stars = {
         draw: function () {
             cancelAnimationFrame(idAnimationFrame);
             var container, scene, camera, renderer, controls, stats;
-            var keyboard = new THREEx.KeyboardState();
             var clock = new THREE.Clock();
-            // custom global variables
-
             init();
             animate();
-
-            // FUNCTIONS
             function init() {
-
-                // SCENE
                 scene = new THREE.Scene();
-                // CAMERA
                 SCREEN_WIDTH = $('#graphic').width();
                 SCREEN_HEIGHT = $('#graphic').height() - 5;
                 VIEW_ANGLE = 45, ASPECT = SCREEN_WIDTH / SCREEN_HEIGHT, NEAR = 0.1, FAR = 20000;
                 camera = new THREE.PerspectiveCamera(VIEW_ANGLE, ASPECT, NEAR, FAR);
                 camera.position.set(100, 200, 150);
-
                 if (Detector.webgl)
                     renderer = new THREE.WebGLRenderer({antialias: true});
                 else
                     renderer = new THREE.CanvasRenderer();
                 renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
                 container = document.getElementById('graphic');
-               // $('#graphic').html(renderer.domElement);
-                // EVENTS
                 THREEx.WindowResize(renderer, camera);
                 THREEx.FullScreen.bindKey({charCode: 'm'.charCodeAt(0)});
-                // CONTROLS
                 controls = new THREE.OrbitControls(camera, renderer.domElement);
-                // STATS
                 stats = new Stats();
                 stats.domElement.style.display = 'none';
                 stats.domElement.style.position = 'absolute';
                 stats.domElement.style.bottom = '0px';
                 stats.domElement.style.zIndex = 100;
                 $('#graphic').html(renderer.domElement);
-                // LIGHT
                 var light = new THREE.PointLight(0xffffff);
                 light.position.set(0, 250, 0);
                 scene.add(light);
@@ -675,7 +661,6 @@ var stars = {
                 var directions = ["right1", "left2", "top3", "bottom4", "front5", "back6"];
                 var imageSuffix = ".png";
                 var skyGeometry = new THREE.CubeGeometry(22000, 22000, 22000);
-
                 var materialArray = [];
                 for (var i = 0; i < 6; i++)
                     materialArray.push(new THREE.MeshBasicMaterial({
@@ -695,14 +680,10 @@ var stars = {
                 var blendTexture = new THREE.ImageUtils.loadTexture('images/textures/blue_giant4.png');
                 blendTexture.wrapS = blendTexture.wrapT = THREE.RepeatWrapping;
                 var blendSpeed = 0.01;
-                // adjust lightness/darkness of blended texture
                 var blendOffset = 0.005;
-                // texture to determine normal displacement
                 var bumpTexture = noiseTexture;
                 bumpTexture.wrapS = bumpTexture.wrapT = THREE.RepeatWrapping;
-                // multiplier for distortion speed
                 var bumpSpeed = 0.007;
-                // magnitude of normal displacement
                 var bumpScale = 10.0;
                 customUniforms = {
                     baseTexture: {type: "t", value: lavaTexture},

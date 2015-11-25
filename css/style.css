@@ -1142,7 +1142,7 @@ body.landing #header nav a {
 
 #banner table th {
     color: white;
-    font-size: 1.4em;
+    font-size: 1.2em;
     margin: 0 0 0 0;
     text-align: center;
 }
@@ -1205,7 +1205,6 @@ body.landing #header nav a {
 .wrapper.slider {
     background-color: #000000;
 }
-
 .container p,th,td {
     font-size: 95%;
     font-family: Verdana, Arial, Helvetica, sans-serif;
