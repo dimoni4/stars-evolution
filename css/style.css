@@ -1093,8 +1093,20 @@ body.landing #header nav a {
 #header .container nav {
     right: 0;
 }
-
-/* Banner */
+#SuperNovaDiv{
+    position: relative;
+}
+#playButton{
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    cursor: pointer;
+    width: 10%;
+}
 
 #banner {
     background-image: url(../images/dark_tint.png), url(../images/pr1.jpg);

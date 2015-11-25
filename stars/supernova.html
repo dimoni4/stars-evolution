@@ -6,8 +6,10 @@
         <h2>Наднова</h2>
 
     </header>
-
+    <div id="SuperNovaDiv">
     <div id="graphic"></div>
+    <img id="playButton" src="./images/play-button.png" onclick="stars.supernova.draw()"/>
+    </div>
     <div class="row">
         <section class="9u">
             <p>Наднова — зоря, світність якої збільшується за кілька днів у мільярди разів закінчує своє життя
@@ -46,8 +48,7 @@
                 спектрами:</p>
             <ul>
                 <div class="youtube">
-                    <iframe width="560" height="315"  src="https://www.youtube.com/embed/8oRzqRBtM9Y" frameborder="0"
-                            allowfullscreen></iframe>
+                    <iframe width="560" height="315"  src="https://www.youtube.com/embed/8oRzqRBtM9Y" frameborder="0"></iframe>
                 </div>
                 <li>І — У спектрі під час вибуху немає ліній водню. Криві блиску майже однакові, різниця між ними
                     виявляється на
@@ -73,8 +74,7 @@
                     масивними зорями типу Вольфа-Райє.
                 </li>
                 <div class="youtube">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/vOOtFUWZ7Qw" frameborder="0"
-                            allowfullscreen></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/vOOtFUWZ7Qw" frameborder="0"></iframe>
 
 
                 </div>
@@ -96,8 +96,7 @@
             <p>В всіх типах наднових вибух викидає багато або навіть усю речовину зорі зі значною швидкістю.</p>
 
             <div class="youtube">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/GZyIb65gw3k" frameborder="0"
-                        allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/GZyIb65gw3k" frameborder="0"></iframe>
             </div>
         </section>
         <div id="ImageContainer">
@@ -167,6 +166,4 @@
     document.getElementById('ImageContainer').onclick = function () {
         $('#ImageContainer').hide(100);
     };
-    stars.supernova.draw();
-
 </script>

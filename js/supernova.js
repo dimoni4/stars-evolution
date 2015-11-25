@@ -1,5 +1,6 @@
 stars.supernova = {
     draw: function () {
+        $('#playButton').hide(0);
         cancelAnimationFrame(idAnimationFrame);
         container = {};
         stats = {};
@@ -118,7 +119,7 @@ stars.supernova = {
             renderer = new THREE.WebGLRenderer();//{ antialias: false, alpha: true });
             renderer.autoClear = true;
             renderer.setSize(windowHalfX, windowHalfY);
-            container.appendChild(renderer.domElement);
+            $('#graphic').html(renderer.domElement);
 
 
             var settingsVel = {
@@ -186,7 +187,13 @@ stars.supernova = {
             render();
 
         }
+
         var ready = false;
+
+        function returnPlayButton() {
+            cancelAnimationFrame(idAnimationFrame);
+            $('#playButton').show(0);
+        }
 
         function render() {
 
@@ -195,7 +202,7 @@ stars.supernova = {
                 ready = true;
                 composerVel.setSource(velPass.temptexture);
                 composerPos.setSource(posPass.temptexture);
-                setTimeout(function() {  cancelAnimationFrame(idAnimationFrame); } , 6201);
+                setTimeout(returnPlayButton, 5701);
             }
             if (!ready) return;
 
